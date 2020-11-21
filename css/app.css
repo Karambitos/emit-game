@@ -1,343 +1,13 @@
-/*
- *  Global elements
+@charset "UTF-8";
+/**
+ *  «Respond to» mixin
+ *
+ *  Mixin to manage responsive breakpoints
+ *  @param {String} $breakpoint - Breakpoint name
+ *  @author Hugo Giraudel
+ *
+ *  @require $breakpoints
  */
-html {
-  -webkit-box-sizing: border-box;
-          box-sizing: border-box;
-  width: 100vw;
-  overflow-x: hidden;
-}
-
-*,
-*::before,
-*::after {
-  -webkit-box-sizing: inherit;
-          box-sizing: inherit;
-}
-
-body {
-  font-family: 'Bangers', cursive;
-  font-weight: 400;
-  margin: 0;
-  padding: 0;
-  width: 100%;
-  height: 100vh;
-  background-color: grey;
-}
-
-.logo {
-  position: absolute;
-  top: 65px;
-  right: 100px;
-  z-index: 10;
-}
-
-.logo img {
-  -webkit-box-shadow: none;
-          box-shadow: none;
-}
-
-h2 {
-  margin: 0;
-  color: #f90f1c;
-  font-weight: normal;
-  font-size: 90px;
-  line-height: 109%;
-  text-shadow: 5px 9px 0px #000000;
-}
-
-img {
-  display: block;
-  max-width: 100%;
-  height: auto;
-  -webkit-filter: drop-shadow(0px 4px 20px rgba(0, 0, 0, 0.6));
-          filter: drop-shadow(0px 4px 20px rgba(0, 0, 0, 0.6));
-}
-
-section {
-  overflow: hidden;
-}
-
-.start {
-  -webkit-transition: all 0.35s ease-in-out;
-  transition: all 0.35s ease-in-out;
-  position: absolute;
-  width: 100%;
-  height: 100%;
-  z-index: 1;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-  height: inherit;
-  background-image: url(../images/fight-ring.jpg);
-  background-position: center;
-  background-size: cover;
-  background-repeat: no-repeat;
-  opacity: 0;
-  pointer-events: none;
-  visibility: hidden;
-}
-
-.start.active {
-  opacity: 1;
-  pointer-events: all;
-  visibility: inherit;
-}
-
-.start::before {
-  content: '';
-  position: absolute;
-  right: 0;
-  top: 0;
-  width: 50%;
-  height: 100%;
-  background: -webkit-gradient(linear, left top, right top, from(#000000), color-stop(94.82%, rgba(196, 196, 196, 0)));
-  background: linear-gradient(90deg, #000000 0%, rgba(196, 196, 196, 0) 94.82%);
-  mix-blend-mode: multiply;
-  -webkit-transform: rotate(179.98deg);
-          transform: rotate(179.98deg);
-}
-
-.start--wrapper {
-  position: relative;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-  overflow: hidden;
-  background-color: transparent;
-  height: 770px;
-  width: 100%;
-  background-position: bottom;
-  background-size: cover;
-}
-
-.start--wrapper-bg {
-  position: absolute;
-  width: 100%;
-}
-
-.start--wrapper-bg img {
-  width: 100%;
-}
-
-.start--text {
-  position: relative;
-  margin-left: auto;
-  margin-right: 180px;
-  max-width: 705px;
-}
-
-.start--text h2 {
-  pointer-events: none;
-}
-
-.start--referee {
-  -webkit-animation: referee 5000ms ease-in-out;
-          animation: referee 5000ms ease-in-out;
-  position: absolute;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  bottom: -10%;
-  left: 20px;
-  z-index: 2;
-  height: 90%;
-}
-
-.start--referee img {
-  -o-object-fit: contain;
-     object-fit: contain;
-  -o-object-position: bottom;
-     object-position: bottom;
-}
-
-.start--arrow {
-  -webkit-animation: tada 1000ms infinite;
-          animation: tada 1000ms infinite;
-  position: absolute;
-  right: -10%;
-  bottom: 0;
-}
-
-.start--arrow:hover {
-  -webkit-animation: none;
-          animation: none;
-  -webkit-transform: scale3d(1.1, 1.1, 1.1) rotate3d(0, 0, 1, 3deg);
-          transform: scale3d(1.1, 1.1, 1.1) rotate3d(0, 0, 1, 3deg);
-}
-
-.start--arrow-text {
-  pointer-events: none;
-  text-transform: uppercase;
-  font-family: 'Bangers', cursive;
-  font-weight: 400;
-  font-size: 32px;
-  line-height: 109%;
-  margin: 0;
-  color: #f90f1c;
-  position: absolute;
-  right: 55%;
-  top: 47%;
-  -webkit-transform: translate(50%, -50%);
-          transform: translate(50%, -50%);
-}
-
-.fight-container {
-  position: relative;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-  height: inherit;
-  background-image: url(../images/fight-ringBG.png);
-  background-position: center;
-  background-size: cover;
-  background-repeat: no-repeat;
-}
-
-.fight-container .shadow-box {
-  position: absolute;
-  width: 100%;
-  height: 100%;
-  background: -webkit-gradient(linear, left top, right top, from(#000000), color-stop(94.82%, rgba(196, 196, 196, 0)));
-  background: linear-gradient(90deg, #000000 0%, rgba(196, 196, 196, 0) 94.82%);
-}
-
-.fight-container .shadow-box::after {
-  content: '';
-  position: absolute;
-  left: 0;
-  top: 0;
-  height: 100%;
-  width: 100%;
-  background: radial-gradient(47.61% 47.61% at 50% 50%, rgba(255, 255, 255, 0) 0%, rgba(128, 128, 128, 0.397515) 75.49%, rgba(0, 0, 0, 0.48) 97.59%);
-}
-
-.fight-container .shadow-box::before {
-  content: '';
-  position: absolute;
-  right: 0;
-  top: 0;
-  width: 50%;
-  height: 100%;
-  background: -webkit-gradient(linear, left top, right top, from(#000000), color-stop(94.82%, rgba(196, 196, 196, 0)));
-  background: linear-gradient(90deg, #000000 0%, rgba(196, 196, 196, 0) 94.82%);
-  mix-blend-mode: multiply;
-  -webkit-transform: rotate(179.98deg);
-          transform: rotate(179.98deg);
-}
-
-.round-card {
-  -webkit-animation: tada 1000ms infinite;
-          animation: tada 1000ms infinite;
-  position: absolute;
-  top: 10%;
-}
-
-/*
-* progress-bar
-*/
-.slot {
-  position: relative;
-  height: 80%;
-  margin-top: auto;
-  margin-left: 73px;
-  margin-right: auto;
-}
-
-.progress-bar {
-  height: 100%;
-  padding: 0 28px;
-  position: absolute;
-  bottom: -15px;
-  overflow: hidden;
-  width: 100%;
-}
-
-.progress-bar span {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: reverse;
-      -ms-flex-direction: column-reverse;
-          flex-direction: column-reverse;
-}
-
-.bar {
-  background: rgba(6, 207, 213, 0.25);
-  height: 100%;
-  width: 34px;
-}
-
-.progress {
-  -webkit-animation: loader 8s ease infinite;
-          animation: loader 8s ease infinite;
-  position: relative;
-  background: #06cfd5;
-  color: #fff;
-  margin-top: 15px;
-  padding: 16px;
-  width: 0;
-}
-
-.progress-percent {
-  position: absolute;
-  top: -20px;
-  left: 50px;
-  font-family: 'Titillium Web', sans-serif;
-  font-weight: 600;
-  font-size: 45px;
-  line-height: 68px;
-}
-
-.progress-enemy {
-  position: absolute;
-  top: -10px;
-  left: -4px;
-  width: 40px;
-  height: 40px;
-  border: 3px solid white;
-  background-image: url(../images/tramp.png);
-  background-size: cover;
-  background-position: center;
-  border-radius: 50%;
-}
-
-/*
-* Hands
-*/
-.left-hand {
-  position: absolute;
-  left: 13%;
-  bottom: -28%;
-  width: 25%;
-}
-
-.right-hand {
-  position: absolute;
-  right: 18%;
-  bottom: -23%;
-  width: 25%;
-}
-
 /*
 * Animation
 */
@@ -456,7 +126,7 @@ section {
   0% {
     bottom: -100%;
   }
-  90% {
+  100% {
     bottom: 0%;
   }
   100% {
@@ -468,7 +138,7 @@ section {
   0% {
     bottom: -100%;
   }
-  90% {
+  100% {
     bottom: 0%;
   }
   100% {
@@ -476,7 +146,8 @@ section {
   }
 }
 
-.move-box {
+.move-box,
+.move-box--x {
   --x: 0;
   --y: 0;
   -webkit-transform-origin: 50% 50%;
@@ -486,4 +157,342 @@ section {
   -webkit-transform: translateZ(100px) rotateY(calc(var(--x) * 16deg)) rotateX(calc(var(--y) * -16deg));
           transform: translateZ(100px) rotateY(calc(var(--x) * 16deg)) rotateX(calc(var(--y) * -16deg));
 }
-/*# sourceMappingURL=styles.css.map */
+
+/*
+ *  Global elements
+ */
+html {
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  width: 100vw;
+  overflow-x: hidden;
+}
+
+*,
+*::before,
+*::after {
+  -webkit-box-sizing: inherit;
+          box-sizing: inherit;
+}
+
+body {
+  font-family: 'Bangers', cursive;
+  font-weight: 400;
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  height: 100vh;
+  background-color: grey;
+}
+
+.logo {
+  position: absolute;
+  top: 3%;
+  right: 100px;
+  z-index: 10;
+}
+
+.logo img {
+  -webkit-box-shadow: none;
+          box-shadow: none;
+}
+
+h2 {
+  margin: 0;
+  color: #f90f1c;
+  font-weight: normal;
+  font-size: 90px;
+  line-height: 109%;
+  text-shadow: 5px 9px 0px #000000;
+}
+
+img {
+  display: block;
+  max-width: 100%;
+  height: auto;
+  -webkit-filter: drop-shadow(0px 4px 20px rgba(0, 0, 0, 0.6));
+          filter: drop-shadow(0px 4px 20px rgba(0, 0, 0, 0.6));
+}
+
+section {
+  overflow: hidden;
+}
+
+/**components*/
+.start {
+  -webkit-transition: all 0.3s ease-in-out;
+  transition: all 0.3s ease-in-out;
+  width: 100%;
+  height: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  height: inherit;
+  background-image: url(../images/fight-ring.jpg);
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  opacity: 1;
+  pointer-events: all;
+  visibility: inherit;
+}
+
+.start::before {
+  content: '';
+  position: absolute;
+  right: 0;
+  top: 0;
+  width: 50%;
+  height: 100%;
+  background: -webkit-gradient(linear, left top, right top, from(#000000), color-stop(94.82%, rgba(196, 196, 196, 0)));
+  background: linear-gradient(90deg, #000000 0%, rgba(196, 196, 196, 0) 94.82%);
+  mix-blend-mode: multiply;
+  -webkit-transform: rotate(179.98deg);
+          transform: rotate(179.98deg);
+}
+
+.start--wrapper {
+  position: relative;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  overflow: hidden;
+  background-color: transparent;
+  height: 100%;
+  width: 100%;
+  background-position: bottom;
+  background-size: cover;
+}
+
+.start--wrapper-bg {
+  position: absolute;
+  width: 100%;
+}
+
+.start--wrapper-bg img {
+  width: 100%;
+}
+
+.start--text {
+  position: relative;
+  margin-left: auto;
+  margin-right: 180px;
+  max-width: 705px;
+  z-index: 3;
+}
+
+.start--text h2 {
+  pointer-events: none;
+  z-index: 5;
+}
+
+.start--referee {
+  -webkit-animation: referee 3000ms ease-in-out;
+          animation: referee 3000ms ease-in-out;
+  position: absolute;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  bottom: -10%;
+  left: 20px;
+  z-index: 2;
+  height: 100%;
+}
+
+.start--referee img {
+  -o-object-fit: contain;
+     object-fit: contain;
+  -o-object-position: bottom;
+     object-position: bottom;
+}
+
+.start--arrow {
+  -webkit-animation: tada 1000ms infinite;
+          animation: tada 1000ms infinite;
+  position: absolute;
+  right: -10%;
+  bottom: 0;
+}
+
+.start--arrow:hover {
+  -webkit-animation: none;
+          animation: none;
+  -webkit-transform: scale3d(1.1, 1.1, 1.1) rotate3d(0, 0, 1, 3deg);
+          transform: scale3d(1.1, 1.1, 1.1) rotate3d(0, 0, 1, 3deg);
+}
+
+.start--arrow-text {
+  pointer-events: none;
+  text-transform: uppercase;
+  font-family: 'Bangers', cursive;
+  font-weight: 400;
+  font-size: 32px;
+  line-height: 109%;
+  margin: 0;
+  color: #f90f1c;
+  position: absolute;
+  right: 55%;
+  top: 47%;
+  -webkit-transform: translate(50%, -50%);
+          transform: translate(50%, -50%);
+}
+
+.fight-container {
+  position: relative;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  height: inherit;
+  background-image: url(../images/fight-ringBG.png);
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+
+.fight-container .shadow-box {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background: -webkit-gradient(linear, left top, right top, from(#000000), color-stop(94.82%, rgba(196, 196, 196, 0)));
+  background: linear-gradient(90deg, #000000 0%, rgba(196, 196, 196, 0) 94.82%);
+}
+
+.fight-container .shadow-box::after {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 0;
+  height: 100%;
+  width: 100%;
+  background: radial-gradient(47.61% 47.61% at 50% 50%, rgba(255, 255, 255, 0) 0%, rgba(128, 128, 128, 0.397515) 75.49%, rgba(0, 0, 0, 0.48) 97.59%);
+}
+
+.fight-container .shadow-box::before {
+  content: '';
+  position: absolute;
+  right: 0;
+  top: 0;
+  width: 50%;
+  height: 100%;
+  background: -webkit-gradient(linear, left top, right top, from(#000000), color-stop(94.82%, rgba(196, 196, 196, 0)));
+  background: linear-gradient(90deg, #000000 0%, rgba(196, 196, 196, 0) 94.82%);
+  mix-blend-mode: multiply;
+  -webkit-transform: rotate(179.98deg);
+          transform: rotate(179.98deg);
+}
+
+/*
+* round-cards
+*/
+.round-card {
+  -webkit-animation: tada 1000ms infinite;
+          animation: tada 1000ms infinite;
+  position: absolute;
+  top: 10%;
+}
+
+/*
+* progress-bar
+*/
+.slot {
+  position: relative;
+  height: 80%;
+  margin-top: auto;
+  margin-left: 73px;
+  margin-right: auto;
+}
+
+.progress-bar {
+  height: 100%;
+  padding: 0 28px;
+  position: absolute;
+  bottom: -15px;
+  overflow: hidden;
+  width: 100%;
+}
+
+.progress-bar span {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: reverse;
+      -ms-flex-direction: column-reverse;
+          flex-direction: column-reverse;
+}
+
+.bar {
+  background: rgba(6, 207, 213, 0.25);
+  height: 100%;
+  width: 34px;
+}
+
+.progress {
+  -webkit-animation: loader 8s ease infinite;
+          animation: loader 8s ease infinite;
+  position: relative;
+  background: #06cfd5;
+  color: #fff;
+  margin-top: 15px;
+  padding: 16px;
+  width: 0;
+}
+
+.progress-percent {
+  position: absolute;
+  top: -20px;
+  left: 50px;
+  font-family: 'Titillium Web', sans-serif;
+  font-weight: 600;
+  font-size: 45px;
+  line-height: 68px;
+}
+
+.progress-enemy {
+  position: absolute;
+  top: -10px;
+  left: -4px;
+  width: 40px;
+  height: 40px;
+  border: 3px solid white;
+  background-image: url(../images/tramp.png);
+  background-size: cover;
+  background-position: center;
+  border-radius: 50%;
+}
+
+/*
+* Hands
+*/
+.left-hand {
+  position: absolute;
+  left: 13%;
+  bottom: -28%;
+  width: 25%;
+}
+
+.right-hand {
+  position: absolute;
+  right: 18%;
+  bottom: -23%;
+  width: 25%;
+}
+/*# sourceMappingURL=app.css.map */

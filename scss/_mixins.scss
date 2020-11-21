@@ -1,0 +1,55 @@
+/**
+ *  «Respond to» mixin
+ *
+ *  Mixin to manage responsive breakpoints
+ *  @param {String} $breakpoint - Breakpoint name
+ *  @author Hugo Giraudel
+ *
+ *  @require $breakpoints
+ */
+
+$breakpoints: ('full-max': 1920px,
+  'full_xl': 1550px,
+  'full': 1439px,
+  'huge_xl': 1360px,
+  'huge': 1280px,
+  'giant_xl': 1124px,
+  'giant': 1024px,
+  'large': 992px,
+  'medium_xl': 800px,
+  'medium': 768px,
+  'small': 640px,
+  'tiny': 468px);
+// @include respond-to('small') {}
+
+@mixin respond-to($breakpoint) {
+  @if map-has-key($breakpoints, $breakpoint) {
+    @media (max-width: map-get($breakpoints, $breakpoint)) {
+      @content;
+    }
+  }
+
+  @else {
+    @warn "Unfortunately, no value could be retrieved from `#{$breakpoint}`. "
+    +"Available breakpoints are: #{map-keys( $breakpoints )}.";
+  }
+}
+
+/// Animate css properties
+// usage
+// scss - @include animate(color);
+//     or @include animate(color width);
+//     or @include animate(color width, 1s, linear);
+//
+$animation-speed: .3s !default;
+
+@mixin animate($properties, $duration: $animation-speed, $easing: ease-in-out) {
+  $list: ();
+
+  @each $prop in $properties {
+    $str: #{$prop} #{$duration} #{$easing};
+    $list: join($list, #{$str}, comma);
+  }
+
+  transition: $list;
+}

@@ -1,0 +1,90 @@
+/*
+* Animation
+*/
+
+@keyframes loader {
+    0% {
+        height: 0;
+    }
+
+    20% {
+        height: 10%;
+    }
+
+    25% {
+        height: 24%;
+    }
+
+    43% {
+        height: 41%;
+    }
+
+    56% {
+        height: 50%;
+    }
+
+    66% {
+        height: 52%;
+    }
+
+    71% {
+        height: 60%;
+    }
+
+    75% {
+        height: 76%;
+    }
+
+    94% {
+        height: 86%;
+    }
+
+    100% {
+        height: 100%;
+    }
+}
+
+@keyframes tada {
+    0% {
+        transform: scale3d(1, 1, 1);
+    }
+
+    20% {
+        transform: scale3d(0.9, 0.9, 0.9) rotate3d(0, 0, 1, -3deg);
+    }
+
+    90% {
+        transform: scale3d(1.1, 1.1, 1.1) rotate3d(0, 0, 1, 3deg);
+    }
+
+    80% {
+        transform: scale3d(1.1, 1.1, 1.1) rotate3d(0, 0, 1, -3deg);
+    }
+
+    100% {
+        transform: scale3d(1, 1, 1);
+    }
+}
+
+@keyframes referee {
+    0% {
+        bottom: -100%;
+    }
+
+    100% {
+        bottom: 0%;
+    }
+
+    100% {
+        bottom: -10%;
+    }
+}
+
+.move-box,
+.move-box--x {
+    --x: 0;
+    --y: 0;
+    transform-origin: 50% 50%;
+    transform-style: preserve-3d;
+    transform: translateZ(100px) rotateY(calc(var(--x) * 16deg)) rotateX(calc(var(--y) * -16deg));
+}
