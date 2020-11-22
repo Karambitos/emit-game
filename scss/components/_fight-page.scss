@@ -281,7 +281,28 @@
     z-index: 2;
   }
 
+  &.stars-added {
+    animation: none;
+    left: 30%;
+    top: 42%;
 
+    .star-box {
+      @include animate (all);
+      animation: tadaRound 4000ms infinite ease-out;
+      background-image: url(../../images/star.png);
+      background-size: auto;
+      background-position: center;
+      background-repeat: no-repeat;
+      width: 300px;
+      height: 215px;
+      display: block;
+
+      position: absolute;
+      z-index: 3;
+      left: -62px;
+      top: -90px;
+    }
+  }
 }
 
 .virusRight {
