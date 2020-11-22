@@ -87,9 +87,9 @@
 }
 
 .progress {
-  animation: loader 8s ease infinite;
+  @include animate (all);
   position: relative;
-  // height: 7%;
+  height: 7%;
   background: $lineInner;
   color: #fff;
   margin-top: 15px;
@@ -135,4 +135,42 @@
   right: 18%;
   bottom: -23%;
   width: 25%;
+}
+
+.main-target {
+  left: 60%;
+  top: 25%;
+  width: 50px;
+  height: 50px;
+  background-color: blueviolet;
+  position: absolute;
+  z-index: 99;
+}
+
+// .handMove {
+//   right: 29%;
+//   bottom: 12px;
+// }
+
+// .handLeftMove {
+//   left: 16%;
+//   bottom: 9%;
+// }
+
+.virusRight {
+  width: 50px;
+  height: 50px;
+  background-color: red;
+  position: absolute;
+  z-index: 99;
+}
+
+.virusLeft {
+  width: 50px;
+  height: 50px;
+  background-color: green;
+  position: absolute;
+  left: 35%;
+  top: 35%;
+  z-index: 999;
 }
