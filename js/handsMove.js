@@ -14,8 +14,15 @@ const bonusHitEffect = {
   url: "./images/bonus.png",
   alt: "Hit effect",
 }
+
+const roundWin = {
+  url: "./images/win.png",
+  alt: "Win",
+}
+
 addElement();
 roundNumberHide();
+
 
 const progressLine = document.querySelector("span.progress");
 const toMove = {
@@ -37,8 +44,6 @@ const toMove = {
       //   }
     }
   },
-
-
 
   toMoveRightHand(e) {
     let rightHand = document.querySelector(".right-hand");
@@ -70,7 +75,6 @@ const toMove = {
     // this.count += 25;
   },
 
-
   toMoveLeftHand(e) {
     let leftHand = document.querySelector(".left-hand");
     const leftEffect = document.querySelector('.left-hand--effect');
@@ -99,6 +103,11 @@ const toMove = {
 
   calcPercent() {
     let progress = document.querySelector(".progress-percent");
+    const targetBg = document.querySelector('.main-target');
+    const slotImageBox = document.querySelector('.slot--image');
+    const roundNumber = document.querySelector('.round-card');
+    const roundImage = roundNumber.querySelector('img');
+
     /*
      * Adding progressLine height
      */
@@ -116,20 +125,28 @@ const toMove = {
       parseInt(progress.textContent);
     } else {
       progress.textContent = `100%`;
-      const slotImageBox = document.querySelector('.slot--image');
       slotImageBox.classList.add('active');
     }
 
     /*
-     * Bonus shows up
+     * Bonus fiters shows up
      */
     if (
       parseInt(progress.textContent) >= this.bonusPersent &&
       !document.querySelector(".virusRight")
     ) {
       addVirusElement();
-      const targetBg = document.querySelector('.main-target');
       targetBg.classList.add('active')
+    }
+
+    /*
+     * Win - image shows
+     */
+    if (parseInt(progress.textContent) >= 100) {
+      removeAllFighters();
+      roundImage.src = `${roundWin.url}`;
+      roundNumber.classList.add('active');
+      progress.textContent = ``;
     }
   },
 };
@@ -149,7 +166,7 @@ function roundNumberHide() {
  * Create main element
  */
 function addElement() {
-  let div = `<div class='main-target secondTarget'>
+  let div = `<div class='main-target secondTarget fighter'>
                 <span class="angry-box"></span>
                 <span class="angry-box--text"></span>
                 <div class="main-target-box">
@@ -164,15 +181,7 @@ function addElement() {
   let allTargets = document.querySelectorAll(".secondTarget");
 
   allTargets.forEach((el) =>
-    el.addEventListener("click", (e) => {
-      toMove.toChooseHand(e);
-      // const rightEffect = document.querySelector('.right-hand--effect');
-      // let target = e.currentTarget
-      // if (target.classList.contains('target')) {
-      //   let a = rightEffect.querySelector('img');
-      //   a.src = './images/bonus.png'
-      // }
-    })
+    el.addEventListener("click", (e) => toMove.toChooseHand(e))
   );
 };
 
@@ -180,11 +189,11 @@ function addElement() {
  * Create virus element
  */
 function addVirusElement() {
-  let div = `<div class='virusRight target'>
+  let div = `<div class='virusRight target fighter'>
               <img src = "${bonusFigter.url}"
               alt = "${bonusFigter.alt}" / >
             </div>
-            <div class='virusLeft target'>
+            <div class = 'virusLeft target fighter' >
               <img src = "${bonusFigter.url}"
               alt = "${bonusFigter.alt}" / >
             </div>`;
@@ -197,4 +206,11 @@ function addVirusElement() {
   allTargets.forEach((el) =>
     el.addEventListener("click", (e) => toMove.toChooseHand(e))
   );
+};
+
+function removeAllFighters() {
+  const toRemoveFiters = document.querySelectorAll('.fighter');
+  toRemoveFiters.forEach(elem => {
+    elem.remove(elem);
+  });
 };

@@ -1,5 +1,4 @@
 "use strict";
-
 // import {
 //   progressBarObject
 // } from './progressBar.js'
