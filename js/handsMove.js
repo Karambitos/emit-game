@@ -66,12 +66,12 @@ const toMove = {
 };
 
 function addElement() {
-  let div = `<div class='main-target target'></div>`;
+  let div = `<div class='main-target secondTarget'></div>`;
   document
     .querySelector(".fight-container")
     .insertAdjacentHTML("afterbegin", div);
 
-  let allTargets = document.querySelectorAll(".target");
+  let allTargets = document.querySelectorAll(".secondTarget");
 
   allTargets.forEach((el) =>
     el.addEventListener("click", (e) => toMove.toChooseHand(e))
