@@ -13,6 +13,10 @@ const toMove = {
     } else {
       this.hand = true;
       this.toMoveLeftHand(e);
+      //delete virus
+      //   if (!e.currentTarget.classList.contains("main-target")) {
+      //     console.dir(e.currentTarget.remove());
+      //   }
     }
   },
 
@@ -26,7 +30,8 @@ const toMove = {
       rightHand.style.left = "";
     }, 500);
     let progress = document.querySelector(".progress-percent");
-    progress.textContent = `${(this.count += 25)}%`;
+    //   progress.textContent = `${(this.count += 25)}%`;
+    this.count += 25;
   },
 
   toMoveLeftHand(e) {
