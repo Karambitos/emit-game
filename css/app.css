@@ -755,6 +755,7 @@ section {
 .right-hand {
   position: absolute;
   z-index: 100;
+  opacity: 1;
 }
 
 .left-hand--effect,
@@ -836,6 +837,7 @@ section {
 .main-target.stars-added {
   -webkit-animation: none;
           animation: none;
+  pointer-events: none;
   left: 30%;
   top: 42%;
 }

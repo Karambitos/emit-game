@@ -101,6 +101,8 @@ const toMove = {
   },
 
   calcPercent() {
+    let rightHand = document.querySelector(".right-hand");
+    let leftHand = document.querySelector(".left-hand");
     let progress = document.querySelector(".progress-percent");
     const targetBg = document.querySelector(".main-target");
     const slotImageBox = document.querySelector(".slot--image");
@@ -150,6 +152,8 @@ const toMove = {
         roundNumber.classList.remove("active");
         addElement();
         document.querySelector(".secondTarget").classList.add("stars-added");
+        leftHand.style.opacity = '0';
+        rightHand.style.opacity = '0';
       }, 1000);
     }
   },

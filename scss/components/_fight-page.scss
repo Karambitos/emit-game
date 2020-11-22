@@ -198,17 +198,13 @@
 .right-hand {
   position: absolute;
   z-index: 100;
+  opacity: 1;
 
   &--effect {
     pointer-events: none;
     position: absolute;
     display: block;
     width: 546px;
-    // height: 390px;
-    // background-image: url(../../images/baaam.png);
-    // background-size: contain;
-    // background-position: center;
-    // background-repeat: no-repeat;
     opacity: 0;
   }
 }
@@ -283,6 +279,7 @@
 
   &.stars-added {
     animation: none;
+    pointer-events: none;
     left: 30%;
     top: 42%;
 
