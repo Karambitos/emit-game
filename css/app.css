@@ -11,38 +11,6 @@
 /*
 * Animation
 */
-@-webkit-keyframes loader {
-  0% {
-    height: 0;
-  }
-  20% {
-    height: 10%;
-  }
-  25% {
-    height: 24%;
-  }
-  43% {
-    height: 41%;
-  }
-  56% {
-    height: 50%;
-  }
-  66% {
-    height: 52%;
-  }
-  71% {
-    height: 60%;
-  }
-  75% {
-    height: 76%;
-  }
-  94% {
-    height: 86%;
-  }
-  100% {
-    height: 100%;
-  }
-}
 @keyframes loader {
   0% {
     height: 0;
@@ -76,61 +44,21 @@
   }
 }
 
-@-webkit-keyframes tada {
-  0% {
-    -webkit-transform: scale3d(1, 1, 1);
-            transform: scale3d(1, 1, 1);
-  }
-  20% {
-    -webkit-transform: scale3d(0.9, 0.9, 0.9) rotate3d(0, 0, 1, -3deg);
-            transform: scale3d(0.9, 0.9, 0.9) rotate3d(0, 0, 1, -3deg);
-  }
-  90% {
-    -webkit-transform: scale3d(1.1, 1.1, 1.1) rotate3d(0, 0, 1, 3deg);
-            transform: scale3d(1.1, 1.1, 1.1) rotate3d(0, 0, 1, 3deg);
-  }
-  80% {
-    -webkit-transform: scale3d(1.1, 1.1, 1.1) rotate3d(0, 0, 1, -3deg);
-            transform: scale3d(1.1, 1.1, 1.1) rotate3d(0, 0, 1, -3deg);
-  }
-  100% {
-    -webkit-transform: scale3d(1, 1, 1);
-            transform: scale3d(1, 1, 1);
-  }
-}
-
 @keyframes tada {
   0% {
-    -webkit-transform: scale3d(1, 1, 1);
-            transform: scale3d(1, 1, 1);
+    transform: scale3d(1, 1, 1);
   }
   20% {
-    -webkit-transform: scale3d(0.9, 0.9, 0.9) rotate3d(0, 0, 1, -3deg);
-            transform: scale3d(0.9, 0.9, 0.9) rotate3d(0, 0, 1, -3deg);
+    transform: scale3d(0.9, 0.9, 0.9) rotate3d(0, 0, 1, -3deg);
   }
   90% {
-    -webkit-transform: scale3d(1.1, 1.1, 1.1) rotate3d(0, 0, 1, 3deg);
-            transform: scale3d(1.1, 1.1, 1.1) rotate3d(0, 0, 1, 3deg);
+    transform: scale3d(1.1, 1.1, 1.1) rotate3d(0, 0, 1, 3deg);
   }
   80% {
-    -webkit-transform: scale3d(1.1, 1.1, 1.1) rotate3d(0, 0, 1, -3deg);
-            transform: scale3d(1.1, 1.1, 1.1) rotate3d(0, 0, 1, -3deg);
+    transform: scale3d(1.1, 1.1, 1.1) rotate3d(0, 0, 1, -3deg);
   }
   100% {
-    -webkit-transform: scale3d(1, 1, 1);
-            transform: scale3d(1, 1, 1);
-  }
-}
-
-@-webkit-keyframes referee {
-  0% {
-    bottom: -100%;
-  }
-  100% {
-    bottom: 0%;
-  }
-  100% {
-    bottom: -10%;
+    transform: scale3d(1, 1, 1);
   }
 }
 
@@ -150,20 +78,16 @@
 .move-box--x {
   --x: 0;
   --y: 0;
-  -webkit-transform-origin: 50% 50%;
-          transform-origin: 50% 50%;
-  -webkit-transform-style: preserve-3d;
-          transform-style: preserve-3d;
-  -webkit-transform: translateZ(100px) rotateY(calc(var(--x) * 16deg)) rotateX(calc(var(--y) * -16deg));
-          transform: translateZ(100px) rotateY(calc(var(--x) * 16deg)) rotateX(calc(var(--y) * -16deg));
+  transform-origin: 50% 50%;
+  transform-style: preserve-3d;
+  transform: translateZ(100px) rotateY(calc(var(--x) * 16deg)) rotateX(calc(var(--y) * -16deg));
 }
 
 /*
  *  Global elements
  */
 html {
-  -webkit-box-sizing: border-box;
-          box-sizing: border-box;
+  box-sizing: border-box;
   width: 100vw;
   overflow-x: hidden;
 }
@@ -171,12 +95,11 @@ html {
 *,
 *::before,
 *::after {
-  -webkit-box-sizing: inherit;
-          box-sizing: inherit;
+  box-sizing: inherit;
 }
 
 body {
-  font-family: 'Bangers', cursive;
+  font-family: "Bangers", cursive;
   font-weight: 400;
   margin: 0;
   padding: 0;
@@ -193,8 +116,7 @@ body {
 }
 
 .logo img {
-  -webkit-box-shadow: none;
-          box-shadow: none;
+  box-shadow: none;
 }
 
 h2 {
@@ -210,29 +132,49 @@ img {
   display: block;
   max-width: 100%;
   height: auto;
-  -webkit-filter: drop-shadow(0px 4px 20px rgba(0, 0, 0, 0.6));
-          filter: drop-shadow(0px 4px 20px rgba(0, 0, 0, 0.6));
+  filter: drop-shadow(0px 4px 20px rgba(0, 0, 0, 0.6));
 }
 
 section {
   overflow: hidden;
 }
 
+.virusRight {
+  width: 50px;
+  height: 50px;
+  background-color: red;
+  position: absolute;
+  z-index: 99;
+}
+
+.virusLeft {
+  width: 50px;
+  height: 50px;
+  background-color: green;
+  position: absolute;
+  left: 35%;
+  top: 35%;
+  z-index: 999;
+}
+
+.handMove {
+  right: 29%;
+  bottom: 12px;
+}
+
+.handLeftMove {
+  left: 16%;
+  bottom: 9%;
+}
+
 /**components*/
 .start {
-  -webkit-transition: all 0.3s ease-in-out;
   transition: all 0.3s ease-in-out;
   width: 100%;
   height: 100%;
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
+  justify-content: center;
+  align-items: center;
   height: inherit;
   background-image: url(../images/fight-ring.jpg);
   background-position: center;
@@ -250,24 +192,16 @@ section {
   top: 0;
   width: 50%;
   height: 100%;
-  background: -webkit-gradient(linear, left top, right top, from(#000000), color-stop(94.82%, rgba(196, 196, 196, 0)));
   background: linear-gradient(90deg, #000000 0%, rgba(196, 196, 196, 0) 94.82%);
   mix-blend-mode: multiply;
-  -webkit-transform: rotate(179.98deg);
-          transform: rotate(179.98deg);
+  transform: rotate(179.98deg);
 }
 
 .start--wrapper {
   position: relative;
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
+  justify-content: center;
+  align-items: center;
   overflow: hidden;
   background-color: transparent;
   height: 100%;
@@ -299,11 +233,8 @@ section {
 }
 
 .start--referee {
-  -webkit-animation: referee 3000ms ease-in-out;
-          animation: referee 3000ms ease-in-out;
+  animation: referee 3000ms ease-in-out;
   position: absolute;
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
   bottom: -10%;
   left: 20px;
@@ -312,25 +243,20 @@ section {
 }
 
 .start--referee img {
-  -o-object-fit: contain;
-     object-fit: contain;
-  -o-object-position: bottom;
-     object-position: bottom;
+  object-fit: contain;
+  object-position: bottom;
 }
 
 .start--arrow {
-  -webkit-animation: tada 1000ms infinite;
-          animation: tada 1000ms infinite;
+  animation: tada 1000ms infinite;
   position: absolute;
   right: -10%;
   bottom: 0;
 }
 
 .start--arrow:hover {
-  -webkit-animation: none;
-          animation: none;
-  -webkit-transform: scale3d(1.1, 1.1, 1.1) rotate3d(0, 0, 1, 3deg);
-          transform: scale3d(1.1, 1.1, 1.1) rotate3d(0, 0, 1, 3deg);
+  animation: none;
+  transform: scale3d(1.1, 1.1, 1.1) rotate3d(0, 0, 1, 3deg);
 }
 
 .start--arrow-text {
@@ -345,21 +271,14 @@ section {
   position: absolute;
   right: 55%;
   top: 47%;
-  -webkit-transform: translate(50%, -50%);
-          transform: translate(50%, -50%);
+  transform: translate(50%, -50%);
 }
 
 .fight-container {
   position: relative;
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
+  justify-content: center;
+  align-items: center;
   height: inherit;
   background-image: url(../images/fight-ringBG.png);
   background-position: center;
@@ -371,7 +290,6 @@ section {
   position: absolute;
   width: 100%;
   height: 100%;
-  background: -webkit-gradient(linear, left top, right top, from(#000000), color-stop(94.82%, rgba(196, 196, 196, 0)));
   background: linear-gradient(90deg, #000000 0%, rgba(196, 196, 196, 0) 94.82%);
 }
 
@@ -392,19 +310,16 @@ section {
   top: 0;
   width: 50%;
   height: 100%;
-  background: -webkit-gradient(linear, left top, right top, from(#000000), color-stop(94.82%, rgba(196, 196, 196, 0)));
   background: linear-gradient(90deg, #000000 0%, rgba(196, 196, 196, 0) 94.82%);
   mix-blend-mode: multiply;
-  -webkit-transform: rotate(179.98deg);
-          transform: rotate(179.98deg);
+  transform: rotate(179.98deg);
 }
 
 /*
 * round-cards
 */
 .round-card {
-  -webkit-animation: tada 1000ms infinite;
-          animation: tada 1000ms infinite;
+  animation: tada 1000ms infinite;
   position: absolute;
   top: 10%;
 }
@@ -430,13 +345,8 @@ section {
 }
 
 .progress-bar span {
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: reverse;
-      -ms-flex-direction: column-reverse;
-          flex-direction: column-reverse;
+  flex-direction: column-reverse;
 }
 
 .bar {
@@ -446,8 +356,7 @@ section {
 }
 
 .progress {
-  -webkit-animation: loader 8s ease infinite;
-          animation: loader 8s ease infinite;
+  animation: loader 8s ease infinite;
   position: relative;
   background: #06cfd5;
   color: #fff;
