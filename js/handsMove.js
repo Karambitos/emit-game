@@ -57,7 +57,7 @@ const toMove = {
       progressLine.style.height = `${this.count + this.hitPersent}%`;
     }
 
-    if (parseInt(progress.textContent) < 87) {
+    if (this.count + this.hitPersent < 100) {
       progress.textContent = `${(this.count += this.hitPersent)}%`;
       parseInt(progress.textContent);
     } else {
