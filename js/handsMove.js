@@ -74,7 +74,7 @@ function addElement() {
   let allTargets = document.querySelectorAll(".target");
 
   allTargets.forEach((el) =>
-    el.addEventListener("click", (e) => toMove.toMoveHand(e))
+    el.addEventListener("click", (e) => toMove.toChooseHand(e))
   );
 }
 
