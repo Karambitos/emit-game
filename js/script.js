@@ -1,4 +1,8 @@
 "use strict";
+import { progressBarObject } from './progressBar.js'
+// progressBarObject.changeProgressBar()
+
+
 $(document).ready(() => {
 
     // const enterBtn = document.querySelector('.js-enter');
