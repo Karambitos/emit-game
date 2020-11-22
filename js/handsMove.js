@@ -24,6 +24,7 @@ const toMove = {
     let rightHand = document.querySelector(".right-hand");
     rightHand.style.top = e.clientY + "px";
     rightHand.style.left = e.clientX + "px";
+    this.calcPercent();
 
     setTimeout(function () {
       rightHand.style.top = "";
@@ -31,7 +32,7 @@ const toMove = {
     }, 500);
     let progress = document.querySelector(".progress-percent");
     //   progress.textContent = `${(this.count += 25)}%`;
-    this.count += 25;
+    // this.count += 25;
   },
 
   toMoveLeftHand(e) {
@@ -40,11 +41,13 @@ const toMove = {
     leftHand.style.top = e.clientY + "px";
 
     leftHand.style.left = e.clientX - 200 + "px";
-
+    this.calcPercent();
     setTimeout(function () {
       leftHand.style.top = "";
       leftHand.style.left = "";
     }, 500);
+  },
+  calcPercent() {
     let progress = document.querySelector(".progress-percent");
 
     if (!progressLine.style.height) {
@@ -54,7 +57,7 @@ const toMove = {
       progressLine.style.height = `${this.count + this.hitPersent}%`;
     }
 
-    if (parseInt(progress.textContent) < 100) {
+    if (parseInt(progress.textContent) < 87) {
       progress.textContent = `${(this.count += this.hitPersent)}%`;
       parseInt(progress.textContent);
     } else {
