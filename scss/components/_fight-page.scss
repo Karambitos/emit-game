@@ -50,20 +50,64 @@
 * round-cards
 */
 .round-card {
-  animation: tada 1000ms infinite;
+  @include animate (all);
+  animation: tadaRoundShake 5000ms infinite;
   position: absolute;
   top: 10%;
+  z-index: 1;
+  opacity: 0;
+  pointer-events: none;
+  visibility: hidden;
+
+  &.active {
+    opacity: 1;
+    visibility: inherit;
+    pointer-events: all;
+  }
 }
 
 /*
 * progress-bar
 */
+
+
 .slot {
   position: relative;
   height: 80%;
   margin-top: auto;
   margin-left: 73px;
   margin-right: auto;
+
+  &--box {
+    display: flex;
+    align-items: center;
+    padding: 0 20px;
+    width: 100%;
+    width: 240px;
+    height: 91px;
+    background-image: url(../../images/slot.png);
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+  }
+
+  &--image {
+    @include animate (all);
+    display: flex;
+    justify-content: center;
+    width: 40px;
+    height: 40px;
+    margin: 15px 5px;
+    border: 4px solid white;
+    border-radius: 50%;
+    overflow: hidden;
+    opacity: 0;
+
+    img {
+      max-width: inherit;
+      width: 50px;
+    }
+  }
 }
 
 .progress-bar {
@@ -84,16 +128,17 @@
   background: $line;
   height: 100%;
   width: 34px;
+  border-radius: 30px;
 }
 
 .progress {
   @include animate (all);
   position: relative;
-  height: 7%;
+  height: 9%;
   background: $lineInner;
   color: #fff;
-  margin-top: 15px;
-  padding: 16px;
+  margin-top: 21px;
+  padding: 17px;
   width: 0;
 
   &-percent {
@@ -128,49 +173,146 @@
   left: 13%;
   bottom: -28%;
   width: 25%;
+
+  &--effect {
+    margin-right: auto;
+    top: -30%;
+    left: 0;
+    transform: rotateZ(-20deg);
+  }
 }
 
 .right-hand {
-  position: absolute;
   right: 18%;
   bottom: -23%;
   width: 25%;
+
+  &--effect {
+    margin-left: auto;
+    top: -36%;
+    right: 17%;
+  }
+}
+
+.left-hand,
+.right-hand {
+  position: absolute;
+  z-index: 100;
+
+  &--effect {
+    pointer-events: none;
+    position: absolute;
+    display: block;
+    width: 546px;
+    // height: 390px;
+    // background-image: url(../../images/baaam.png);
+    // background-size: contain;
+    // background-position: center;
+    // background-repeat: no-repeat;
+    opacity: 0;
+  }
 }
 
 .main-target {
-  left: 60%;
+  animation: tadaRound 4000ms infinite ease-out;
+
+  left: 49%;
   top: 25%;
-  width: 50px;
-  height: 50px;
-  background-color: blueviolet;
   position: absolute;
-  z-index: 99;
+  transform: rotate(-10deg);
+
+  &-box {
+    position: relative;
+    width: 210px;
+    height: 210px;
+    border: 10px solid white;
+    border-radius: 50%;
+    overflow: hidden;
+
+
+    img {
+      object-fit: cover;
+      height: inherit;
+    }
+  }
+
+  &.active {
+
+    .angry-box {
+      @include animate (all);
+      background-image: url(../../images/angry1.png);
+      background-size: auto;
+      background-position: center;
+      background-repeat: no-repeat;
+      width: 110px;
+      height: 110px;
+      display: block;
+
+      position: absolute;
+      z-index: 3;
+      left: -36px;
+
+    }
+
+    .angry-box--text {
+      @include animate (all);
+      background-image: url(../../images/angry2.png);
+      background-size: contain;
+      background-position: center;
+      background-repeat: no-repeat;
+      width: 230px;
+      height: 150px;
+      display: block;
+
+      position: absolute;
+      z-index: 3;
+      left: 140px;
+      top: -40%;
+    }
+  }
+
+  &.active>.main-target-box>.target-bg {
+    @include animate (all);
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    display: block;
+    background: rgba(255, 0, 0, 0.5);
+    z-index: 2;
+  }
+
+
 }
 
-// .handMove {
-//   right: 29%;
-//   bottom: 12px;
-// }
-
-// .handLeftMove {
-//   left: 16%;
-//   bottom: 9%;
-// }
-
 .virusRight {
-  width: 50px;
-  height: 50px;
-  background-color: red;
+  @include animate (all);
+  animation: tadaRound 1000ms infinite ease-out;
+
+  opacity: 1;
+  max-width: 100px;
+  width: 100%;
+  height: auto;
   position: absolute;
-  z-index: 99;
+  left: 48%;
+  top: 60%;
 }
 
 .virusLeft {
-  width: 50px;
-  height: 50px;
-  background-color: green;
+  @include animate (all);
+  animation: tadaRound 1000ms infinite ease-out;
+
+  max-width: 138px;
+  width: 100%;
+  height: auto;
   position: absolute;
-  left: 35%;
-  top: 35%;
-  z-index: 999;
+  left: 33%;
+  top: 45%;
+}
+
+
+/*
+* active class
+*/
+.active {
+  opacity: 1;
 }
