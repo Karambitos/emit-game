@@ -157,16 +157,6 @@ section {
   z-index: 999;
 }
 
-.handMove {
-  right: 29%;
-  bottom: 12px;
-}
-
-.handLeftMove {
-  left: 16%;
-  bottom: 9%;
-}
-
 /**components*/
 .start {
   transition: all 0.3s ease-in-out;
