@@ -1,33 +1,11 @@
 "use strict";
-import { progressBarObject } from './progressBar.js'
+
+// import {
+//   progressBarObject
+// } from './progressBar.js'
 // progressBarObject.changeProgressBar()
 
-
 $(document).ready(() => {
-
-    // const enterBtn = document.querySelector('.js-enter');
-    // const enterSection = document.querySelector('.start');
-    // const rightHand = document.querySelector('.right-hand');
-
-    /*
-     * Progress BAR
-     */
-    // const progressPercent = document.querySelector('.progress-percent');
-    // const progress = document.querySelector('span.progress');
-    // (function () {
-    //   let c = 0;
-    //   let timeout = setInterval(function () {
-    //     c++;
-    //     console.dir(progress.offsetHeight);
-    //     progressPercent.textContent = progress.offsetHeight + '%'
-    //   }, 500);
-    // })();
-
-    // enterBtn.addEventListener('click', event => {
-    //     enterSection.classList.remove('active');
-    // });
-
-
     const moveBoxs = document.querySelectorAll('.move-box');
     moveBoxs.forEach((box) => {
         let raf;
