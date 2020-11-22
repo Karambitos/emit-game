@@ -5,15 +5,21 @@ const firstFigter = {
 const bonusFigter = {
   url: "./images/virus.png",
   alt: "Figter virus",
-}
+};
 const hitEffect = {
   url: "./images/baaam.png",
   alt: "Hit effect",
-}
+};
 const bonusHitEffect = {
   url: "./images/bonus.png",
   alt: "Hit effect",
-}
+};
+
+const roundWin = {
+  url: "./images/win.png",
+  alt: "Win",
+};
+
 addElement();
 roundNumberHide();
 
@@ -38,67 +44,69 @@ const toMove = {
     }
   },
 
-
-
   toMoveRightHand(e) {
     let rightHand = document.querySelector(".right-hand");
-    const rightEffect = document.querySelector('.right-hand--effect');
+    const rightEffect = document.querySelector(".right-hand--effect");
     /*
      * Change the hit effect
      */
-    let target = e.currentTarget
-    if (target.classList.contains('target')) {
-      let hitImage = rightEffect.querySelector('img');
-      hitImage.src = `${bonusHitEffect.url}`
+    let target = e.currentTarget;
+    if (target.classList.contains("target")) {
+      let hitImage = rightEffect.querySelector("img");
+      hitImage.src = `${bonusHitEffect.url}`;
       setTimeout(function () {
         hitImage.src = `${hitEffect.url}`;
       }, 200);
     }
     rightHand.style.top = e.clientY + "px";
     rightHand.style.left = e.clientX + "px";
-    rightEffect.style.opacity = '1'
+    rightEffect.style.opacity = "1";
 
     this.calcPercent();
 
     setTimeout(function () {
       rightHand.style.top = "";
       rightHand.style.left = "";
-      rightEffect.style.opacity = '';
+      rightEffect.style.opacity = "";
     }, 200);
     let progress = document.querySelector(".progress-percent");
     //   progress.textContent = `${(this.count += 25)}%`;
     // this.count += 25;
   },
 
-
   toMoveLeftHand(e) {
     let leftHand = document.querySelector(".left-hand");
-    const leftEffect = document.querySelector('.left-hand--effect');
+    const leftEffect = document.querySelector(".left-hand--effect");
     /*
      * Change the hit effect
      */
-    let target = e.currentTarget
-    if (target.classList.contains('target')) {
-      let hitImage = leftEffect.querySelector('img');
-      hitImage.src = `${bonusHitEffect.url}`
+    let target = e.currentTarget;
+    if (target.classList.contains("target")) {
+      let hitImage = leftEffect.querySelector("img");
+      hitImage.src = `${bonusHitEffect.url}`;
       setTimeout(function () {
         hitImage.src = `${hitEffect.url}`;
       }, 200);
     }
 
-    leftEffect.style.opacity = '1'
+    leftEffect.style.opacity = "1";
     leftHand.style.top = e.clientY + "px";
     leftHand.style.left = e.clientX - 200 + "px";
     this.calcPercent();
     setTimeout(function () {
       leftHand.style.top = "";
       leftHand.style.left = "";
-      leftEffect.style.opacity = ''
+      leftEffect.style.opacity = "";
     }, 200);
   },
 
   calcPercent() {
     let progress = document.querySelector(".progress-percent");
+    const targetBg = document.querySelector(".main-target");
+    const slotImageBox = document.querySelector(".slot--image");
+    const roundNumber = document.querySelector(".round-card");
+    const roundImage = roundNumber.querySelector("img");
+
     /*
      * Adding progressLine height
      */
@@ -116,20 +124,33 @@ const toMove = {
       parseInt(progress.textContent);
     } else {
       progress.textContent = `100%`;
-      const slotImageBox = document.querySelector('.slot--image');
-      slotImageBox.classList.add('active');
+      slotImageBox.classList.add("active");
     }
 
     /*
-     * Bonus shows up
+     * Bonus fiters shows up
      */
     if (
       parseInt(progress.textContent) >= this.bonusPersent &&
       !document.querySelector(".virusRight")
     ) {
       addVirusElement();
-      const targetBg = document.querySelector('.main-target');
-      targetBg.classList.add('active')
+      targetBg.classList.add("active");
+    }
+
+    /*
+     * Win - image shows
+     */
+    if (parseInt(progress.textContent) >= 100) {
+      removeAllFighters();
+      roundImage.src = `${roundWin.url}`;
+      roundNumber.classList.add("active");
+      progress.textContent = ``;
+      setTimeout(function () {
+        roundNumber.classList.remove("active");
+        addElement();
+        document.querySelector(".secondTarget").classList.add("stars-added");
+      }, 1000);
     }
   },
 };
@@ -139,17 +160,17 @@ const toMove = {
  */
 function roundNumberHide() {
   setTimeout(function () {
-    const roundNumber = document.querySelector('.round-card')
-    roundNumber.classList.remove('active')
+    const roundNumber = document.querySelector(".round-card");
+    roundNumber.classList.remove("active");
   }, 1000);
-};
-
+}
 
 /*
  * Create main element
  */
 function addElement() {
-  let div = `<div class='main-target secondTarget'>
+  let div = `<div class='main-target secondTarget fighter'>
+                <span class ="star-box"></span>
                 <span class="angry-box"></span>
                 <span class="angry-box--text"></span>
                 <div class="main-target-box">
@@ -164,27 +185,19 @@ function addElement() {
   let allTargets = document.querySelectorAll(".secondTarget");
 
   allTargets.forEach((el) =>
-    el.addEventListener("click", (e) => {
-      toMove.toChooseHand(e);
-      // const rightEffect = document.querySelector('.right-hand--effect');
-      // let target = e.currentTarget
-      // if (target.classList.contains('target')) {
-      //   let a = rightEffect.querySelector('img');
-      //   a.src = './images/bonus.png'
-      // }
-    })
+    el.addEventListener("click", (e) => toMove.toChooseHand(e))
   );
-};
+}
 
 /*
  * Create virus element
  */
 function addVirusElement() {
-  let div = `<div class='virusRight target'>
+  let div = `<div class='virusRight target fighter'>
               <img src = "${bonusFigter.url}"
               alt = "${bonusFigter.alt}" / >
             </div>
-            <div class='virusLeft target'>
+            <div class = 'virusLeft target fighter' >
               <img src = "${bonusFigter.url}"
               alt = "${bonusFigter.alt}" / >
             </div>`;
@@ -197,4 +210,11 @@ function addVirusElement() {
   allTargets.forEach((el) =>
     el.addEventListener("click", (e) => toMove.toChooseHand(e))
   );
-};
+}
+
+function removeAllFighters() {
+  const toRemoveFiters = document.querySelectorAll(".fighter");
+  toRemoveFiters.forEach((elem) => {
+    elem.remove(elem);
+  });
+}

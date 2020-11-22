@@ -833,6 +833,31 @@ section {
   z-index: 2;
 }
 
+.main-target.stars-added {
+  -webkit-animation: none;
+          animation: none;
+  left: 30%;
+  top: 42%;
+}
+
+.main-target.stars-added .star-box {
+  -webkit-transition: all 0.3s ease-in-out;
+  transition: all 0.3s ease-in-out;
+  -webkit-animation: tadaRound 4000ms infinite ease-out;
+          animation: tadaRound 4000ms infinite ease-out;
+  background-image: url(../../images/star.png);
+  background-size: auto;
+  background-position: center;
+  background-repeat: no-repeat;
+  width: 300px;
+  height: 215px;
+  display: block;
+  position: absolute;
+  z-index: 3;
+  left: -62px;
+  top: -90px;
+}
+
 .virusRight {
   -webkit-transition: all 0.3s ease-in-out;
   transition: all 0.3s ease-in-out;
