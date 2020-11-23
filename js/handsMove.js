@@ -1,8 +1,10 @@
-const firstFigter = {
+import { progressBarObject } from "./progressBar.js";
+
+let firstFigter = {
   url: "./images/tramp.png",
   alt: "Figter Trump",
 };
-const bonusFigter = {
+let bonusFigter = {
   url: "./images/virus.png",
   alt: "Figter virus",
 };
@@ -19,8 +21,9 @@ const roundWin = {
   url: "./images/win.png",
   alt: "Win",
 };
-
-addElement();
+setTimeout(function () {
+  addElement();
+}, 1200);
 roundNumberHide();
 
 const progressLine = document.querySelector("span.progress");
@@ -100,7 +103,7 @@ const toMove = {
     }, 200);
   },
 
-  calcPercent() {
+  calcPercent(lvl = false) {
     let rightHand = document.querySelector(".right-hand");
     let leftHand = document.querySelector(".left-hand");
     let progress = document.querySelector(".progress-percent");
@@ -109,6 +112,15 @@ const toMove = {
     const roundNumber = document.querySelector(".round-card");
     const roundImage = roundNumber.querySelector("img");
 
+    /*
+     * Next level
+     */
+
+    if (lvl) {
+      progress.textContent = `${this.count}%`;
+      progressLine.style.height = "";
+      return;
+    }
     /*
      * Adding progressLine height
      */
@@ -152,12 +164,47 @@ const toMove = {
         roundNumber.classList.remove("active");
         addElement();
         document.querySelector(".mainTarget").classList.add("stars-added");
-        leftHand.style.opacity = '0';
-        rightHand.style.opacity = '0';
+        leftHand.style.opacity = "0";
+        rightHand.style.opacity = "0";
+        let arrovNext = document.querySelector(".start--arrow-next");
+        arrovNext.classList.add("active");
+        arrovNext.addEventListener("click", toTheNextRound);
       }, 1000);
     }
   },
 };
+/*
+ * Go to the next round
+ */
+function toTheNextRound() {
+  progressBarObject.changeProgressBar();
+  toMove.count = 0;
+  toMove.calcPercent(2);
+  firstFigter.url = "./images/main-target2.jpg";
+  firstFigter.alt = "target2";
+  document.querySelector(".mainTarget").remove("stars-added");
+
+  toChangeRoundPict();
+
+  setTimeout(function () {
+    let rightHand = document.querySelector(".right-hand");
+    let leftHand = document.querySelector(".left-hand");
+    leftHand.style.opacity = "1";
+    rightHand.style.opacity = "1";
+
+    addElement();
+  }, 1000);
+}
+
+// console.log(document.querySelector(".progress-enemy"));
+function toChangeRoundPict() {
+  const roundPict = document.querySelector(".round-card> img");
+  const roundPictDiv = document.querySelector(".round-card");
+
+  roundPict.setAttribute("src", "./images/round_2.png");
+  roundPictDiv.classList.add("active");
+  roundNumberHide();
+}
 
 /*
  * Hide round Number
