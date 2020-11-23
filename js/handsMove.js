@@ -151,7 +151,7 @@ const toMove = {
       setTimeout(function () {
         roundNumber.classList.remove("active");
         addElement();
-        document.querySelector(".secondTarget").classList.add("stars-added");
+        document.querySelector(".mainTarget").classList.add("stars-added");
         leftHand.style.opacity = '0';
         rightHand.style.opacity = '0';
       }, 1000);
@@ -173,7 +173,7 @@ function roundNumberHide() {
  * Create main element
  */
 function addElement() {
-  let div = `<div class='main-target secondTarget fighter'>
+  let div = `<div class='main-target mainTarget fighter'>
                 <span class ="star-box"></span>
                 <span class="angry-box"></span>
                 <span class="angry-box--text"></span>
@@ -186,7 +186,7 @@ function addElement() {
     .querySelector(".fight-container")
     .insertAdjacentHTML("beforeend", div);
 
-  let allTargets = document.querySelectorAll(".secondTarget");
+  let allTargets = document.querySelectorAll(".mainTarget");
 
   allTargets.forEach((el) =>
     el.addEventListener("click", (e) => toMove.toChooseHand(e))

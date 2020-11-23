@@ -90,6 +90,23 @@
     right: -10%;
     bottom: 0;
 
+    &-next {
+      @include animate (all);
+      animation: none;
+      opacity: 0;
+      visibility: hidden;
+      pointer-events: none;
+      right: 100px;
+      bottom: 42px;
+    }
+
+    &-next.active {
+      animation: tada 1000ms infinite;
+      opacity: 1;
+      visibility: inherit;
+      pointer-events: all;
+    }
+
     &:hover {
       animation: none;
       transform: scale3d(1.1, 1.1, 1.1) rotate3d(0, 0, 1, 3deg);

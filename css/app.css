@@ -560,6 +560,26 @@ section.unsupported-browser {
   bottom: 0;
 }
 
+.start--arrow-next {
+  -webkit-transition: all 0.3s ease-in-out;
+  transition: all 0.3s ease-in-out;
+  -webkit-animation: none;
+          animation: none;
+  opacity: 0;
+  visibility: hidden;
+  pointer-events: none;
+  right: 100px;
+  bottom: 42px;
+}
+
+.start--arrow-next.active {
+  -webkit-animation: tada 1000ms infinite;
+          animation: tada 1000ms infinite;
+  opacity: 1;
+  visibility: inherit;
+  pointer-events: all;
+}
+
 .start--arrow:hover {
   -webkit-animation: none;
           animation: none;
