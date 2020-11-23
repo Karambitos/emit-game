@@ -70,7 +70,7 @@
 
   &--referee {
     animation: referee 3000ms ease-in-out,
-      pulse 1000ms infinite 3000ms;
+      move 5000ms infinite 3000ms;
 
     position: absolute;
     display: flex;
