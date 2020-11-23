@@ -87,16 +87,14 @@ $(document).ready(() => {
             const unsupportedScrean = document.querySelector('.unsupported-box');
             let sections = document.querySelectorAll('section');
 
-            console.log(`broeser ${this.browser}, version ${this.version}, os ${this.OS}`);
-            console.log($(window).width());
+            // console.log(`broeser ${this.browser}, version ${this.version}, os ${this.OS}`);
 
             if ($(window).width() < 1025) {
                 openUnsupportedPopUp();
-                console.log('if');
             } else {
                 closeUnsupportedPopUp();
-                console.log('else');
             }
+
             if (
                 this.browser === ('Chrome') && this.version >= 87 ||
                 this.browser === ('Safari') && this.version >= 14 ||
@@ -112,7 +110,6 @@ $(document).ready(() => {
             function openUnsupportedPopUp() {
                 sections.forEach((section) => {
                     section.classList.add('unsupported-browser');
-                    console.log(section);
                 });
                 unsupportedScrean.classList.add('unsupported-browser');
             }

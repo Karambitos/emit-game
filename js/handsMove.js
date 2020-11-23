@@ -1,4 +1,6 @@
-import { progressBarObject } from "./progressBar.js";
+import {
+  progressBarObject
+} from "./progressBar.js";
 
 let firstFigter = {
   url: "./images/tramp.png",
@@ -16,11 +18,11 @@ const bonusHitEffect = {
   url: "./images/bonus.png",
   alt: "Hit effect",
 };
-
 const roundWin = {
   url: "./images/win.png",
   alt: "Win",
 };
+
 setTimeout(function () {
   addElement();
 }, 1200);
@@ -72,9 +74,6 @@ const toMove = {
       rightHand.style.left = "";
       rightEffect.style.opacity = "";
     }, 200);
-    let progress = document.querySelector(".progress-percent");
-    //   progress.textContent = `${(this.count += 25)}%`;
-    // this.count += 25;
   },
 
   toMoveLeftHand(e) {
@@ -115,7 +114,6 @@ const toMove = {
     /*
      * Next level
      */
-
     if (lvl) {
       progress.textContent = `${this.count}%`;
       progressLine.style.height = "";
