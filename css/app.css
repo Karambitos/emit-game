@@ -677,7 +677,7 @@ section.unsupported-browser {
   width: 100%;
   width: 240px;
   height: 91px;
-  background-image: url(../../images/slot.png);
+  background-image: url(../images/slot.png);
   background-position: center;
   background-size: cover;
   background-repeat: no-repeat;
@@ -841,7 +841,7 @@ section.unsupported-browser {
 .main-target.active .angry-box {
   -webkit-transition: all 0.3s ease-in-out;
   transition: all 0.3s ease-in-out;
-  background-image: url(../../images/angry1.png);
+  background-image: url(../images/angry1.png);
   background-size: auto;
   background-position: center;
   background-repeat: no-repeat;
@@ -856,7 +856,7 @@ section.unsupported-browser {
 .main-target.active .angry-box--text {
   -webkit-transition: all 0.3s ease-in-out;
   transition: all 0.3s ease-in-out;
-  background-image: url(../../images/angry2.png);
+  background-image: url(../images/angry2.png);
   background-size: contain;
   background-position: center;
   background-repeat: no-repeat;
@@ -893,7 +893,7 @@ section.unsupported-browser {
   transition: all 0.3s ease-in-out;
   -webkit-animation: tadaRound 4000ms infinite ease-out;
           animation: tadaRound 4000ms infinite ease-out;
-  background-image: url(../../images/star.png);
+  background-image: url(../images/star.png);
   background-size: auto;
   background-position: center;
   background-repeat: no-repeat;
