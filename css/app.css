@@ -8,6 +8,24 @@
  *
  *  @require $breakpoints
  */
+/* font-family: "Bangers"; */
+@font-face {
+  font-family: "Bangers";
+  src: url("../fonts/Bangers-Regular.ttf");
+}
+
+@font-face {
+  font-family: "Titillium Web 600";
+  src: url("../fonts/TitilliumWeb-SemiBoldttf");
+  font-weight: 600;
+}
+
+@font-face {
+  font-family: "Titillium Web 400";
+  src: url("../fonts/TitilliumWeb-Regular");
+  font-weight: 600;
+}
+
 /*
 * Animation
 */
@@ -384,6 +402,12 @@ body {
           box-shadow: none;
 }
 
+@media (max-width: 1024px) {
+  .logo {
+    right: 30px;
+  }
+}
+
 h2 {
   margin: 0;
   color: #f90f1c;
@@ -409,7 +433,7 @@ section {
   visibility: hidden;
   display: none;
   width: 100%;
-  height: 100%;
+  height: inherit;
   pointer-events: none;
   -webkit-box-pack: center;
       -ms-flex-pack: center;
@@ -431,7 +455,7 @@ section {
   color: black;
 }
 
-@media (max-width: 640px) {
+@media (max-width: 1024px) {
   .unsupported-box h2 {
     font-size: 30px;
     text-shadow: 2px 2px 0px #000000;
@@ -659,8 +683,8 @@ section.unsupported-browser {
 .round-card {
   -webkit-transition: all 0.3s ease-in-out;
   transition: all 0.3s ease-in-out;
-  -webkit-animation: tadaRoundShake 5000ms infinite;
-          animation: tadaRoundShake 5000ms infinite;
+  -webkit-animation: none;
+          animation: none;
   position: absolute;
   top: 10%;
   z-index: 1;
@@ -670,6 +694,8 @@ section.unsupported-browser {
 }
 
 .round-card.active {
+  -webkit-animation: tadaRoundShake 5000ms infinite;
+          animation: tadaRoundShake 5000ms infinite;
   opacity: 1;
   visibility: inherit;
   pointer-events: all;
@@ -917,12 +943,12 @@ section.unsupported-browser {
   background-size: auto;
   background-position: center;
   background-repeat: no-repeat;
-  width: 300px;
+  width: 366px;
   height: 215px;
   display: block;
   position: absolute;
   z-index: 3;
-  left: -62px;
+  left: -88px;
   top: -90px;
 }
 
