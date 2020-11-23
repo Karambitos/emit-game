@@ -60,7 +60,7 @@
   visibility: hidden;
 
   &.active {
-    animation: tadaRoundShake 5000ms infinite;
+    animation: zoom 1000ms cubic-bezier(0, 0, 0.58, 1);
     opacity: 1;
     visibility: inherit;
     pointer-events: all;
