@@ -79,7 +79,7 @@ $(document).ready(() => {
     /*
      * browser detect
      */
-    var BrowserDetect = {
+    const BrowserDetect = {
         init: function () {
             this.browser = this.searchString(this.dataBrowser) || "An unknown browser";
             this.version = this.searchVersion(navigator.userAgent) || this.searchVersion(navigator.appVersion) || "an unknown version";
@@ -126,9 +126,9 @@ $(document).ready(() => {
 
         },
         searchString: function (data) {
-            for (var i = 0; i < data.length; i++) {
-                var dataString = data[i].string;
-                var dataProp = data[i].prop;
+            for (let i = 0; i < data.length; i++) {
+                let dataString = data[i].string;
+                let dataProp = data[i].prop;
                 this.versionSearchString = data[i].versionSearch || data[i].identity;
                 if (dataString) {
                     if (dataString.indexOf(data[i].subString) != -1) return data[i].identity;
@@ -136,7 +136,7 @@ $(document).ready(() => {
             }
         },
         searchVersion: function (dataString) {
-            var index = dataString.indexOf(this.versionSearchString);
+            let index = dataString.indexOf(this.versionSearchString);
             if (index == -1) return;
             return parseFloat(dataString.substring(index + this.versionSearchString.length + 1));
         },
@@ -218,5 +218,4 @@ $(document).ready(() => {
     $(window).resize(function () {
         BrowserDetect.init();
     });
-
 });
