@@ -51,7 +51,7 @@
 */
 .round-card {
   @include animate (all);
-  animation: tadaRoundShake 5000ms infinite;
+  animation: none;
   position: absolute;
   top: 10%;
   z-index: 1;
@@ -60,6 +60,7 @@
   visibility: hidden;
 
   &.active {
+    animation: tadaRoundShake 5000ms infinite;
     opacity: 1;
     visibility: inherit;
     pointer-events: all;
@@ -290,13 +291,13 @@
       background-size: auto;
       background-position: center;
       background-repeat: no-repeat;
-      width: 300px;
+      width: 366px;
       height: 215px;
       display: block;
 
       position: absolute;
       z-index: 3;
-      left: -62px;
+      left: -88px;
       top: -90px;
     }
   }
