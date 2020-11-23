@@ -85,7 +85,7 @@
     width: 100%;
     width: 240px;
     height: 91px;
-    background-image: url(../../images/slot.png);
+    background-image: url(../images/slot.png);
     background-position: center;
     background-size: cover;
     background-repeat: no-repeat;
@@ -236,7 +236,7 @@
 
     .angry-box {
       @include animate (all);
-      background-image: url(../../images/angry1.png);
+      background-image: url(../images/angry1.png);
       background-size: auto;
       background-position: center;
       background-repeat: no-repeat;
@@ -252,7 +252,7 @@
 
     .angry-box--text {
       @include animate (all);
-      background-image: url(../../images/angry2.png);
+      background-image: url(../images/angry2.png);
       background-size: contain;
       background-position: center;
       background-repeat: no-repeat;
@@ -286,7 +286,7 @@
     .star-box {
       @include animate (all);
       animation: tadaRound 4000ms infinite ease-out;
-      background-image: url(../../images/star.png);
+      background-image: url(../images/star.png);
       background-size: auto;
       background-position: center;
       background-repeat: no-repeat;
