@@ -57,7 +57,9 @@
     position: relative;
     margin-left: auto;
     margin-right: 15%;
-    max-width: 705px;
+    // max-width: 705px;
+    width: 705px;
+    height: 300px;
     z-index: 3;
 
     h2 {
@@ -67,7 +69,8 @@
   }
 
   &--referee {
-    animation: referee 3000ms ease-in-out;
+    animation: referee 3000ms ease-in-out,
+      pulse 1000ms infinite 3000ms;
 
     position: absolute;
     display: flex;
@@ -83,7 +86,7 @@
   }
 
   &--arrow {
-    animation: tada 1000ms infinite;
+    animation: pulse 1000ms infinite;
     position: absolute;
     // transform: translateX(50%);
     // right: 0;
@@ -101,7 +104,7 @@
     }
 
     &-next.active {
-      animation: tada 1000ms infinite;
+      animation: pulse 1000ms infinite;
       opacity: 1;
       visibility: inherit;
       pointer-events: all;
