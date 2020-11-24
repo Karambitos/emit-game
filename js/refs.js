@@ -11,9 +11,7 @@ let progress = document.querySelector(".progress-percent");
 const targetBg = document.querySelector(".main-target");
 const slotImageBox = document.querySelector(".slot--image");
 const roundNumber = document.querySelector(".round-card");
-const roundImage = roundNumber.querySelector("img");
 const roundPict = document.querySelector(".round-card> img");
-const roundPictDiv = document.querySelector(".round-card");
 const animateBox = document.querySelector(".fight-container--animate-box")
 let enemy = document.querySelector('.progress-enemy>img');
 let slotEnemyActive = document.querySelectorAll('.slot--image>img');
@@ -35,9 +33,7 @@ export {
     progress,
     targetBg,
     slotImageBox,
-    roundImage,
     roundNumber,
     roundPict,
-    roundPictDiv,
     animateBox
 }
