@@ -711,8 +711,8 @@ section.unsupported-browser {
 }
 
 .start--referee {
-  -webkit-animation: referee 3000ms ease-in-out, move 5000ms infinite 3000ms;
-          animation: referee 3000ms ease-in-out, move 5000ms infinite 3000ms;
+  -webkit-animation: referee 3000ms cubic-bezier(0.4, 0, 1, 1), move 11000ms infinite 3000ms;
+          animation: referee 3000ms cubic-bezier(0.4, 0, 1, 1), move 11000ms infinite 3000ms;
   position: absolute;
   display: -webkit-box;
   display: -ms-flexbox;
@@ -956,15 +956,25 @@ section.unsupported-browser {
 
 .progress-enemy {
   position: absolute;
+  overflow: hidden;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
   top: -10px;
   left: -4px;
   width: 40px;
   height: 40px;
   border: 3px solid white;
-  background-image: url(../images/tramp.png);
-  background-size: cover;
-  background-position: center;
+  background-color: white;
   border-radius: 50%;
+}
+
+.progress-enemy img {
+  max-width: inherit;
+  width: 60px;
 }
 
 /*
