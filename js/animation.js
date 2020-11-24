@@ -2,7 +2,9 @@
 
 $(document).ready(() => {
     // AOS.init();
-
+    setInterval(() => {
+        animateDiv();
+    }, 1000);
     let text = $('h1.title').text();
     let length = text.length;
     let timeOut;
@@ -10,7 +12,7 @@ $(document).ready(() => {
     typeWriter();
 
     function typeWriter() {
-        console.log('hi');
+        // console.log('hi');
 
         timeOut = setTimeout(function () {
             character++;
@@ -23,4 +25,29 @@ $(document).ready(() => {
             }
         }, 100);
     };
+
+
 });
+
+function makeNewPosition() {
+
+    // Get viewport dimensions (remove the dimension of the div)
+    var h = $(window).height() - 400;
+    var w = $(window).width() - 400;
+
+    var nh = Math.floor(Math.random() * h);
+    var nw = Math.floor(Math.random() * w);
+
+    return [nh, nw];
+
+}
+
+function animateDiv() {
+    // console.log($('.main-target'));
+    var newq = makeNewPosition();
+    console.log(newq);
+    $('.main-target').animate({ top: newq[0], left: newq[1] }, 1000, function () {
+        animateDiv();
+    });
+
+};
