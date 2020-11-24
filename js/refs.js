@@ -4,6 +4,8 @@ let rightHand = document.querySelector(".right-hand");
 const rightEffect = document.querySelector(".right-hand--effect");
 let leftHand = document.querySelector(".left-hand");
 const leftEffect = document.querySelector(".left-hand--effect");
+const winRoundReffery = document.querySelector('.reffery-win');
+const winRoundRefferyText = winRoundReffery.querySelector('.reffery-win--text');
 let arrovNext = document.querySelector(".start--arrow-next");
 let progress = document.querySelector(".progress-percent");
 const targetBg = document.querySelector(".main-target");
@@ -27,6 +29,8 @@ export {
     rightEffect,
     leftHand,
     leftEffect,
+    winRoundReffery,
+    winRoundRefferyText,
     arrovNext,
     progress,
     targetBg,

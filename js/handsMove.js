@@ -8,17 +8,25 @@ import {
   rightEffect,
   leftHand,
   leftEffect,
+  winRoundReffery,
+  winRoundRefferyText,
   arrovNext,
   progress,
-  targetBg,
-  slotImageBox,
-  roundImage,
-  roundNumber,
   roundPict,
-  roundPictDiv,
+  roundNumber,
   animateBox
 } from "./refs.js";
-import { firstFigter, bonusFigter, hitEffect, bonusHitEffect, roundWin } from './images/images.js';
+import {
+  firstFigter,
+  bonusFigter,
+  hitEffect,
+  bonusHitEffect,
+  roundWin
+} from './images/images.js';
+
+import {
+  typingText
+} from './animation.js';
 
 setTimeout(function () {
   addElement();
@@ -105,7 +113,7 @@ const toMove = {
     const targetBg = document.querySelector(".main-target");
     const slotImageBox = document.querySelector(".slot--image");
     const roundNumber = document.querySelector(".round-card");
-    const roundImage = roundNumber.querySelector("img");
+    const roundPict = roundNumber.querySelector("img");
 
     /*
      * Next level
@@ -151,7 +159,7 @@ const toMove = {
      */
     if (parseInt(progress.textContent) >= 100) {
       this.removeAllFighters();
-      roundImage.src = `${roundWin.url}`;
+      roundPict.src = `${roundWin.url}`;
       roundNumber.classList.add('active');
       progress.textContent = ``;
       setTimeout(function () {
@@ -160,9 +168,17 @@ const toMove = {
         document.querySelector(".mainTarget").classList.add("stars-added");
         leftHand.style.opacity = "0";
         rightHand.style.opacity = "0";
-        arrovNext.classList.add("active");
+        // let arrovNext = document.querySelector(".start--arrow-next");
+        winRoundReffery.classList.add('active');
+        setTimeout(function () {
+          winRoundRefferyText.classList.add("active");
+          typingText();
+        }, 1000);
+        setTimeout(function () {
+          arrovNext.classList.add("active");
+        }, 4000);
         arrovNext.addEventListener("click", toTheNextRound);
-      }, 1000);
+      }, 2000);
     }
   },
   changeProgressBar() {
@@ -189,7 +205,10 @@ function toTheNextRound() {
   }
   slotenemy[toMove.round - 2].classList.add('active');
   document.querySelector('.mainTarget').remove('stars-added');
+  winRoundReffery.classList.remove('active');
+  winRoundRefferyText.classList.remove("active");
   arrovNext.classList.remove('active');
+
   toChangeRoundPict();
 
   setTimeout(function () {
@@ -201,9 +220,10 @@ function toTheNextRound() {
     addElement();
   }, 1000);
 }
+
 function toChangeRoundPict() {
   roundPict.setAttribute('src', `./images/round_${toMove.round}.png`);
-  roundPictDiv.classList.add('active');
+  roundNumber.classList.add('active');
   roundNumberHide();
 }
 

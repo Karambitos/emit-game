@@ -361,9 +361,7 @@
   }
 
   &--text {
-    animation: zoom-in 1000ms ease-out 1000ms;
-    // animation-play-state: paused;
-
+    opacity: 0;
     width: 370px;
     height: 228px;
     position: absolute;
@@ -384,27 +382,12 @@
       margin-top: 50px;
       padding: 0 40px 0 105px;
     }
+
+    &.active {
+      animation: zoom-in 1000ms ease-out;
+      opacity: 1;
+    }
   }
-
-  // img:first-child {
-  //   position: absolute;
-  //   top: -20%;
-  //   left: -60%;
-  // }
-
-  // p {
-  //   position: absolute;
-  //   top: -20%;
-  //   left: -60%;
-  //   font-family: 'Titillium Web', sans-serif;
-  //   font-style: normal;
-  //   font-weight: bold;
-  //   font-size: 35px;
-  //   line-height: 115%;
-  //   margin: 0;
-  //   padding: 50px 30px 50px 108px;
-  //   width: 380px;
-  // }
 }
 
 /*
