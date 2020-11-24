@@ -1,4 +1,20 @@
 import { progressBarObject } from "./progressBar.js";
+import {
+  progressLine,
+  rightHand,
+  rightEffect,
+  leftHand,
+  leftEffect,
+  arrovNext,
+  progress,
+  targetBg,
+  slotImageBox,
+  roundImage,
+  roundNumber,
+  roundPict,
+  roundPictDiv,
+  animateBox
+} from "./refs.js";
 
 let firstFigter = {
   url: "./images/tramp.png",
@@ -26,7 +42,7 @@ setTimeout(function () {
 }, 1200);
 roundNumberHide();
 
-const progressLine = document.querySelector("span.progress");
+// const progressLine = document.querySelector("span.progress");
 const toMove = {
   count: 0,
   hand: true,
@@ -49,8 +65,8 @@ const toMove = {
   },
 
   toMoveRightHand(e) {
-    let rightHand = document.querySelector(".right-hand");
-    const rightEffect = document.querySelector(".right-hand--effect");
+    // let rightHand = document.querySelector(".right-hand");
+    // const rightEffect = document.querySelector(".right-hand--effect");
     /*
      * Change the hit effect
      */
@@ -76,8 +92,8 @@ const toMove = {
   },
 
   toMoveLeftHand(e) {
-    let leftHand = document.querySelector(".left-hand");
-    const leftEffect = document.querySelector(".left-hand--effect");
+    // let leftHand = document.querySelector(".left-hand");
+    // const leftEffect = document.querySelector(".left-hand--effect");
     /*
      * Change the hit effect
      */
@@ -102,9 +118,9 @@ const toMove = {
   },
 
   calcPercent(lvl = false) {
-    let rightHand = document.querySelector(".right-hand");
-    let leftHand = document.querySelector(".left-hand");
-    let progress = document.querySelector(".progress-percent");
+    // let rightHand = document.querySelector(".right-hand");
+    // let leftHand = document.querySelector(".left-hand");
+    // let progress = document.querySelector(".progress-percent");
     const targetBg = document.querySelector(".main-target");
     const slotImageBox = document.querySelector(".slot--image");
     const roundNumber = document.querySelector(".round-card");
@@ -160,10 +176,12 @@ const toMove = {
       setTimeout(function () {
         roundNumber.classList.remove("active");
         addElement();
+        // targetBg.classList.add("stars-added");
+
         document.querySelector(".mainTarget").classList.add("stars-added");
         leftHand.style.opacity = "0";
         rightHand.style.opacity = "0";
-        let arrovNext = document.querySelector(".start--arrow-next");
+        // let arrovNext = document.querySelector(".start--arrow-next");
         arrovNext.classList.add("active");
         arrovNext.addEventListener("click", toTheNextRound);
       }, 1000);
@@ -181,14 +199,15 @@ function toTheNextRound() {
   toMove.calcPercent(2);
   firstFigter.url = `./images/main-target${toMove.round}.jpg`;
   firstFigter.alt = "target2";
+  // targetBg.remove("stars-added");
   document.querySelector(".mainTarget").remove("stars-added");
-  let arrovNext = document.querySelector(".start--arrow-next");
+  // let arrovNext = document.querySelector(".start--arrow-next");
   arrovNext.classList.remove("active");
   toChangeRoundPict();
 
   setTimeout(function () {
-    let rightHand = document.querySelector(".right-hand");
-    let leftHand = document.querySelector(".left-hand");
+    // let rightHand = document.querySelector(".right-hand");
+    // let leftHand = document.querySelector(".left-hand");
     leftHand.style.opacity = "1";
     rightHand.style.opacity = "1";
 
@@ -198,8 +217,8 @@ function toTheNextRound() {
 
 // console.log(document.querySelector(".progress-enemy"));
 function toChangeRoundPict() {
-  const roundPict = document.querySelector(".round-card> img");
-  const roundPictDiv = document.querySelector(".round-card");
+  // const roundPict = document.querySelector(".round-card> img");
+  // const roundPictDiv = document.querySelector(".round-card");
 
   roundPict.setAttribute("src", `./images/round_${toMove.round}.png`);
   roundPictDiv.classList.add("active");
@@ -252,9 +271,9 @@ function addVirusElement() {
               <img src = "${bonusFigter.url}"
               alt = "${bonusFigter.alt}" / >
             </div>`;
-  document
-    .querySelector(".fight-container--animate-box")
-    .insertAdjacentHTML("beforeend", div);
+  // document
+  //   .querySelector(".fight-container--animate-box")
+  animateBox.insertAdjacentHTML("beforeend", div);
 
   let allTargets = document.querySelectorAll(".target");
 
