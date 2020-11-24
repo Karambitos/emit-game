@@ -10,19 +10,19 @@
  */
 /* font-family: "Bangers"; */
 @font-face {
-  font-family: "Bangers";
-  src: url("../fonts/Bangers-Regular.ttf");
+  font-family: 'Bangers';
+  src: url('../fonts/Bangers-Regular.ttf');
 }
 
 @font-face {
-  font-family: "Titillium Web 600";
-  src: url("../fonts/TitilliumWeb-SemiBoldttf");
+  font-family: 'Titillium Web 600';
+  src: url('../fonts/TitilliumWeb-SemiBoldttf');
   font-weight: 600;
 }
 
 @font-face {
-  font-family: "Titillium Web 400";
-  src: url("../fonts/TitilliumWeb-Regular");
+  font-family: 'Titillium Web 400';
+  src: url('../fonts/TitilliumWeb-Regular');
   font-weight: 600;
 }
 
@@ -214,7 +214,8 @@
   --y: 0;
   transform-origin: 50% 50%;
   transform-style: preserve-3d;
-  transform: translateZ(100px) rotateY(calc(var(--x) * 16deg)) rotateX(calc(var(--y) * -16deg));
+  transform: translateZ(100px) rotateY(calc(var(--x) * 16deg))
+    rotateX(calc(var(--y) * -16deg));
 }
 
 /*
@@ -233,7 +234,7 @@ html {
 }
 
 body {
-  font-family: "Bangers", cursive;
+  font-family: 'Bangers', cursive;
   font-weight: 400;
   margin: 0;
   padding: 0;
@@ -387,7 +388,8 @@ section.unsupported-browser {
 }
 
 .start--referee {
-  animation: referee 3000ms cubic-bezier(0.4, 0, 1, 1), move 15000ms infinite 3000ms;
+  animation: referee 3000ms cubic-bezier(0.4, 0, 1, 1),
+    move 15000ms infinite 3000ms;
   position: absolute;
   display: flex;
   bottom: -10%;
@@ -471,7 +473,12 @@ section.unsupported-browser {
   top: 0;
   height: 100%;
   width: 100%;
-  background: radial-gradient(47.61% 47.61% at 50% 50%, rgba(255, 255, 255, 0) 0%, rgba(128, 128, 128, 0.397515) 75.49%, rgba(0, 0, 0, 0.48) 97.59%);
+  background: radial-gradient(
+    47.61% 47.61% at 50% 50%,
+    rgba(255, 255, 255, 0) 0%,
+    rgba(128, 128, 128, 0.397515) 75.49%,
+    rgba(0, 0, 0, 0.48) 97.59%
+  );
 }
 
 .fight-container .shadow-box::before {
@@ -495,6 +502,7 @@ section.unsupported-browser {
   left: 25%;
   bottom: 20%;
   top: 16%;
+  background-color: yellowgreen;
 }
 
 /*
@@ -651,7 +659,10 @@ section.unsupported-browser {
 
 .left-hand,
 .right-hand {
-  animation: referee 1000ms cubic-bezier(0.4, 0, 1, 1), move 15000ms infinite 1000ms;
+  -webkit-animation: referee 1000ms cubic-bezier(0.4, 0, 1, 1),
+    move 8000ms infinite 1000ms;
+  animation: referee 1000ms cubic-bezier(0.4, 0, 1, 1),
+    move 8000ms infinite 1000ms;
   position: absolute;
   z-index: 100;
   opacity: 1;
@@ -754,33 +765,56 @@ section.unsupported-browser {
 }
 
 .virusRight {
-  transition: all 0.3s ease-in-out;
-  animation: tadaRound 1000ms infinite ease-out;
   opacity: 1;
   max-width: 100px;
   width: 100%;
   height: auto;
   position: absolute;
-  left: 48%;
+  left: 18%;
   top: 60%;
 }
 
 .virusLeft {
-  transition: all 0.3s ease-in-out;
-  animation: tadaRound 1000ms infinite ease-out;
   max-width: 138px;
   width: 100%;
   height: auto;
   position: absolute;
   left: 33%;
-  top: 45%;
+  top: 35%;
 }
 
 .reffery-win {
   position: absolute;
-  animation: referee 1000ms cubic-bezier(0.4, 0, 1, 1), move 15000ms infinite 1000ms;
-  bottom: -20px;
+  -webkit-animation: referee 1000ms cubic-bezier(0.4, 0, 1, 1),
+    move 15000ms infinite 1000ms;
+  animation: referee 1000ms cubic-bezier(0.4, 0, 1, 1),
+    move 15000ms infinite 1000ms;
+  bottom: -20%;
   right: 12%;
+  max-width: 400px;
+}
+
+.reffery-win--text {
+  width: 370px;
+  height: 228px;
+  position: absolute;
+  top: -17%;
+  left: -48%;
+  background-image: url(../images/reffery-text.png);
+  background-size: contain;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+.reffery-win--text p {
+  display: block;
+  font-family: 'Titillium Web', sans-serif;
+  font-style: normal;
+  font-weight: bold;
+  font-size: 30px;
+  line-height: 115%;
+  margin-top: 50px;
+  padding: 0 40px 0 105px;
 }
 
 /*

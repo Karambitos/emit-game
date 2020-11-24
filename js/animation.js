@@ -2,6 +2,10 @@
 
 $(document).ready(() => {
   // AOS.init();
+  // reffery-win--text
+  /*
+   * Text animation
+   */
   setInterval(() => {
     animateDiv();
   }, 1000);
@@ -12,8 +16,6 @@ $(document).ready(() => {
   typeWriter();
 
   function typeWriter() {
-    // console.log('hi');
-
     timeOut = setTimeout(function () {
       character++;
       let type = text.substring(0, character);
@@ -26,6 +28,9 @@ $(document).ready(() => {
     }, 100);
   }
 
+  /*
+   * Fighter move animation
+   */
   function makeNewPosition() {
     // Get viewport dimensions (remove the dimension of the div)
     let h = $('.fight-container--animate-box').height() - 200;
@@ -36,15 +41,30 @@ $(document).ready(() => {
   }
 
   function animateDiv() {
-    // console.log($('.main-target'));
     let newq = makeNewPosition();
-    // console.log(newq);
-    $('.main-target').animate(
-      {
+    $('.main-target').animate({
         top: newq[0],
         left: newq[1],
       },
       800,
+      function () {
+        animateDiv();
+      },
+    );
+    $('.virusLeft').animate({
+        top: newq[0],
+        left: newq[1],
+      },
+      600,
+      function () {
+        animateDiv();
+      },
+    );
+    $('.virusRight').animate({
+        top: newq[0],
+        left: newq[1],
+      },
+      700,
       function () {
         animateDiv();
       },
