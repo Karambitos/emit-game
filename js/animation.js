@@ -2,14 +2,15 @@
 
 $(document).ready(() => {
   // AOS.init();
-  // reffery-win--text
+
   /*
    * Text animation
    */
   setInterval(() => {
     animateDiv();
   }, 1000);
-  let text = $('h1.title').text();
+
+  let text = $('.animation-title').text();
   let length = text.length;
   let timeOut;
   let character = 0;
@@ -19,7 +20,7 @@ $(document).ready(() => {
     timeOut = setTimeout(function () {
       character++;
       let type = text.substring(0, character);
-      $('h1.title').text(type);
+      $('.animation-title').text(type);
       typeWriter();
 
       if (character == length) {
