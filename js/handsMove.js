@@ -1,5 +1,5 @@
-import { progressBarObject } from "./progressBar.js";
 import {
+  bar,
   slotenemy,
   slotEnemyActive,
   enemy,
@@ -18,27 +18,27 @@ import {
   roundPictDiv,
   animateBox
 } from "./refs.js";
-
-let firstFigter = {
-  url: './images/tramp.png',
-  alt: 'Figter Trump',
-};
-let bonusFigter = {
-  url: './images/virus.png',
-  alt: 'Figter virus',
-};
-const hitEffect = {
-  url: './images/baaam.png',
-  alt: 'Hit effect',
-};
-const bonusHitEffect = {
-  url: './images/bonus.png',
-  alt: 'Hit effect',
-};
-const roundWin = {
-  url: './images/win.png',
-  alt: 'Win',
-};
+import { firstFigter, bonusFigter, hitEffect, bonusHitEffect, roundWin } from './images/images.js';
+// let firstFigter = {
+//   url: './images/tramp.png',
+//   alt: 'Figter Trump',
+// };
+// let bonusFigter = {
+//   url: './images/virus.png',
+//   alt: 'Figter virus',
+// };
+// const hitEffect = {
+//   url: './images/baaam.png',
+//   alt: 'Hit effect',
+// };
+// const bonusHitEffect = {
+//   url: './images/bonus.png',
+//   alt: 'Hit effect',
+// };
+// const roundWin = {
+//   url: './images/win.png',
+//   alt: 'Win',
+// };
 
 setTimeout(function () {
   addElement();
@@ -48,6 +48,7 @@ roundNumberHide();
 // const progressLine = document.querySelector("span.progress");
 const toMove = {
   count: 0,
+  barMargin: 0,
   hand: true,
   hitPersent: 12,
   bonusPersent: 60,
@@ -195,12 +196,16 @@ const toMove = {
       }, 1000);
     }
   },
+  changeProgressBar() {
+    this.barMargin += 50;
+    bar.style.marginLeft = this.barMargin + "px";
+  },
 };
 /*
  * Go to the next round
  */
 function toTheNextRound() {
-  progressBarObject.changeProgressBar();
+  toMove.changeProgressBar();
   toMove.count = 0;
   toMove.round += 1;
   toMove.calcPercent(2);
