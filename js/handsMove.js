@@ -17,24 +17,24 @@ import {
 } from "./refs.js";
 
 let firstFigter = {
-  url: "./images/tramp.png",
-  alt: "Figter Trump",
+  url: './images/tramp.png',
+  alt: 'Figter Trump',
 };
 let bonusFigter = {
-  url: "./images/virus.png",
-  alt: "Figter virus",
+  url: './images/virus.png',
+  alt: 'Figter virus',
 };
 const hitEffect = {
-  url: "./images/baaam.png",
-  alt: "Hit effect",
+  url: './images/baaam.png',
+  alt: 'Hit effect',
 };
 const bonusHitEffect = {
-  url: "./images/bonus.png",
-  alt: "Hit effect",
+  url: './images/bonus.png',
+  alt: 'Hit effect',
 };
 const roundWin = {
-  url: "./images/win.png",
-  alt: "Win",
+  url: './images/win.png',
+  alt: 'Win',
 };
 
 setTimeout(function () {
@@ -71,23 +71,23 @@ const toMove = {
      * Change the hit effect
      */
     let target = e.currentTarget;
-    if (target.classList.contains("target")) {
-      let hitImage = rightEffect.querySelector("img");
+    if (target.classList.contains('target')) {
+      let hitImage = rightEffect.querySelector('img');
       hitImage.src = `${bonusHitEffect.url}`;
       setTimeout(function () {
         hitImage.src = `${hitEffect.url}`;
       }, 200);
     }
-    rightHand.style.top = e.clientY + "px";
-    rightHand.style.left = e.clientX + "px";
-    rightEffect.style.opacity = "1";
+    rightHand.style.top = e.clientY + 'px';
+    rightHand.style.left = e.clientX + 'px';
+    rightEffect.style.opacity = '1';
 
     this.calcPercent();
 
     setTimeout(function () {
-      rightHand.style.top = "";
-      rightHand.style.left = "";
-      rightEffect.style.opacity = "";
+      rightHand.style.top = '';
+      rightHand.style.left = '';
+      rightEffect.style.opacity = '';
     }, 200);
   },
 
@@ -98,22 +98,22 @@ const toMove = {
      * Change the hit effect
      */
     let target = e.currentTarget;
-    if (target.classList.contains("target")) {
-      let hitImage = leftEffect.querySelector("img");
+    if (target.classList.contains('target')) {
+      let hitImage = leftEffect.querySelector('img');
       hitImage.src = `${bonusHitEffect.url}`;
       setTimeout(function () {
         hitImage.src = `${hitEffect.url}`;
       }, 200);
     }
 
-    leftEffect.style.opacity = "1";
-    leftHand.style.top = e.clientY + "px";
-    leftHand.style.left = e.clientX - 200 + "px";
+    leftEffect.style.opacity = '1';
+    leftHand.style.top = e.clientY + 'px';
+    leftHand.style.left = e.clientX - 200 + 'px';
     this.calcPercent();
     setTimeout(function () {
-      leftHand.style.top = "";
-      leftHand.style.left = "";
-      leftEffect.style.opacity = "";
+      leftHand.style.top = '';
+      leftHand.style.left = '';
+      leftEffect.style.opacity = '';
     }, 200);
   },
 
@@ -131,7 +131,7 @@ const toMove = {
      */
     if (lvl) {
       progress.textContent = `${this.count}%`;
-      progressLine.style.height = "";
+      progressLine.style.height = '';
       return;
     }
     /*
@@ -151,7 +151,7 @@ const toMove = {
       parseInt(progress.textContent);
     } else {
       progress.textContent = `100%`;
-      slotImageBox.classList.add("active");
+      slotImageBox.classList.add('active');
     }
 
     /*
@@ -159,10 +159,10 @@ const toMove = {
      */
     if (
       parseInt(progress.textContent) >= this.bonusPersent &&
-      !document.querySelector(".virusRight")
+      !document.querySelector('.virusRight')
     ) {
       addVirusElement();
-      targetBg.classList.add("active");
+      targetBg.classList.add('active');
     }
 
     /*
@@ -171,10 +171,10 @@ const toMove = {
     if (parseInt(progress.textContent) >= 100) {
       removeAllFighters();
       roundImage.src = `${roundWin.url}`;
-      roundNumber.classList.add("active");
+      roundNumber.classList.add('active');
       progress.textContent = ``;
       setTimeout(function () {
-        roundNumber.classList.remove("active");
+        roundNumber.classList.remove('active');
         addElement();
         // targetBg.classList.add("stars-added");
 
@@ -195,7 +195,6 @@ function toTheNextRound() {
   progressBarObject.changeProgressBar();
   toMove.count = 0;
   toMove.round += 1;
-
   toMove.calcPercent(2);
   firstFigter.url = `./images/main-target${toMove.round}.jpg`;
   firstFigter.alt = "target2";
@@ -215,13 +214,12 @@ function toTheNextRound() {
   }, 1000);
 }
 
-// console.log(document.querySelector(".progress-enemy"));
 function toChangeRoundPict() {
   // const roundPict = document.querySelector(".round-card> img");
   // const roundPictDiv = document.querySelector(".round-card");
 
-  roundPict.setAttribute("src", `./images/round_${toMove.round}.png`);
-  roundPictDiv.classList.add("active");
+  roundPict.setAttribute('src', `./images/round_${toMove.round}.png`);
+  roundPictDiv.classList.add('active');
   roundNumberHide();
 }
 
@@ -230,8 +228,8 @@ function toChangeRoundPict() {
  */
 function roundNumberHide() {
   setTimeout(function () {
-    const roundNumber = document.querySelector(".round-card");
-    roundNumber.classList.remove("active");
+    const roundNumber = document.querySelector('.round-card');
+    roundNumber.classList.remove('active');
   }, 1500);
 }
 
@@ -249,13 +247,13 @@ function addElement() {
                 </div>
               </div>`;
   document
-    .querySelector(".fight-container--animate-box")
-    .insertAdjacentHTML("beforeend", div);
+    .querySelector('.fight-container--animate-box')
+    .insertAdjacentHTML('beforeend', div);
 
-  let allTargets = document.querySelectorAll(".mainTarget");
+  let allTargets = document.querySelectorAll('.mainTarget');
 
-  allTargets.forEach((el) =>
-    el.addEventListener("click", (e) => toMove.toChooseHand(e))
+  allTargets.forEach(el =>
+    el.addEventListener('click', e => toMove.toChooseHand(e)),
   );
 }
 
@@ -275,16 +273,16 @@ function addVirusElement() {
   //   .querySelector(".fight-container--animate-box")
   animateBox.insertAdjacentHTML("beforeend", div);
 
-  let allTargets = document.querySelectorAll(".target");
+  let allTargets = document.querySelectorAll('.target');
 
-  allTargets.forEach((el) =>
-    el.addEventListener("click", (e) => toMove.toChooseHand(e))
+  allTargets.forEach(el =>
+    el.addEventListener('click', e => toMove.toChooseHand(e)),
   );
 }
 
 function removeAllFighters() {
-  const toRemoveFiters = document.querySelectorAll(".fighter");
-  toRemoveFiters.forEach((elem) => {
+  const toRemoveFiters = document.querySelectorAll('.fighter');
+  toRemoveFiters.forEach(elem => {
     elem.remove(elem);
   });
 }

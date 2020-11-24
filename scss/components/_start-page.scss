@@ -21,9 +21,11 @@
     top: 0;
     width: 50%;
     height: 100%;
-    background: linear-gradient(90deg,
-        #000000 0%,
-        rgba(196, 196, 196, 0) 94.82%);
+    background: linear-gradient(
+      90deg,
+      #000000 0%,
+      rgba(196, 196, 196, 0) 94.82%
+    );
     mix-blend-mode: multiply;
     transform: rotate(179.98deg);
   }
@@ -92,7 +94,7 @@
     bottom: 0;
 
     &-next {
-      @include animate (all);
+      @include animate(all);
       animation: none;
       opacity: 0;
       visibility: hidden;
