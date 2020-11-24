@@ -226,6 +226,18 @@
   }
 }
 
+@keyframes zoom-in {
+  0% {
+    opacity: 0;
+    transform: scale(0);
+  }
+
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
 .move-box,
 .move-box--x {
   --x: 0;

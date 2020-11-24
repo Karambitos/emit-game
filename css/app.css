@@ -211,6 +211,17 @@
   }
 }
 
+@keyframes zoom-in {
+  0% {
+    opacity: 0;
+    transform: scale(0);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
 .move-box,
 .move-box--x {
   --x: 0;
@@ -770,33 +781,65 @@ section.unsupported-browser {
 }
 
 .virusRight {
-  transition: all 0.3s ease-in-out;
-  animation: tadaRound 1000ms infinite ease-out;
   opacity: 1;
   max-width: 100px;
   width: 100%;
   height: auto;
   position: absolute;
-  left: 48%;
+  left: 18%;
   top: 60%;
 }
 
 .virusLeft {
-  transition: all 0.3s ease-in-out;
-  animation: tadaRound 1000ms infinite ease-out;
   max-width: 138px;
   width: 100%;
   height: auto;
   position: absolute;
   left: 33%;
-  top: 45%;
+  top: 35%;
 }
 
 .reffery-win {
   position: absolute;
-  animation: referee 1000ms cubic-bezier(0.4, 0, 1, 1), move 15000ms infinite 1000ms;
-  bottom: -20px;
+  bottom: -20%;
   right: 12%;
+  max-width: 400px;
+  opacity: 0;
+  visibility: hidden;
+  pointer-events: none;
+}
+
+.reffery-win.active {
+  animation: referee 1000ms cubic-bezier(0.4, 0, 1, 1), move 15000ms infinite 1000ms;
+}
+
+.reffery-win--text {
+  opacity: 0;
+  width: 370px;
+  height: 228px;
+  position: absolute;
+  top: -17%;
+  left: -48%;
+  background-image: url(../images/reffery-text.png);
+  background-size: contain;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+.reffery-win--text p {
+  display: block;
+  font-family: 'Titillium Web', sans-serif;
+  font-style: normal;
+  font-weight: bold;
+  font-size: 30px;
+  line-height: 115%;
+  margin-top: 50px;
+  padding: 0 40px 0 105px;
+}
+
+.reffery-win--text.active {
+  animation: zoom-in 1000ms ease-out;
+  opacity: 1;
 }
 
 /*
@@ -804,5 +847,7 @@ section.unsupported-browser {
 */
 .active {
   opacity: 1;
+  visibility: inherit;
+  pointer-events: all;
 }
 /*# sourceMappingURL=app.css.map */

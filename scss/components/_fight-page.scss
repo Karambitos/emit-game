@@ -60,6 +60,7 @@
     left: 25%;
     bottom: 20%;
     top: 16%;
+    // background-color: yellowgreen;
   }
 }
 
@@ -342,36 +343,72 @@
 }
 
 .virusRight {
-  @include animate(all);
-  animation: tadaRound 1000ms infinite ease-out;
+  // @include animate(all);
+  // animation: tadaRound 1000ms infinite ease-out;
 
   opacity: 1;
   max-width: 100px;
   width: 100%;
   height: auto;
   position: absolute;
-  left: 48%;
+  left: 18%;
   top: 60%;
 }
 
 .virusLeft {
-  @include animate(all);
-  animation: tadaRound 1000ms infinite ease-out;
+  // @include animate(all);
+  // animation: tadaRound 1000ms infinite ease-out;
 
   max-width: 138px;
   width: 100%;
   height: auto;
   position: absolute;
   left: 33%;
-  top: 45%;
+  top: 35%;
 }
 
 .reffery-win {
   position: absolute;
-  animation: referee 1000ms cubic-bezier(0.4, 0, 1, 1),
-    move 15000ms infinite 1000ms;
-  bottom: -20px;
+  bottom: -20%;
   right: 12%;
+  max-width: 400px;
+  opacity: 0;
+  visibility: hidden;
+  pointer-events: none;
+
+  &.active {
+    animation: referee 1000ms cubic-bezier(0.4, 0, 1, 1),
+      move 15000ms infinite 1000ms;
+  }
+
+  &--text {
+    opacity: 0;
+    width: 370px;
+    height: 228px;
+    position: absolute;
+    top: -17%;
+    left: -48%;
+    background-image: url(../images/reffery-text.png);
+    background-size: contain;
+    background-position: center;
+    background-repeat: no-repeat;
+
+    p {
+      display: block;
+      font-family: 'Titillium Web', sans-serif;
+      font-style: normal;
+      font-weight: bold;
+      font-size: 30px;
+      line-height: 115%;
+      margin-top: 50px;
+      padding: 0 40px 0 105px;
+    }
+
+    &.active {
+      animation: zoom-in 1000ms ease-out;
+      opacity: 1;
+    }
+  }
 }
 
 /*
@@ -379,4 +416,6 @@
 */
 .active {
   opacity: 1;
+  visibility: inherit;
+  pointer-events: all;
 }
