@@ -119,7 +119,12 @@ const toMove = {
       leftEffect.style.opacity = '';
     }, 200);
   },
-
+  removeAllFighters() {
+    const toRemoveFiters = document.querySelectorAll('.fighter');
+    toRemoveFiters.forEach(elem => {
+      elem.remove(elem);
+    });
+  },
   calcPercent(lvl = false) {
     // let rightHand = document.querySelector(".right-hand");
     // let leftHand = document.querySelector(".left-hand");
@@ -172,7 +177,7 @@ const toMove = {
      * Win - image shows
      */
     if (parseInt(progress.textContent) >= 100) {
-      removeAllFighters();
+      this.removeAllFighters();
       roundImage.src = `${roundWin.url}`;
       roundNumber.classList.add('active');
       progress.textContent = ``;
@@ -294,9 +299,9 @@ function addVirusElement() {
   );
 }
 
-function removeAllFighters() {
-  const toRemoveFiters = document.querySelectorAll('.fighter');
-  toRemoveFiters.forEach(elem => {
-    elem.remove(elem);
-  });
-}
+// function removeAllFighters() {
+//   const toRemoveFiters = document.querySelectorAll('.fighter');
+//   toRemoveFiters.forEach(elem => {
+//     elem.remove(elem);
+//   });
+// }
