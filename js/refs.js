@@ -13,7 +13,14 @@ const roundImage = roundNumber.querySelector("img");
 const roundPict = document.querySelector(".round-card> img");
 const roundPictDiv = document.querySelector(".round-card");
 const animateBox = document.querySelector(".fight-container--animate-box")
+let enemy = document.querySelector('.progress-enemy>img');
+let slotEnemyActive = document.querySelectorAll('.slot--image>img');
+let slotenemy = document.querySelectorAll('.slot--image');
+
 export {
+    slotenemy,
+    slotEnemyActive,
+    enemy,
     bar,
     progressLine,
     rightHand,

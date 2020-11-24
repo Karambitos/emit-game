@@ -1,5 +1,8 @@
 import { progressBarObject } from "./progressBar.js";
 import {
+  slotenemy,
+  slotEnemyActive,
+  enemy,
   progressLine,
   rightHand,
   rightEffect,
@@ -197,23 +200,34 @@ function toTheNextRound() {
   toMove.round += 1;
   toMove.calcPercent(2);
   firstFigter.url = `./images/main-target${toMove.round}.jpg`;
-  firstFigter.alt = "target2";
-  // targetBg.remove("stars-added");
-  document.querySelector(".mainTarget").remove("stars-added");
-  // let arrovNext = document.querySelector(".start--arrow-next");
-  arrovNext.classList.remove("active");
+  firstFigter.alt = 'target2';
+  // let enemy = document.querySelector('.progress-enemy>img');
+  enemy.setAttribute('src', `./images/main-target${toMove.round}.jpg`);
+  // let slotEnemyActive = document.querySelectorAll('.slot--image>img');
+
+  if (slotEnemyActive[toMove.round - 1]) {
+    slotEnemyActive[toMove.round - 1].setAttribute(
+      'src',
+      `./images/main-target${toMove.round}.jpg`,
+    );
+  }
+
+  // let slotenemy = document.querySelectorAll('.slot--image');
+  slotenemy[toMove.round - 2].classList.add('active');
+  document.querySelector('.mainTarget').remove('stars-added');
+  // let arrovNext = document.querySelector('.start--arrow-next');
+  arrovNext.classList.remove('active');
   toChangeRoundPict();
 
   setTimeout(function () {
-    // let rightHand = document.querySelector(".right-hand");
-    // let leftHand = document.querySelector(".left-hand");
-    leftHand.style.opacity = "1";
-    rightHand.style.opacity = "1";
+    let rightHand = document.querySelector('.right-hand');
+    let leftHand = document.querySelector('.left-hand');
+    leftHand.style.opacity = '1';
+    rightHand.style.opacity = '1';
 
     addElement();
   }, 1000);
 }
-
 function toChangeRoundPict() {
   // const roundPict = document.querySelector(".round-card> img");
   // const roundPictDiv = document.querySelector(".round-card");
