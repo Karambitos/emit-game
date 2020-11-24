@@ -26,28 +26,26 @@ $(document).ready(() => {
         }, 100);
     };
 
+    function makeNewPosition() {
+        // Get viewport dimensions (remove the dimension of the div)
+        let h = $('.fight-container--animate-box').height() - 400;
+        let w = $('.fight-container--animate-box').width() - 400;
+        let nh = Math.floor(Math.random() * h);
+        let nw = Math.floor(Math.random() * w);
+        return [nh, nw];
+    }
+
+    function animateDiv() {
+        // console.log($('.main-target'));
+        let newq = makeNewPosition();
+        console.log(newq);
+        $('.main-target').animate({
+            top: newq[0],
+            left: newq[1]
+        }, 1000, function () {
+            animateDiv();
+        });
+
+    };
 
 });
-
-function makeNewPosition() {
-
-    // Get viewport dimensions (remove the dimension of the div)
-    var h = $(window).height() - 400;
-    var w = $(window).width() - 400;
-
-    var nh = Math.floor(Math.random() * h);
-    var nw = Math.floor(Math.random() * w);
-
-    return [nh, nw];
-
-}
-
-function animateDiv() {
-    // console.log($('.main-target'));
-    var newq = makeNewPosition();
-    console.log(newq);
-    $('.main-target').animate({ top: newq[0], left: newq[1] }, 1000, function () {
-        animateDiv();
-    });
-
-};
