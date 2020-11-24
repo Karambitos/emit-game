@@ -1,80 +1,83 @@
 <!DOCTYPE html>
 <html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <link rel="stylesheet" href="./css/app.css" />
+    <title>Game</title>
+  </head>
 
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta http-equiv="X-UA-Compatible" content="ie=edge" />
-  <link rel="stylesheet" href="./css/app.css" />
-  <title>Game</title>
-</head>
-
-<body>
-  <div class="logo">
-    <img src="./images/emit-logo.svg" alt="Logo" />
-  </div>
-  <div class="unsupported-box">
-    <div>
-      <h2>Browser or device not supported</h2>
-      <p>You can use Google Chrome (v87), Safari (v14) or Firefox (v82) browser to see this site.</p>
+  <body>
+    <div class="logo">
+      <img src="./images/emit-logo.svg" alt="Logo" />
     </div>
-  </div>
-  <section class="fight-container">
-    <div class="shadow-box"></div>
-    <div class="slot">
-      <div class="slot--box">
-        <div class="slot--image">
-          <img src="./images/tramp.png" alt="Fighter" />
-        </div>
-        <div class="slot--image">
-          <img src="./images/tramp.png" alt="Fighter" />
-        </div>
-        <div class="slot--image">
-          <img src="./images/tramp.png" alt="Fighter" />
-        </div>
-        <div class="slot--image"></div>
+    <div class="unsupported-box">
+      <div>
+        <h2>Browser or device not supported</h2>
+        <p>
+          You can use Google Chrome (v87), Safari (v14) or Firefox (v82) browser
+          to see this site.
+        </p>
       </div>
-      <div class="progress-bar">
-        <span class="bar">
-          <span class="progress">
-            <span class="progress-enemy">
-              <img src="./images/tramp.png" alt="Fighter">
+    </div>
+    <section class="fight-container">
+      <div class="shadow-box"></div>
+      <div class="slot">
+        <div class="slot--box">
+          <div class="slot--image">
+            <img src="./images/tramp.png" alt="Fighter" />
+          </div>
+          <div class="slot--image">
+            <img src="./images/tramp.png" alt="Fighter" />
+          </div>
+          <div class="slot--image">
+            <img src="./images/tramp.png" alt="Fighter" />
+          </div>
+          <div class="slot--image"></div>
+        </div>
+        <div class="progress-bar">
+          <span class="bar">
+            <span class="progress">
+              <span class="progress-enemy">
+                <img src="./images/tramp.png" alt="Fighter" />
+              </span>
+              <span class="progress-percent">0%</span>
             </span>
-            <span class="progress-percent">0%</span>
           </span>
+        </div>
+      </div>
+      <div class="fight-container--animate-box"></div>
+      <div class="round-card active">
+        <img src="./images/round_1-1.png" alt="round card" />
+      </div>
+      <div class="reffery-win">
+        <div class="reffery-win--text">
+          <p>Are you ready for the next match?</p>
+        </div>
+        <!-- <img src="./images/reffery-text.png" alt="" /> -->
+        <img src="./images/referee.png" alt="Referee" />
+        <!-- <p>Are you ready for the next match?</p> -->
+      </div>
+      <div class="start--arrow start--arrow-next js-enter">
+        <img src="./images/arrow.png" alt="Start arrow" />
+      </div>
+      <div class="left-hand">
+        <img src="./images/left-hand.png" alt="Left hand" />
+        <span class="left-hand--effect">
+          <img src="./images/baaam.png" alt="Hit effect" />
         </span>
       </div>
-    </div>
-    <div class="fight-container--animate-box">
-
-    </div>
-    <div class="round-card active">
-      <img src="./images/round_1-1.png" alt="round card" />
-    </div>
-    <!-- <div class="reffery-win">
-      <img src="./images/referee.png" alt="">
-    </div> -->
-    <div class="start--arrow start--arrow-next js-enter">
-      <img src="./images/arrow.png" alt="Start arrow" />
-    </div>
-    <div class="left-hand">
-      <img src="./images/left-hand.png" alt="Left hand" />
-      <span class="left-hand--effect">
-        <img src="./images/baaam.png" alt="Hit effect">
-      </span>
-    </div>
-    <div class="right-hand">
-      <img src="./images/right-hand.png" alt="Right hand" />
-      <span class="right-hand--effect">
-        <img src="./images/baaam.png" alt="Hit effect">
-      </span>
-    </div>
-  </section>
-  <script src="./js/jquery-3.5.1.min.js"></script>
-  <script src="./js/script.js" type="module"></script>
-  <script src="./js/handsMove.js" type="module"></script>
-  <script src="./js/animation.js" type="module"></script>
-
-</body>
-
+      <div class="right-hand">
+        <img src="./images/right-hand.png" alt="Right hand" />
+        <span class="right-hand--effect">
+          <img src="./images/baaam.png" alt="Hit effect" />
+        </span>
+      </div>
+    </section>
+    <script src="./js/jquery-3.5.1.min.js"></script>
+    <script src="./js/script.js" type="module"></script>
+    <script src="./js/handsMove.js" type="module"></script>
+    <script src="./js/animation.js" type="module"></script>
+  </body>
 </html>

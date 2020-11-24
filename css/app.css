@@ -800,6 +800,7 @@ section.unsupported-browser {
   left: 25%;
   bottom: 20%;
   top: 16%;
+  background-color: yellowgreen;
 }
 
 /*
@@ -882,7 +883,6 @@ section.unsupported-browser {
   padding: 0 28px;
   position: absolute;
   bottom: -15px;
-  overflow: hidden;
   width: 100%;
 }
 
@@ -980,8 +980,8 @@ section.unsupported-browser {
 
 .left-hand,
 .right-hand {
-  -webkit-animation: referee 1000ms cubic-bezier(0.4, 0, 1, 1), move 15000ms infinite 1000ms;
-          animation: referee 1000ms cubic-bezier(0.4, 0, 1, 1), move 15000ms infinite 1000ms;
+  -webkit-animation: referee 1000ms cubic-bezier(0.4, 0, 1, 1), move 8000ms infinite 1000ms;
+          animation: referee 1000ms cubic-bezier(0.4, 0, 1, 1), move 8000ms infinite 1000ms;
   position: absolute;
   z-index: 100;
   opacity: 1;
@@ -1093,38 +1093,54 @@ section.unsupported-browser {
 }
 
 .virusRight {
-  -webkit-transition: all 0.3s ease-in-out;
-  transition: all 0.3s ease-in-out;
-  -webkit-animation: tadaRound 1000ms infinite ease-out;
-          animation: tadaRound 1000ms infinite ease-out;
   opacity: 1;
   max-width: 100px;
   width: 100%;
   height: auto;
   position: absolute;
-  left: 48%;
+  left: 18%;
   top: 60%;
 }
 
 .virusLeft {
-  -webkit-transition: all 0.3s ease-in-out;
-  transition: all 0.3s ease-in-out;
-  -webkit-animation: tadaRound 1000ms infinite ease-out;
-          animation: tadaRound 1000ms infinite ease-out;
   max-width: 138px;
   width: 100%;
   height: auto;
   position: absolute;
   left: 33%;
-  top: 45%;
+  top: 35%;
 }
 
 .reffery-win {
   position: absolute;
   -webkit-animation: referee 1000ms cubic-bezier(0.4, 0, 1, 1), move 15000ms infinite 1000ms;
           animation: referee 1000ms cubic-bezier(0.4, 0, 1, 1), move 15000ms infinite 1000ms;
-  bottom: -20px;
+  bottom: -20%;
   right: 12%;
+  max-width: 400px;
+}
+
+.reffery-win--text {
+  width: 370px;
+  height: 228px;
+  position: absolute;
+  top: -17%;
+  left: -48%;
+  background-image: url(../images/reffery-text.png);
+  background-size: contain;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+.reffery-win--text p {
+  display: block;
+  font-family: 'Titillium Web', sans-serif;
+  font-style: normal;
+  font-weight: bold;
+  font-size: 30px;
+  line-height: 115%;
+  margin-top: 50px;
+  padding: 0 40px 0 105px;
 }
 
 /*

@@ -13,9 +13,11 @@
     position: absolute;
     width: 100%;
     height: 100%;
-    background: linear-gradient(90deg,
-        #000000 0%,
-        rgba(196, 196, 196, 0) 94.82%);
+    background: linear-gradient(
+      90deg,
+      #000000 0%,
+      rgba(196, 196, 196, 0) 94.82%
+    );
 
     &::after {
       content: '';
@@ -24,10 +26,12 @@
       top: 0;
       height: 100%;
       width: 100%;
-      background: radial-gradient(47.61% 47.61% at 50% 50%,
-          rgba(255, 255, 255, 0) 0%,
-          rgba(128, 128, 128, 0.397515) 75.49%,
-          rgba(0, 0, 0, 0.48) 97.59%);
+      background: radial-gradient(
+        47.61% 47.61% at 50% 50%,
+        rgba(255, 255, 255, 0) 0%,
+        rgba(128, 128, 128, 0.397515) 75.49%,
+        rgba(0, 0, 0, 0.48) 97.59%
+      );
     }
 
     &::before {
@@ -37,9 +41,11 @@
       top: 0;
       width: 50%;
       height: 100%;
-      background: linear-gradient(90deg,
-          #000000 0%,
-          rgba(196, 196, 196, 0) 94.82%);
+      background: linear-gradient(
+        90deg,
+        #000000 0%,
+        rgba(196, 196, 196, 0) 94.82%
+      );
       mix-blend-mode: multiply;
       transform: rotate(179.98deg);
     }
@@ -54,6 +60,7 @@
     left: 25%;
     bottom: 20%;
     top: 16%;
+    background-color: yellowgreen;
   }
 }
 
@@ -61,7 +68,7 @@
 * round-cards
 */
 .round-card {
-  @include animate (all);
+  @include animate(all);
   animation: none;
   position: absolute;
   top: 10%;
@@ -81,7 +88,6 @@
 /*
 * progress-bar
 */
-
 
 .slot {
   position: relative;
@@ -104,7 +110,7 @@
   }
 
   &--image {
-    @include animate (all);
+    @include animate(all);
     display: flex;
     justify-content: center;
     width: 40px;
@@ -127,7 +133,7 @@
   padding: 0 28px;
   position: absolute;
   bottom: -15px;
-  overflow: hidden;
+  // overflow: hidden;
   width: 100%;
 
   span {
@@ -144,7 +150,7 @@
 }
 
 .progress {
-  @include animate (all);
+  @include animate(all);
   position: relative;
   height: 9%;
   background: $lineInner;
@@ -215,7 +221,7 @@
 .left-hand,
 .right-hand {
   animation: referee 1000ms cubic-bezier(0.4, 0, 1, 1),
-    move 15000ms infinite 1000ms;
+    move 8000ms infinite 1000ms;
 
   position: absolute;
   z-index: 100;
@@ -244,7 +250,6 @@
     border-radius: 50%;
     overflow: hidden;
 
-
     img {
       object-fit: cover;
       height: inherit;
@@ -255,7 +260,7 @@
     animation: tadaRound 4000ms infinite ease-out;
 
     .angry-box {
-      @include animate (all);
+      @include animate(all);
       background-image: url(../images/angry1.png);
       background-size: auto;
       background-position: center;
@@ -267,11 +272,10 @@
       position: absolute;
       z-index: 3;
       left: -36px;
-
     }
 
     .angry-box--text {
-      @include animate (all);
+      @include animate(all);
       background-image: url(../images/angry2.png);
       background-size: contain;
       background-position: center;
@@ -287,8 +291,8 @@
     }
   }
 
-  &.active>.main-target-box>.target-bg {
-    @include animate (all);
+  &.active > .main-target-box > .target-bg {
+    @include animate(all);
     position: absolute;
     width: 100%;
     height: 100%;
@@ -304,7 +308,7 @@
     top: 42%;
 
     .star-box {
-      @include animate (all);
+      @include animate(all);
       animation: tadaRound 4000ms infinite ease-out;
       background-image: url(../images/star.png);
       background-size: auto;
@@ -323,36 +327,79 @@
 }
 
 .virusRight {
-  @include animate (all);
-  animation: tadaRound 1000ms infinite ease-out;
+  // @include animate(all);
+  // animation: tadaRound 1000ms infinite ease-out;
 
   opacity: 1;
   max-width: 100px;
   width: 100%;
   height: auto;
   position: absolute;
-  left: 48%;
+  left: 18%;
   top: 60%;
 }
 
 .virusLeft {
-  @include animate (all);
-  animation: tadaRound 1000ms infinite ease-out;
+  // @include animate(all);
+  // animation: tadaRound 1000ms infinite ease-out;
 
   max-width: 138px;
   width: 100%;
   height: auto;
   position: absolute;
   left: 33%;
-  top: 45%;
+  top: 35%;
 }
 
 .reffery-win {
   position: absolute;
   animation: referee 1000ms cubic-bezier(0.4, 0, 1, 1),
     move 15000ms infinite 1000ms;
-  bottom: -20px;
+  bottom: -20%;
   right: 12%;
+  max-width: 400px;
+
+  &--text {
+    width: 370px;
+    height: 228px;
+    position: absolute;
+    top: -17%;
+    left: -48%;
+    background-image: url(../images/reffery-text.png);
+    background-size: contain;
+    background-position: center;
+    background-repeat: no-repeat;
+
+    p {
+      display: block;
+      font-family: 'Titillium Web', sans-serif;
+      font-style: normal;
+      font-weight: bold;
+      font-size: 30px;
+      line-height: 115%;
+      margin-top: 50px;
+      padding: 0 40px 0 105px;
+    }
+  }
+  // img:first-child {
+  //   position: absolute;
+  //   top: -20%;
+  //   left: -60%;
+  // }
+
+  // p {
+  //   position: absolute;
+  //   top: -20%;
+  //   left: -60%;
+  //   font-family: 'Titillium Web', sans-serif;
+  //   font-style: normal;
+  //   font-weight: bold;
+  //   font-size: 35px;
+  //   line-height: 115%;
+  //   margin: 0;
+  //   padding: 50px 30px 50px 108px;
+  //   width: 380px;
+  // }
 }
 
 /*
