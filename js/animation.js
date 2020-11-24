@@ -25,7 +25,6 @@ function typingText() {
   typeWriter();
 
   function typeWriter() {
-    console.log('typeWriter');
     timeOut = setTimeout(function () {
       character++;
       let type = text.substring(0, character);

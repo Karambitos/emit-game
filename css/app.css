@@ -799,7 +799,6 @@ section.unsupported-browser {
       -ms-flex-align: center;
           align-items: center;
   height: inherit;
-  background-image: url(../images/fight-ringBG.png);
   background-position: center;
   background-size: cover;
   background-repeat: no-repeat;
