@@ -44,6 +44,17 @@
       transform: rotate(179.98deg);
     }
   }
+
+  &--animate-box {
+    position: absolute;
+    display: block;
+    width: 45%;
+    height: 70%;
+    right: 25%;
+    left: 25%;
+    bottom: 20%;
+    top: 16%;
+  }
 }
 
 /*
@@ -203,6 +214,9 @@
 
 .left-hand,
 .right-hand {
+  animation: referee 1000ms cubic-bezier(0.4, 0, 1, 1),
+    move 15000ms infinite 1000ms;
+
   position: absolute;
   z-index: 100;
   opacity: 1;
@@ -217,8 +231,6 @@
 }
 
 .main-target {
-  animation: tadaRound 4000ms infinite ease-out;
-
   left: 49%;
   top: 25%;
   position: absolute;
@@ -240,6 +252,7 @@
   }
 
   &.active {
+    animation: tadaRound 4000ms infinite ease-out;
 
     .angry-box {
       @include animate (all);
