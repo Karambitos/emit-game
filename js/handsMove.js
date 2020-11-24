@@ -222,7 +222,7 @@ function toTheNextRound() {
 }
 
 function toChangeRoundPict() {
-  roundPict.setAttribute('src', `./images/round_${toMove.round}.png`);
+  roundPict.setAttribute('src', `./images/round${toMove.round}.svg`);
   roundNumber.classList.add('active');
   roundNumberHide();
 }
