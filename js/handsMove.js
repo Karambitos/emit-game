@@ -228,7 +228,7 @@ function toChangeRoundPict() {
  */
 function roundNumberHide() {
   setTimeout(function () {
-    const roundNumber = document.querySelector('.round-card');
+    // const roundNumber = document.querySelector('.round-card');
     roundNumber.classList.remove('active');
   }, 1500);
 }
