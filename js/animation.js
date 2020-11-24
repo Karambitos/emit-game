@@ -9,7 +9,6 @@ $(document).ready(() => {
   setInterval(() => {
     animateDiv();
   }, 1000);
-
   let text = $('h1.title').text();
   let length = text.length;
   let timeOut;
@@ -40,10 +39,10 @@ $(document).ready(() => {
     let nw = Math.floor(Math.random() * w);
     return [nh, nw];
   }
+
   function animateDiv() {
     let newq = makeNewPosition();
-    $('.main-target').animate(
-      {
+    $('.main-target').animate({
         top: newq[0],
         left: newq[1],
       },
@@ -52,8 +51,7 @@ $(document).ready(() => {
         animateDiv();
       },
     );
-    $('.virusLeft').animate(
-      {
+    $('.virusLeft').animate({
         top: newq[0],
         left: newq[1],
       },
@@ -62,8 +60,7 @@ $(document).ready(() => {
         animateDiv();
       },
     );
-    $('.virusRight').animate(
-      {
+    $('.virusRight').animate({
         top: newq[0],
         left: newq[1],
       },

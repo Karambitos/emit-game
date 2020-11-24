@@ -10,57 +10,25 @@
  */
 /* font-family: "Bangers"; */
 @font-face {
-  font-family: "Bangers";
-  src: url("../fonts/Bangers-Regular.ttf");
+  font-family: 'Bangers';
+  src: url('../fonts/Bangers-Regular.ttf');
 }
 
 @font-face {
-  font-family: "Titillium Web 600";
-  src: url("../fonts/TitilliumWeb-SemiBoldttf");
+  font-family: 'Titillium Web 600';
+  src: url('../fonts/TitilliumWeb-SemiBoldttf');
   font-weight: 600;
 }
 
 @font-face {
-  font-family: "Titillium Web 400";
-  src: url("../fonts/TitilliumWeb-Regular");
+  font-family: 'Titillium Web 400';
+  src: url('../fonts/TitilliumWeb-Regular');
   font-weight: 600;
 }
 
 /*
 * Animation
 */
-@-webkit-keyframes loader {
-  0% {
-    height: 0;
-  }
-  20% {
-    height: 10%;
-  }
-  25% {
-    height: 24%;
-  }
-  43% {
-    height: 41%;
-  }
-  56% {
-    height: 50%;
-  }
-  66% {
-    height: 52%;
-  }
-  71% {
-    height: 60%;
-  }
-  75% {
-    height: 76%;
-  }
-  94% {
-    height: 86%;
-  }
-  100% {
-    height: 100%;
-  }
-}
 @keyframes loader {
   0% {
     height: 0;
@@ -94,249 +62,93 @@
   }
 }
 
-@-webkit-keyframes tadaRound {
-  0% {
-    -webkit-transform: rotate(-10deg);
-            transform: rotate(-10deg);
-  }
-  10% {
-    -webkit-transform: rotate(9deg);
-            transform: rotate(9deg);
-  }
-  20% {
-    -webkit-transform: rotate(-10deg);
-            transform: rotate(-10deg);
-  }
-  30% {
-    -webkit-transform: rotate(9deg);
-            transform: rotate(9deg);
-  }
-  40% {
-    -webkit-transform: rotate(-10deg);
-            transform: rotate(-10deg);
-  }
-  50% {
-    -webkit-transform: rotate(9deg);
-            transform: rotate(9deg);
-  }
-  60% {
-    -webkit-transform: rotate(-10deg);
-            transform: rotate(-10deg);
-  }
-  70% {
-    -webkit-transform: rotate(9deg);
-            transform: rotate(9deg);
-  }
-  80% {
-    -webkit-transform: rotate(-10deg);
-            transform: rotate(-10deg);
-  }
-  90% {
-    -webkit-transform: rotate(9deg);
-            transform: rotate(9deg);
-  }
-  100% {
-    -webkit-transform: rotate(-10deg);
-            transform: rotate(-10deg);
-  }
-}
-
 @keyframes tadaRound {
   0% {
-    -webkit-transform: rotate(-10deg);
-            transform: rotate(-10deg);
+    transform: rotate(-10deg);
   }
   10% {
-    -webkit-transform: rotate(9deg);
-            transform: rotate(9deg);
+    transform: rotate(9deg);
   }
   20% {
-    -webkit-transform: rotate(-10deg);
-            transform: rotate(-10deg);
+    transform: rotate(-10deg);
   }
   30% {
-    -webkit-transform: rotate(9deg);
-            transform: rotate(9deg);
+    transform: rotate(9deg);
   }
   40% {
-    -webkit-transform: rotate(-10deg);
-            transform: rotate(-10deg);
+    transform: rotate(-10deg);
   }
   50% {
-    -webkit-transform: rotate(9deg);
-            transform: rotate(9deg);
+    transform: rotate(9deg);
   }
   60% {
-    -webkit-transform: rotate(-10deg);
-            transform: rotate(-10deg);
+    transform: rotate(-10deg);
   }
   70% {
-    -webkit-transform: rotate(9deg);
-            transform: rotate(9deg);
+    transform: rotate(9deg);
   }
   80% {
-    -webkit-transform: rotate(-10deg);
-            transform: rotate(-10deg);
+    transform: rotate(-10deg);
   }
   90% {
-    -webkit-transform: rotate(9deg);
-            transform: rotate(9deg);
+    transform: rotate(9deg);
   }
   100% {
-    -webkit-transform: rotate(-10deg);
-            transform: rotate(-10deg);
-  }
-}
-
-@-webkit-keyframes tadaRoundShake {
-  0% {
-    -webkit-transform: rotate(-10deg);
-            transform: rotate(-10deg);
-  }
-  10% {
-    -webkit-transform: rotate(9deg);
-            transform: rotate(9deg);
-  }
-  20% {
-    -webkit-transform: rotate(-8deg);
-            transform: rotate(-8deg);
-  }
-  30% {
-    -webkit-transform: rotate(7deg);
-            transform: rotate(7deg);
-  }
-  40% {
-    -webkit-transform: rotate(-6deg);
-            transform: rotate(-6deg);
-  }
-  50% {
-    -webkit-transform: rotate(5deg);
-            transform: rotate(5deg);
-  }
-  60% {
-    -webkit-transform: rotate(-4deg);
-            transform: rotate(-4deg);
-  }
-  70% {
-    -webkit-transform: rotate(3deg);
-            transform: rotate(3deg);
-  }
-  80% {
-    -webkit-transform: rotate(-2deg);
-            transform: rotate(-2deg);
-  }
-  90% {
-    -webkit-transform: rotate(1deg);
-            transform: rotate(1deg);
-  }
-  100% {
-    -webkit-transform: rotate(0);
-            transform: rotate(0);
+    transform: rotate(-10deg);
   }
 }
 
 @keyframes tadaRoundShake {
   0% {
-    -webkit-transform: rotate(-10deg);
-            transform: rotate(-10deg);
+    transform: rotate(-10deg);
   }
   10% {
-    -webkit-transform: rotate(9deg);
-            transform: rotate(9deg);
+    transform: rotate(9deg);
   }
   20% {
-    -webkit-transform: rotate(-8deg);
-            transform: rotate(-8deg);
+    transform: rotate(-8deg);
   }
   30% {
-    -webkit-transform: rotate(7deg);
-            transform: rotate(7deg);
+    transform: rotate(7deg);
   }
   40% {
-    -webkit-transform: rotate(-6deg);
-            transform: rotate(-6deg);
+    transform: rotate(-6deg);
   }
   50% {
-    -webkit-transform: rotate(5deg);
-            transform: rotate(5deg);
+    transform: rotate(5deg);
   }
   60% {
-    -webkit-transform: rotate(-4deg);
-            transform: rotate(-4deg);
+    transform: rotate(-4deg);
   }
   70% {
-    -webkit-transform: rotate(3deg);
-            transform: rotate(3deg);
+    transform: rotate(3deg);
   }
   80% {
-    -webkit-transform: rotate(-2deg);
-            transform: rotate(-2deg);
+    transform: rotate(-2deg);
   }
   90% {
-    -webkit-transform: rotate(1deg);
-            transform: rotate(1deg);
+    transform: rotate(1deg);
   }
   100% {
-    -webkit-transform: rotate(0);
-            transform: rotate(0);
-  }
-}
-
-@-webkit-keyframes pulse {
-  0% {
-    -webkit-transform: scale3d(1, 1, 1);
-            transform: scale3d(1, 1, 1);
-  }
-  20% {
-    -webkit-transform: scale3d(0.9, 0.9, 0.9);
-            transform: scale3d(0.9, 0.9, 0.9);
-  }
-  90% {
-    -webkit-transform: scale3d(1.1, 1.1, 1.1);
-            transform: scale3d(1.1, 1.1, 1.1);
-  }
-  80% {
-    -webkit-transform: scale3d(1.1, 1.1, 1.1);
-            transform: scale3d(1.1, 1.1, 1.1);
-  }
-  100% {
-    -webkit-transform: scale3d(1, 1, 1);
-            transform: scale3d(1, 1, 1);
+    transform: rotate(0);
   }
 }
 
 @keyframes pulse {
   0% {
-    -webkit-transform: scale3d(1, 1, 1);
-            transform: scale3d(1, 1, 1);
+    transform: scale3d(1, 1, 1);
   }
   20% {
-    -webkit-transform: scale3d(0.9, 0.9, 0.9);
-            transform: scale3d(0.9, 0.9, 0.9);
+    transform: scale3d(0.9, 0.9, 0.9);
   }
   90% {
-    -webkit-transform: scale3d(1.1, 1.1, 1.1);
-            transform: scale3d(1.1, 1.1, 1.1);
+    transform: scale3d(1.1, 1.1, 1.1);
   }
   80% {
-    -webkit-transform: scale3d(1.1, 1.1, 1.1);
-            transform: scale3d(1.1, 1.1, 1.1);
+    transform: scale3d(1.1, 1.1, 1.1);
   }
   100% {
-    -webkit-transform: scale3d(1, 1, 1);
-            transform: scale3d(1, 1, 1);
-  }
-}
-
-@-webkit-keyframes referee {
-  0% {
-    bottom: -100%;
-  }
-  100% {
-    bottom: 0%;
-  }
-  100% {
-    bottom: -10%;
+    transform: scale3d(1, 1, 1);
   }
 }
 
@@ -352,115 +164,47 @@
   }
 }
 
-@-webkit-keyframes move {
-  0% {
-    -webkit-transform: translate(30px, 0px) rotate(0deg);
-            transform: translate(30px, 0px) rotate(0deg);
-  }
-  20% {
-    -webkit-transform: translate(50px, -30px) rotate(1deg);
-            transform: translate(50px, -30px) rotate(1deg);
-  }
-  40% {
-    -webkit-transform: translate(-40px, 20px) rotate(1deg);
-            transform: translate(-40px, 20px) rotate(1deg);
-  }
-  60% {
-    -webkit-transform: translate(-60px, 50px) rotate(-1deg);
-            transform: translate(-60px, 50px) rotate(-1deg);
-  }
-  80% {
-    -webkit-transform: translate(-30px, -11px) rotate(1deg);
-            transform: translate(-30px, -11px) rotate(1deg);
-  }
-  100% {
-    -webkit-transform: translate(20px, 13px) rotate(0deg);
-            transform: translate(20px, 13px) rotate(0deg);
-  }
-}
-
 @keyframes move {
   0% {
-    -webkit-transform: translate(30px, 0px) rotate(0deg);
-            transform: translate(30px, 0px) rotate(0deg);
+    transform: translate(30px, 0px) rotate(0deg);
   }
   20% {
-    -webkit-transform: translate(50px, -30px) rotate(1deg);
-            transform: translate(50px, -30px) rotate(1deg);
+    transform: translate(50px, -30px) rotate(1deg);
   }
   40% {
-    -webkit-transform: translate(-40px, 20px) rotate(1deg);
-            transform: translate(-40px, 20px) rotate(1deg);
+    transform: translate(-40px, 20px) rotate(1deg);
   }
   60% {
-    -webkit-transform: translate(-60px, 50px) rotate(-1deg);
-            transform: translate(-60px, 50px) rotate(-1deg);
+    transform: translate(-60px, 50px) rotate(-1deg);
   }
   80% {
-    -webkit-transform: translate(-30px, -11px) rotate(1deg);
-            transform: translate(-30px, -11px) rotate(1deg);
+    transform: translate(-30px, -11px) rotate(1deg);
   }
   100% {
-    -webkit-transform: translate(20px, 13px) rotate(0deg);
-            transform: translate(20px, 13px) rotate(0deg);
-  }
-}
-
-@-webkit-keyframes zoom {
-  0% {
-    opacity: 0;
-    -webkit-transform: scale(2);
-            transform: scale(2);
-  }
-  65% {
-    opacity: 1;
-    -webkit-transform: scale(1);
-            transform: scale(1);
-  }
-  75% {
-    -webkit-transform: scale(1.2);
-            transform: scale(1.2);
-  }
-  85% {
-    -webkit-transform: scale(1);
-            transform: scale(1);
-  }
-  95% {
-    -webkit-transform: scale(1.05);
-            transform: scale(1.05);
-  }
-  100% {
-    -webkit-transform: scale(1);
-            transform: scale(1);
+    transform: translate(20px, 13px) rotate(0deg);
   }
 }
 
 @keyframes zoom {
   0% {
     opacity: 0;
-    -webkit-transform: scale(2);
-            transform: scale(2);
+    transform: scale(2);
   }
   65% {
     opacity: 1;
-    -webkit-transform: scale(1);
-            transform: scale(1);
+    transform: scale(1);
   }
   75% {
-    -webkit-transform: scale(1.2);
-            transform: scale(1.2);
+    transform: scale(1.2);
   }
   85% {
-    -webkit-transform: scale(1);
-            transform: scale(1);
+    transform: scale(1);
   }
   95% {
-    -webkit-transform: scale(1.05);
-            transform: scale(1.05);
+    transform: scale(1.05);
   }
   100% {
-    -webkit-transform: scale(1);
-            transform: scale(1);
+    transform: scale(1);
   }
 }
 
@@ -468,20 +212,17 @@
 .move-box--x {
   --x: 0;
   --y: 0;
-  -webkit-transform-origin: 50% 50%;
-          transform-origin: 50% 50%;
-  -webkit-transform-style: preserve-3d;
-          transform-style: preserve-3d;
-  -webkit-transform: translateZ(100px) rotateY(calc(var(--x) * 16deg)) rotateX(calc(var(--y) * -16deg));
-          transform: translateZ(100px) rotateY(calc(var(--x) * 16deg)) rotateX(calc(var(--y) * -16deg));
+  transform-origin: 50% 50%;
+  transform-style: preserve-3d;
+  transform: translateZ(100px) rotateY(calc(var(--x) * 16deg))
+    rotateX(calc(var(--y) * -16deg));
 }
 
 /*
  *  Global elements
  */
 html {
-  -webkit-box-sizing: border-box;
-          box-sizing: border-box;
+  box-sizing: border-box;
   width: 100vw;
   overflow-x: hidden;
 }
@@ -489,12 +230,11 @@ html {
 *,
 *::before,
 *::after {
-  -webkit-box-sizing: inherit;
-          box-sizing: inherit;
+  box-sizing: inherit;
 }
 
 body {
-  font-family: "Bangers", cursive;
+  font-family: 'Bangers', cursive;
   font-weight: 400;
   margin: 0;
   padding: 0;
@@ -510,8 +250,7 @@ body {
 }
 
 .logo img {
-  -webkit-box-shadow: none;
-          box-shadow: none;
+  box-shadow: none;
 }
 
 @media (max-width: 1024px) {
@@ -534,8 +273,7 @@ img {
   display: block;
   max-width: 100%;
   height: auto;
-  -webkit-filter: drop-shadow(0px 4px 20px rgba(0, 0, 0, 0.6));
-          filter: drop-shadow(0px 4px 20px rgba(0, 0, 0, 0.6));
+  filter: drop-shadow(0px 4px 20px rgba(0, 0, 0, 0.6));
 }
 
 section {
@@ -548,12 +286,8 @@ section {
   width: 100%;
   height: inherit;
   pointer-events: none;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
+  justify-content: center;
+  align-items: center;
   text-align: center;
   padding: 0 20px;
 }
@@ -579,8 +313,6 @@ section {
 }
 
 .unsupported-box.unsupported-browser {
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
   visibility: inherit;
 }
@@ -591,19 +323,12 @@ section.unsupported-browser {
 
 /**components*/
 .start {
-  -webkit-transition: all 0.3s ease-in-out;
   transition: all 0.3s ease-in-out;
   width: 100%;
   height: 100%;
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
+  justify-content: center;
+  align-items: center;
   height: inherit;
   background-image: url(../images/fight-ring.jpg);
   background-position: center;
@@ -621,24 +346,16 @@ section.unsupported-browser {
   top: 0;
   width: 50%;
   height: 100%;
-  background: -webkit-gradient(linear, left top, right top, from(#000000), color-stop(94.82%, rgba(196, 196, 196, 0)));
   background: linear-gradient(90deg, #000000 0%, rgba(196, 196, 196, 0) 94.82%);
   mix-blend-mode: multiply;
-  -webkit-transform: rotate(179.98deg);
-          transform: rotate(179.98deg);
+  transform: rotate(179.98deg);
 }
 
 .start--wrapper {
   position: relative;
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
+  justify-content: center;
+  align-items: center;
   overflow: hidden;
   background-color: transparent;
   height: 100%;
@@ -671,11 +388,9 @@ section.unsupported-browser {
 }
 
 .start--referee {
-  -webkit-animation: referee 3000ms cubic-bezier(0.4, 0, 1, 1), move 15000ms infinite 3000ms;
-          animation: referee 3000ms cubic-bezier(0.4, 0, 1, 1), move 15000ms infinite 3000ms;
+  animation: referee 3000ms cubic-bezier(0.4, 0, 1, 1),
+    move 15000ms infinite 3000ms;
   position: absolute;
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
   bottom: -10%;
   left: 20px;
@@ -684,25 +399,20 @@ section.unsupported-browser {
 }
 
 .start--referee img {
-  -o-object-fit: contain;
-     object-fit: contain;
-  -o-object-position: bottom;
-     object-position: bottom;
+  object-fit: contain;
+  object-position: bottom;
 }
 
 .start--arrow {
-  -webkit-animation: pulse 1000ms infinite;
-          animation: pulse 1000ms infinite;
+  animation: pulse 1000ms infinite;
   position: absolute;
   right: -10%;
   bottom: 0;
 }
 
 .start--arrow-next {
-  -webkit-transition: all 0.3s ease-in-out;
   transition: all 0.3s ease-in-out;
-  -webkit-animation: none;
-          animation: none;
+  animation: none;
   opacity: 0;
   visibility: hidden;
   pointer-events: none;
@@ -711,18 +421,15 @@ section.unsupported-browser {
 }
 
 .start--arrow-next.active {
-  -webkit-animation: pulse 1000ms infinite;
-          animation: pulse 1000ms infinite;
+  animation: pulse 1000ms infinite;
   opacity: 1;
   visibility: inherit;
   pointer-events: all;
 }
 
 .start--arrow:hover {
-  -webkit-animation: none;
-          animation: none;
-  -webkit-transform: scale3d(1.1, 1.1, 1.1) rotate3d(0, 0, 1, 3deg);
-          transform: scale3d(1.1, 1.1, 1.1) rotate3d(0, 0, 1, 3deg);
+  animation: none;
+  transform: scale3d(1.1, 1.1, 1.1) rotate3d(0, 0, 1, 3deg);
 }
 
 .start--arrow-text {
@@ -737,21 +444,14 @@ section.unsupported-browser {
   position: absolute;
   right: 55%;
   top: 47%;
-  -webkit-transform: translate(50%, -50%);
-          transform: translate(50%, -50%);
+  transform: translate(50%, -50%);
 }
 
 .fight-container {
   position: relative;
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
+  justify-content: center;
+  align-items: center;
   height: inherit;
   background-image: url(../images/fight-ringBG.png);
   background-position: center;
@@ -763,7 +463,6 @@ section.unsupported-browser {
   position: absolute;
   width: 100%;
   height: 100%;
-  background: -webkit-gradient(linear, left top, right top, from(#000000), color-stop(94.82%, rgba(196, 196, 196, 0)));
   background: linear-gradient(90deg, #000000 0%, rgba(196, 196, 196, 0) 94.82%);
 }
 
@@ -774,7 +473,12 @@ section.unsupported-browser {
   top: 0;
   height: 100%;
   width: 100%;
-  background: radial-gradient(47.61% 47.61% at 50% 50%, rgba(255, 255, 255, 0) 0%, rgba(128, 128, 128, 0.397515) 75.49%, rgba(0, 0, 0, 0.48) 97.59%);
+  background: radial-gradient(
+    47.61% 47.61% at 50% 50%,
+    rgba(255, 255, 255, 0) 0%,
+    rgba(128, 128, 128, 0.397515) 75.49%,
+    rgba(0, 0, 0, 0.48) 97.59%
+  );
 }
 
 .fight-container .shadow-box::before {
@@ -784,11 +488,9 @@ section.unsupported-browser {
   top: 0;
   width: 50%;
   height: 100%;
-  background: -webkit-gradient(linear, left top, right top, from(#000000), color-stop(94.82%, rgba(196, 196, 196, 0)));
   background: linear-gradient(90deg, #000000 0%, rgba(196, 196, 196, 0) 94.82%);
   mix-blend-mode: multiply;
-  -webkit-transform: rotate(179.98deg);
-          transform: rotate(179.98deg);
+  transform: rotate(179.98deg);
 }
 
 .fight-container--animate-box {
@@ -807,10 +509,8 @@ section.unsupported-browser {
 * round-cards
 */
 .round-card {
-  -webkit-transition: all 0.3s ease-in-out;
   transition: all 0.3s ease-in-out;
-  -webkit-animation: none;
-          animation: none;
+  animation: none;
   position: absolute;
   top: 10%;
   z-index: 1;
@@ -820,8 +520,7 @@ section.unsupported-browser {
 }
 
 .round-card.active {
-  -webkit-animation: zoom 1000ms cubic-bezier(0, 0, 0.58, 1);
-          animation: zoom 1000ms cubic-bezier(0, 0, 0.58, 1);
+  animation: zoom 1000ms cubic-bezier(0, 0, 0.58, 1);
   opacity: 1;
   visibility: inherit;
   pointer-events: all;
@@ -839,12 +538,8 @@ section.unsupported-browser {
 }
 
 .slot--box {
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
+  align-items: center;
   padding: 0 20px;
   width: 100%;
   width: 240px;
@@ -856,14 +551,9 @@ section.unsupported-browser {
 }
 
 .slot--image {
-  -webkit-transition: all 0.3s ease-in-out;
   transition: all 0.3s ease-in-out;
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
+  justify-content: center;
   width: 40px;
   height: 40px;
   margin: 15px 5px;
@@ -887,13 +577,8 @@ section.unsupported-browser {
 }
 
 .progress-bar span {
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: reverse;
-      -ms-flex-direction: column-reverse;
-          flex-direction: column-reverse;
+  flex-direction: column-reverse;
 }
 
 .bar {
@@ -904,7 +589,6 @@ section.unsupported-browser {
 }
 
 .progress {
-  -webkit-transition: all 0.3s ease-in-out;
   transition: all 0.3s ease-in-out;
   position: relative;
   height: 9%;
@@ -928,12 +612,8 @@ section.unsupported-browser {
 .progress-enemy {
   position: absolute;
   overflow: hidden;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
+  justify-content: center;
+  align-items: center;
   top: -10px;
   left: -4px;
   width: 40px;
@@ -962,8 +642,7 @@ section.unsupported-browser {
   margin-right: auto;
   top: -30%;
   left: 0;
-  -webkit-transform: rotateZ(-20deg);
-          transform: rotateZ(-20deg);
+  transform: rotateZ(-20deg);
 }
 
 .right-hand {
@@ -980,8 +659,10 @@ section.unsupported-browser {
 
 .left-hand,
 .right-hand {
-  -webkit-animation: referee 1000ms cubic-bezier(0.4, 0, 1, 1), move 8000ms infinite 1000ms;
-          animation: referee 1000ms cubic-bezier(0.4, 0, 1, 1), move 8000ms infinite 1000ms;
+  -webkit-animation: referee 1000ms cubic-bezier(0.4, 0, 1, 1),
+    move 8000ms infinite 1000ms;
+  animation: referee 1000ms cubic-bezier(0.4, 0, 1, 1),
+    move 8000ms infinite 1000ms;
   position: absolute;
   z-index: 100;
   opacity: 1;
@@ -1000,8 +681,7 @@ section.unsupported-browser {
   left: 49%;
   top: 25%;
   position: absolute;
-  -webkit-transform: rotate(-10deg);
-          transform: rotate(-10deg);
+  transform: rotate(-10deg);
 }
 
 .main-target-box {
@@ -1014,18 +694,15 @@ section.unsupported-browser {
 }
 
 .main-target-box img {
-  -o-object-fit: cover;
-     object-fit: cover;
+  object-fit: cover;
   height: inherit;
 }
 
 .main-target.active {
-  -webkit-animation: tadaRound 4000ms infinite ease-out;
-          animation: tadaRound 4000ms infinite ease-out;
+  animation: tadaRound 4000ms infinite ease-out;
 }
 
 .main-target.active .angry-box {
-  -webkit-transition: all 0.3s ease-in-out;
   transition: all 0.3s ease-in-out;
   background-image: url(../images/angry1.png);
   background-size: auto;
@@ -1040,7 +717,6 @@ section.unsupported-browser {
 }
 
 .main-target.active .angry-box--text {
-  -webkit-transition: all 0.3s ease-in-out;
   transition: all 0.3s ease-in-out;
   background-image: url(../images/angry2.png);
   background-size: contain;
@@ -1056,7 +732,6 @@ section.unsupported-browser {
 }
 
 .main-target.active > .main-target-box > .target-bg {
-  -webkit-transition: all 0.3s ease-in-out;
   transition: all 0.3s ease-in-out;
   position: absolute;
   width: 100%;
@@ -1067,18 +742,15 @@ section.unsupported-browser {
 }
 
 .main-target.stars-added {
-  -webkit-animation: none;
-          animation: none;
+  animation: none;
   pointer-events: none;
   left: 30%;
   top: 42%;
 }
 
 .main-target.stars-added .star-box {
-  -webkit-transition: all 0.3s ease-in-out;
   transition: all 0.3s ease-in-out;
-  -webkit-animation: tadaRound 4000ms infinite ease-out;
-          animation: tadaRound 4000ms infinite ease-out;
+  animation: tadaRound 4000ms infinite ease-out;
   background-image: url(../images/star.png);
   background-size: auto;
   background-position: center;
@@ -1113,8 +785,10 @@ section.unsupported-browser {
 
 .reffery-win {
   position: absolute;
-  -webkit-animation: referee 1000ms cubic-bezier(0.4, 0, 1, 1), move 15000ms infinite 1000ms;
-          animation: referee 1000ms cubic-bezier(0.4, 0, 1, 1), move 15000ms infinite 1000ms;
+  -webkit-animation: referee 1000ms cubic-bezier(0.4, 0, 1, 1),
+    move 15000ms infinite 1000ms;
+  animation: referee 1000ms cubic-bezier(0.4, 0, 1, 1),
+    move 15000ms infinite 1000ms;
   bottom: -20%;
   right: 12%;
   max-width: 400px;
