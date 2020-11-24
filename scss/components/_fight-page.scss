@@ -347,13 +347,23 @@
 
 .reffery-win {
   position: absolute;
-  animation: referee 1000ms cubic-bezier(0.4, 0, 1, 1),
-    move 15000ms infinite 1000ms;
   bottom: -20%;
   right: 12%;
   max-width: 400px;
+  opacity: 0;
+  visibility: hidden;
+  pointer-events: none;
+
+
+  &.active {
+    animation: referee 1000ms cubic-bezier(0.4, 0, 1, 1),
+      move 15000ms infinite 1000ms;
+  }
 
   &--text {
+    animation: zoom-in 1000ms ease-out 1000ms;
+    // animation-play-state: paused;
+
     width: 370px;
     height: 228px;
     position: absolute;
@@ -402,4 +412,6 @@
 */
 .active {
   opacity: 1;
+  visibility: inherit;
+  pointer-events: all;
 }
