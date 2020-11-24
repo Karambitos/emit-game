@@ -69,8 +69,8 @@
   }
 
   &--referee {
-    animation: referee 3000ms ease-in-out,
-      move 5000ms infinite 3000ms;
+    animation: referee 3000ms cubic-bezier(0.4, 0, 1, 1),
+      move 15000ms infinite 3000ms;
 
     position: absolute;
     display: flex;
@@ -88,8 +88,6 @@
   &--arrow {
     animation: pulse 1000ms infinite;
     position: absolute;
-    // transform: translateX(50%);
-    // right: 0;
     right: -10%;
     bottom: 0;
 

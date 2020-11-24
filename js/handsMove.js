@@ -230,7 +230,7 @@ function addElement() {
                 </div>
               </div>`;
   document
-    .querySelector(".fight-container")
+    .querySelector(".fight-container--animate-box")
     .insertAdjacentHTML("beforeend", div);
 
   let allTargets = document.querySelectorAll(".mainTarget");
@@ -253,7 +253,7 @@ function addVirusElement() {
               alt = "${bonusFigter.alt}" / >
             </div>`;
   document
-    .querySelector(".fight-container")
+    .querySelector(".fight-container--animate-box")
     .insertAdjacentHTML("beforeend", div);
 
   let allTargets = document.querySelectorAll(".target");
