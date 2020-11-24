@@ -208,7 +208,6 @@ $(document).ready(() => {
             subString: "Linux",
             identity: "Linux"
         }]
-
     };
 
     BrowserDetect.init();

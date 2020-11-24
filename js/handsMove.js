@@ -8,6 +8,8 @@ import {
   rightEffect,
   leftHand,
   leftEffect,
+  winRoundReffery,
+  winRoundRefferyText,
   arrovNext,
   progress,
   targetBg,
@@ -18,27 +20,17 @@ import {
   roundPictDiv,
   animateBox
 } from "./refs.js";
-import { firstFigter, bonusFigter, hitEffect, bonusHitEffect, roundWin } from './images/images.js';
-// let firstFigter = {
-//   url: './images/tramp.png',
-//   alt: 'Figter Trump',
-// };
-// let bonusFigter = {
-//   url: './images/virus.png',
-//   alt: 'Figter virus',
-// };
-// const hitEffect = {
-//   url: './images/baaam.png',
-//   alt: 'Hit effect',
-// };
-// const bonusHitEffect = {
-//   url: './images/bonus.png',
-//   alt: 'Hit effect',
-// };
-// const roundWin = {
-//   url: './images/win.png',
-//   alt: 'Win',
-// };
+import {
+  firstFigter,
+  bonusFigter,
+  hitEffect,
+  bonusHitEffect,
+  roundWin
+} from './images/images.js';
+
+import {
+  typingText
+} from './animation.js';
 
 setTimeout(function () {
   addElement();
@@ -191,9 +183,16 @@ const toMove = {
         leftHand.style.opacity = "0";
         rightHand.style.opacity = "0";
         // let arrovNext = document.querySelector(".start--arrow-next");
-        arrovNext.classList.add("active");
+        winRoundReffery.classList.add('active');
+        setTimeout(function () {
+          winRoundRefferyText.classList.add("active");
+          typingText();
+        }, 1000);
+        setTimeout(function () {
+          arrovNext.classList.add("active");
+        }, 4000);
         arrovNext.addEventListener("click", toTheNextRound);
-      }, 1000);
+      }, 2000);
     }
   },
   changeProgressBar() {
@@ -226,7 +225,10 @@ function toTheNextRound() {
   slotenemy[toMove.round - 2].classList.add('active');
   document.querySelector('.mainTarget').remove('stars-added');
   // let arrovNext = document.querySelector('.start--arrow-next');
+  winRoundReffery.classList.remove('active');
+  winRoundRefferyText.classList.remove("active");
   arrovNext.classList.remove('active');
+
   toChangeRoundPict();
 
   setTimeout(function () {
@@ -238,6 +240,7 @@ function toTheNextRound() {
     addElement();
   }, 1000);
 }
+
 function toChangeRoundPict() {
   // const roundPict = document.querySelector(".round-card> img");
   // const roundPictDiv = document.querySelector(".round-card");

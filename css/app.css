@@ -1152,8 +1152,7 @@ section.unsupported-browser {
 }
 
 .reffery-win--text {
-  -webkit-animation: zoom-in 1000ms ease-out 1000ms;
-          animation: zoom-in 1000ms ease-out 1000ms;
+  opacity: 0;
   width: 370px;
   height: 228px;
   position: absolute;
@@ -1174,6 +1173,12 @@ section.unsupported-browser {
   line-height: 115%;
   margin-top: 50px;
   padding: 0 40px 0 105px;
+}
+
+.reffery-win--text.active {
+  -webkit-animation: zoom-in 1000ms ease-out;
+          animation: zoom-in 1000ms ease-out;
+  opacity: 1;
 }
 
 /*
