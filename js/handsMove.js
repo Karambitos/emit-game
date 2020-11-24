@@ -1,6 +1,4 @@
-import {
-  progressBarObject
-} from "./progressBar.js";
+import { progressBarObject } from "./progressBar.js";
 
 let firstFigter = {
   url: "./images/tramp.png",
@@ -34,6 +32,7 @@ const toMove = {
   hand: true,
   hitPersent: 12,
   bonusPersent: 60,
+  round: 1,
 
   toChooseHand(e) {
     if (this.hand) {
@@ -177,11 +176,14 @@ const toMove = {
 function toTheNextRound() {
   progressBarObject.changeProgressBar();
   toMove.count = 0;
+  toMove.round += 1;
+
   toMove.calcPercent(2);
-  firstFigter.url = "./images/main-target2.jpg";
+  firstFigter.url = `./images/main-target${toMove.round}.jpg`;
   firstFigter.alt = "target2";
   document.querySelector(".mainTarget").remove("stars-added");
-
+  let arrovNext = document.querySelector(".start--arrow-next");
+  arrovNext.classList.remove("active");
   toChangeRoundPict();
 
   setTimeout(function () {
@@ -199,7 +201,7 @@ function toChangeRoundPict() {
   const roundPict = document.querySelector(".round-card> img");
   const roundPictDiv = document.querySelector(".round-card");
 
-  roundPict.setAttribute("src", "./images/round_2.png");
+  roundPict.setAttribute("src", `./images/round_${toMove.round}.png`);
   roundPictDiv.classList.add("active");
   roundNumberHide();
 }
