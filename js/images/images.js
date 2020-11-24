@@ -6,19 +6,27 @@ let bonusFigter = {
     url: './images/virus.png',
     alt: 'Figter virus',
 };
+// const hitEffect = {
+//     url: './images/baaam.png',
+//     alt: 'Hit effect',
+// };
 const hitEffect = {
-    url: './images/baaam.png',
+    url: './images/pow.svg',
     alt: 'Hit effect',
 };
 const bonusHitEffect = {
-    url: './images/bonus.png',
+    url: './images/bonus.svg',
     alt: 'Hit effect',
 };
 const roundWin = {
-    url: './images/win.png',
+    url: './images/win.svg',
     alt: 'Win',
 };
 
 export {
-    firstFigter, bonusFigter, hitEffect, bonusHitEffect, roundWin
+    firstFigter,
+    bonusFigter,
+    hitEffect,
+    bonusHitEffect,
+    roundWin
 }
