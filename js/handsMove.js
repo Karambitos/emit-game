@@ -183,6 +183,7 @@ const toMove = {
       setTimeout(function () {
         roundNumber.classList.remove('active');
         addElement();
+        stopAnimation();
         document.querySelector(".mainTarget").classList.add("stars-added");
         leftHand.style.opacity = "0";
         rightHand.style.opacity = "0";
@@ -239,6 +240,10 @@ function toTheNextRound() {
     addElement();
   }, 1000);
 }
+function stopAnimation() {
+  const targetBg = document.querySelector(".main-target");
+  targetBg.classList.remove('main-target-animate')
+}
 
 function toChangeRoundPict() {
   roundPict.setAttribute('src', `./images/round${toMove.round}.svg`);
@@ -259,7 +264,7 @@ function roundNumberHide() {
  * Create main element
  */
 function addElement() {
-  let div = `<div class='main-target mainTarget fighter'>
+  let div = `<div class='main-target main-target-animate mainTarget fighter'>
                 <span class ="star-box"></span>
                 <span class="angry-box"></span>
                 <span class="angry-box--text"></span>
