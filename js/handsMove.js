@@ -63,6 +63,7 @@ const toMove = {
       if (!target.classList.contains('active')) {
         target.classList.add('active');
         setTimeout(() => {
+
           target.classList.remove('active');
         }, 750);
       }
@@ -170,7 +171,7 @@ const toMove = {
     ) {
       toChangeRoundPict(`./images/virus.png`);
       addVirusElement();
-      targetBg.classList.add('active');
+      // targetBg.classList.add('active');
     }
 
     /*
@@ -184,10 +185,9 @@ const toMove = {
       setTimeout(function () {
         roundNumber.classList.remove('active');
         addElement();
-        document.querySelector('.mainTarget').classList.add('stars-added');
-        leftHand.style.opacity = '0';
-        rightHand.style.opacity = '0';
-        // let arrovNext = document.querySelector(".start--arrow-next");
+        document.querySelector(".mainTarget").classList.add("stars-added");
+        leftHand.style.opacity = "0";
+        rightHand.style.opacity = "0";
         winRoundReffery.classList.add('active');
         setTimeout(function () {
           winRoundRefferyText.classList.add('active');
@@ -205,6 +205,7 @@ const toMove = {
     bar.style.marginLeft = this.barMargin + 'px';
   },
 };
+
 /*
  * Go to the next round
  */
