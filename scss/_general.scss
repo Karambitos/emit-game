@@ -37,6 +37,7 @@ body {
 
   img {
     box-shadow: none;
+    
   }
 
   @include respond-to('giant') {
@@ -60,6 +61,7 @@ img {
   max-width: 100%;
   height: auto;
   filter: drop-shadow(0px 4px 20px rgba(0, 0, 0, 0.6));
+  pointer-events: none;
 }
 
 section {
