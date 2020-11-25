@@ -29,71 +29,6 @@
 /*
 * Animation
 */
-@-webkit-keyframes loader {
-  0% {
-    height: 0;
-  }
-  20% {
-    height: 10%;
-  }
-  25% {
-    height: 24%;
-  }
-  43% {
-    height: 41%;
-  }
-  56% {
-    height: 50%;
-  }
-  66% {
-    height: 52%;
-  }
-  71% {
-    height: 60%;
-  }
-  75% {
-    height: 76%;
-  }
-  94% {
-    height: 86%;
-  }
-  100% {
-    height: 100%;
-  }
-}
-@keyframes loader {
-  0% {
-    height: 0;
-  }
-  20% {
-    height: 10%;
-  }
-  25% {
-    height: 24%;
-  }
-  43% {
-    height: 41%;
-  }
-  56% {
-    height: 50%;
-  }
-  66% {
-    height: 52%;
-  }
-  71% {
-    height: 60%;
-  }
-  75% {
-    height: 76%;
-  }
-  94% {
-    height: 86%;
-  }
-  100% {
-    height: 100%;
-  }
-}
-
 @-webkit-keyframes tadaRound {
   0% {
     -webkit-transform: rotate(-10deg);
@@ -140,7 +75,6 @@
             transform: rotate(-10deg);
   }
 }
-
 @keyframes tadaRound {
   0% {
     -webkit-transform: rotate(-10deg);
@@ -498,6 +432,50 @@
   }
 }
 
+@-webkit-keyframes chicken {
+  0% {
+    -webkit-transform: translateY(0);
+            transform: translateY(0);
+  }
+  100% {
+    -webkit-transform: translateY(100%);
+            transform: translateY(100%);
+  }
+}
+
+@keyframes chicken {
+  0% {
+    -webkit-transform: translateY(0);
+            transform: translateY(0);
+  }
+  100% {
+    -webkit-transform: translateY(100%);
+            transform: translateY(100%);
+  }
+}
+
+@-webkit-keyframes chicken2 {
+  0% {
+    -webkit-transform: translateX(100%);
+            transform: translateX(100%);
+  }
+  100% {
+    -webkit-transform: translateY(0);
+            transform: translateY(0);
+  }
+}
+
+@keyframes chicken2 {
+  0% {
+    -webkit-transform: translateX(100%);
+            transform: translateX(100%);
+  }
+  100% {
+    -webkit-transform: translateY(0);
+            transform: translateY(0);
+  }
+}
+
 .move-box,
 .move-box--x {
   --x: 0;
@@ -634,10 +612,6 @@ section.unsupported-browser {
 
 .round-img {
   width: 840px;
-}
-
-.hit-img {
-  width: 540px;
 }
 
 /**components*/
@@ -869,7 +843,7 @@ section.unsupported-browser {
           animation: none;
   position: absolute;
   top: 10%;
-  z-index: 1;
+  z-index: 12;
   opacity: 0;
   pointer-events: none;
   visibility: hidden;
@@ -1007,63 +981,27 @@ section.unsupported-browser {
 /*
 * Hands
 */
-.left-hand {
-  position: absolute;
-  left: 13%;
-  bottom: -28%;
-  width: 25%;
-}
-
-.left-hand--effect {
-  margin-right: auto;
-  top: -30%;
-  left: 0;
-  -webkit-transform: rotateZ(-20deg);
-          transform: rotateZ(-20deg);
-}
-
-.right-hand {
-  right: 18%;
-  bottom: -23%;
-  width: 25%;
-}
-
-.right-hand--effect {
-  margin-left: auto;
-  top: -36%;
-  right: 17%;
-}
-
 .right-hand {
   -webkit-animation: referee 1000ms cubic-bezier(0.4, 0, 1, 1), move 2500ms linear infinite 1000ms;
           animation: referee 1000ms cubic-bezier(0.4, 0, 1, 1), move 2500ms linear infinite 1000ms;
+  right: 18%;
+  bottom: -23%;
+  width: 25%;
   position: absolute;
-  z-index: 100;
+  z-index: 10;
   opacity: 1;
-}
-
-.right-hand--effect {
-  pointer-events: none;
-  position: absolute;
-  display: block;
-  width: 546px;
-  opacity: 0;
 }
 
 .left-hand {
   -webkit-animation: referee 1000ms cubic-bezier(0.4, 0, 1, 1), move 2500ms linear infinite 2000ms;
           animation: referee 1000ms cubic-bezier(0.4, 0, 1, 1), move 2500ms linear infinite 2000ms;
   position: absolute;
-  z-index: 100;
-  opacity: 1;
-}
-
-.left-hand--effect {
-  pointer-events: none;
+  left: 13%;
+  bottom: -28%;
+  width: 25%;
   position: absolute;
-  display: block;
-  width: 546px;
-  opacity: 0;
+  z-index: 10;
+  opacity: 1;
 }
 
 .main-target {
@@ -1183,6 +1121,14 @@ section.unsupported-browser {
   top: 35%;
 }
 
+.big-boss {
+  width: 50%;
+  position: absolute;
+  bottom: -50%;
+  -webkit-animation: chicken 10000ms ease 1000ms;
+          animation: chicken 10000ms ease 1000ms;
+}
+
 .referee-win {
   position: absolute;
   bottom: -20%;
@@ -1235,5 +1181,33 @@ section.unsupported-browser {
   opacity: 1;
   visibility: inherit;
   pointer-events: all;
+}
+
+.hit-effect {
+  pointer-events: none;
+  position: absolute;
+  display: block;
+  width: 500px;
+  opacity: 0;
+  z-index: 999;
+  top: -90%;
+  left: -50%;
+}
+
+.hit-effect .hit-img {
+  width: 100%;
+}
+
+.virusLeft.activeHit .hit-effect,
+.virusRight.activeHit .hit-effect,
+.main-target.activeHit .hit-effect {
+  opacity: 1;
+}
+
+.virusLeft .hit-effect,
+.virusRight .hit-effect {
+  width: 400px;
+  top: -100%;
+  left: -100%;
 }
 /*# sourceMappingURL=app.css.map */

@@ -37,8 +37,6 @@ function typingText() {
         }, 100);
     }
 }
-
-
 /*
  * Fighter move animation
  */
@@ -54,33 +52,44 @@ function makeNewPosition() {
 function animateDiv() {
     let newq = makeNewPosition();
     $('.main-target-animate').animate({
-        top: newq[0],
-        left: newq[1],
-    },
+            top: newq[0],
+            left: newq[1],
+        },
         800,
         function () {
             animateDiv();
         },
     );
     $('.virusLeft').animate({
-        top: newq[0],
-        left: newq[1],
-    },
+            top: newq[0],
+            left: newq[1],
+        },
         600,
         function () {
             animateDiv();
         },
     );
     $('.virusRight').animate({
-        top: newq[0],
-        left: newq[1],
-    },
+            top: newq[0],
+            left: newq[1],
+        },
         700,
         function () {
             animateDiv();
         },
     );
+    // $('.big-boss').animate({
+    //         top: newq[0],
+    //         left: newq[1],
+    //     },
+    //     1000,
+    //     function () {
+    //         animateDiv();
+    //     },
+    // );
 }
+
+
 
 export {
     typingText

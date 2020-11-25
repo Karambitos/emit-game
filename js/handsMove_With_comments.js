@@ -15,7 +15,6 @@ import {
   roundPict,
   roundNumber,
   animateBox,
-  fightContainer,
   animationTitle,
 } from './refs.js';
 import {
@@ -24,7 +23,6 @@ import {
   hitEffect,
   bonusHitEffect,
   roundWin,
-  bonusFigterCh
 } from './images/images.js';
 
 import {
@@ -33,7 +31,6 @@ import {
 
 setTimeout(function () {
   addElement();
-  // addChickenElement()
 }, 1200);
 roundNumberHide();
 
@@ -47,39 +44,89 @@ const toMove = {
   textRefery: [
     'Wasn’t it a hard year? Show me how you Get Rid of it!',
     'Good Job! But not enough! Show me more.',
-    'Next round.',
+    'Good Job! But not enough! Show me more.',
   ],
 
   toChooseHand(e) {
     if (this.hand) {
       this.hand = false;
       this.toMoveRightHand(e);
+      const target = e.currentTarget;
+      // if (!target.classList.contains('active')) {
+      //   target.classList.add('active');
+      //   setTimeout(() => {
+      //     target.classList.remove('active');
+      //   }, 500);
+      // }
     } else {
       this.hand = true;
       this.toMoveLeftHand(e);
+      const target = e.currentTarget;
+      // if (!target.classList.contains('active')) {
+      //   target.classList.add('active');
+      //   setTimeout(() => {
+      //     target.classList.remove('active');
+      //   }, 500);
+      // }
+
+      //delete virus
+      //   if (!e.currentTarget.classList.contains("main-target")) {
+      //     console.dir(e.currentTarget.remove());
+      //   }
     }
   },
   toMoveRightHand(e) {
+    /*
+     * Change the hit effect
+     */
+
     let target = e.currentTarget;
     hitEffectAdd(target);
+    // let target = e.currentTarget;
+    // if (target.classList.contains('target')) {
+    //   let hitImage = rightEffect.querySelector('img');
+    //   hitImage.src = `${bonusHitEffect.url}`;
+    //   setTimeout(function () {
+    //     hitImage.src = `${hitEffect.url}`;
+    //   }, 320);
+    // }
     rightHand.style.top = e.clientY + 'px';
     rightHand.style.left = e.clientX + 'px';
+    // rightEffect.style.opacity = '1';
+
     this.calcPercent();
+
     setTimeout(function () {
       rightHand.style.top = '';
       rightHand.style.left = '';
-    }, 200);
+      // rightEffect.style.opacity = '';
+    }, 100);
   },
   toMoveLeftHand(e) {
+    /*
+     * Change the hit effect
+     */
+
     let target = e.currentTarget;
     hitEffectAdd(target);
+    // let target = e.currentTarget;
+    // if (target.classList.contains('target')) {
+    //   let hitImage = leftEffect.querySelector('img');
+    //   hitImage.src = `${bonusHitEffect.url}`;
+    //   setTimeout(function () {
+    //     hitImage.src = `${hitEffect.url}`;
+    //   }, 320);
+    // }
+
+    // leftEffect.style.opacity = '1';
     leftHand.style.top = e.clientY + 'px';
     leftHand.style.left = e.clientX - 200 + 'px';
     this.calcPercent();
     setTimeout(function () {
       leftHand.style.top = '';
       leftHand.style.left = '';
-    }, 200);
+      // leftEffect.style.opacity = '';
+    }, 100);
   },
   removeAllFighters() {
     const toRemoveFiters = document.querySelectorAll('.fighter');
@@ -128,12 +175,9 @@ const toMove = {
       parseInt(progress.textContent) >= this.bonusPersent &&
       !document.querySelector('.virusRight')
     ) {
-      toChangeRoundPict(`${bonusHitEffect.url}`);
-      if (this.round === 2) {
-        addChickenElement();
-      } else {
-        addVirusElement();
-      }
+      toChangeRoundPict(`./images/virus.png`);
+      addVirusElement();
+      // targetBg.classList.add('active');
     }
 
     /*
@@ -291,28 +335,6 @@ function addVirusElement() {
 }
 
 /*
- * Create Chicken element
- */
-function addChickenElement() {
-  let div = `<div class='big-boss target fighter'>
-              <img src = "${bonusFigterCh.url}"
-              alt = "${bonusFigterCh.alt}" / >
-              <span class = "hit-effect" >
-                <img class = "hit-img"
-              src = "${bonusHitEffect.url}"
-              alt = "Hit effect" / >
-                </span>
-            </div>`;
-  fightContainer.insertAdjacentHTML('beforeend', div);
-
-  let allTargets = document.querySelectorAll('.target');
-
-  allTargets.forEach(el =>
-    el.addEventListener('click', e => toMove.toChooseHand(e)),
-  );
-}
-
-/*
  * Create hands Hit effect
  */
 function hitEffectAdd(target) {
@@ -322,10 +344,12 @@ function hitEffectAdd(target) {
   // }
   target.classList.add('activeHit')
   setTimeout(function () {
+    console.log('1');
     target.classList.remove('activeHit')
     target.classList.add('active')
-  }, 520);
+  }, 320);
   setTimeout(function () {
+    console.log('2');
     target.classList.remove('active')
-  }, 2500);
+  }, 2000);
 }

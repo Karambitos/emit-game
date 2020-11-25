@@ -1,49 +1,6 @@
 /*
 * Animation
 */
-
-@keyframes loader {
-  0% {
-    height: 0;
-  }
-
-  20% {
-    height: 10%;
-  }
-
-  25% {
-    height: 24%;
-  }
-
-  43% {
-    height: 41%;
-  }
-
-  56% {
-    height: 50%;
-  }
-
-  66% {
-    height: 52%;
-  }
-
-  71% {
-    height: 60%;
-  }
-
-  75% {
-    height: 76%;
-  }
-
-  94% {
-    height: 86%;
-  }
-
-  100% {
-    height: 100%;
-  }
-}
-
 @keyframes tadaRound {
   0% {
     transform: rotate(-10deg);
@@ -176,6 +133,7 @@
   0% {
     transform: translate(0px, 0px) rotate(-0deg);
   }
+
   12% {
     transform: translate(-10px, -10px) rotate(0deg);
   }
@@ -187,12 +145,15 @@
   60% {
     transform: translate(-10px, -30px) rotate(-0deg);
   }
+
   72% {
     transform: translate(0px, -20px) rotate(0deg);
   }
+
   84% {
     transform: translate(10px, -10px) rotate(-0deg);
   }
+
   100% {
     transform: translate(0px, 0px) rotate(0deg);
   }
@@ -238,12 +199,74 @@
   }
 }
 
+@keyframes chicken {
+  0% {
+    transform: translateY(0);
+  }
+
+  100% {
+    transform: translateY(100%);
+  }
+}
+
+@keyframes chicken2 {
+  0% {
+    transform: translateX(100%);
+  }
+
+  100% {
+    transform: translateY(0);
+  }
+}
+
 .move-box,
 .move-box--x {
   --x: 0;
   --y: 0;
   transform-origin: 50% 50%;
   transform-style: preserve-3d;
-  transform: translateZ(100px) rotateY(calc(var(--x) * 16deg))
-    rotateX(calc(var(--y) * -16deg));
+  transform: translateZ(100px) rotateY(calc(var(--x) * 16deg)) rotateX(calc(var(--y) * -16deg));
 }
+
+
+// @keyframes loader {
+//   0% {
+//     height: 0;
+//   }
+
+//   20% {
+//     height: 10%;
+//   }
+
+//   25% {
+//     height: 24%;
+//   }
+
+//   43% {
+//     height: 41%;
+//   }
+
+//   56% {
+//     height: 50%;
+//   }
+
+//   66% {
+//     height: 52%;
+//   }
+
+//   71% {
+//     height: 60%;
+//   }
+
+//   75% {
+//     height: 76%;
+//   }
+
+//   94% {
+//     height: 86%;
+//   }
+
+//   100% {
+//     height: 100%;
+//   }
+// }
