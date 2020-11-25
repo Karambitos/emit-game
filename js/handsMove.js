@@ -14,7 +14,8 @@ import {
   progress,
   roundPict,
   roundNumber,
-  animateBox
+  animateBox,
+  animationTitle
 } from "./refs.js";
 import {
   firstFigter,
@@ -40,13 +41,15 @@ const toMove = {
   hitPersent: 12,
   bonusPersent: 60,
   round: 1,
+  textRefery: [
+    'Wasn’t it a hard year? Show me how you Get Rid of it!', "Good Job! But not enough! Show me more.", "Good Job! But not enough! Show me more."
+  ],
 
   toChooseHand(e) {
     if (this.hand) {
       this.hand = false;
       this.toMoveRightHand(e);
       const target = e.currentTarget;
-      console.log();
       if (!target.classList.contains('active')) {
         target.classList.add('active')
         setTimeout(() => {
@@ -205,6 +208,7 @@ const toMove = {
  * Go to the next round
  */
 function toTheNextRound() {
+  animationTitle.textContent = toMove.textRefery[toMove.round]
   toMove.changeProgressBar();
   toMove.count = 0;
   toMove.round += 1;
