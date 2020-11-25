@@ -124,15 +124,17 @@ const toMove = {
     /*
      * Bonus fiters shows up
      */
-    if (
-      parseInt(progress.textContent) >= this.bonusPersent &&
-      !document.querySelector('.virusRight')
-    ) {
-      toChangeRoundPict(`${bonusHitEffect.url}`);
-      if (this.round === 2) {
-        addChickenElement();
-      } else {
-        addVirusElement();
+    if (!document.querySelector('.virusRight') &&
+      !document.querySelector('.big-boss')) {
+      if (parseInt(progress.textContent) >= this.bonusPersent) {
+        toChangeRoundPict(`${bonusHitEffect.url}`);
+        setTimeout(() => {
+          if (this.round === 2) {
+            addChickenElement();
+          } else {
+            addVirusElement();
+          }
+        }, 1500);
       }
     }
 

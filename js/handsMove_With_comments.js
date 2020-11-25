@@ -51,7 +51,7 @@ const toMove = {
     if (this.hand) {
       this.hand = false;
       this.toMoveRightHand(e);
-      const target = e.currentTarget;
+      // const target = e.currentTarget;
       // if (!target.classList.contains('active')) {
       //   target.classList.add('active');
       //   setTimeout(() => {
@@ -61,7 +61,7 @@ const toMove = {
     } else {
       this.hand = true;
       this.toMoveLeftHand(e);
-      const target = e.currentTarget;
+      // const target = e.currentTarget;
       // if (!target.classList.contains('active')) {
       //   target.classList.add('active');
       //   setTimeout(() => {

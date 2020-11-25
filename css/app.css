@@ -454,28 +454,6 @@
   }
 }
 
-@-webkit-keyframes chicken2 {
-  0% {
-    -webkit-transform: translateX(100%);
-            transform: translateX(100%);
-  }
-  100% {
-    -webkit-transform: translateY(0);
-            transform: translateY(0);
-  }
-}
-
-@keyframes chicken2 {
-  0% {
-    -webkit-transform: translateX(100%);
-            transform: translateX(100%);
-  }
-  100% {
-    -webkit-transform: translateY(0);
-            transform: translateY(0);
-  }
-}
-
 .move-box,
 .move-box--x {
   --x: 0;
@@ -1198,6 +1176,7 @@ section.unsupported-browser {
   width: 100%;
 }
 
+.big-boss.activeHit .hit-effect,
 .virusLeft.activeHit .hit-effect,
 .virusRight.activeHit .hit-effect,
 .main-target.activeHit .hit-effect {
@@ -1209,5 +1188,10 @@ section.unsupported-browser {
   width: 400px;
   top: -100%;
   left: -100%;
+}
+
+.big-boss .hit-effect {
+  top: 300px;
+  left: 70px;
 }
 /*# sourceMappingURL=app.css.map */
