@@ -1103,6 +1103,8 @@ section.unsupported-browser {
   width: 50%;
   position: absolute;
   bottom: -50%;
+  -webkit-animation: chicken 10000ms ease 1000ms;
+          animation: chicken 10000ms ease 1000ms;
 }
 
 .referee-win {
