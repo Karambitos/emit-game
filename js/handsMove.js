@@ -15,6 +15,7 @@ import {
   roundPict,
   roundNumber,
   animateBox,
+  animationTitle,
 } from './refs.js';
 import {
   firstFigter,
@@ -38,14 +39,33 @@ const toMove = {
   hitPersent: 12,
   bonusPersent: 60,
   round: 1,
+  textRefery: [
+    'Wasn’t it a hard year? Show me how you Get Rid of it!',
+    'Good Job! But not enough! Show me more.',
+    'Good Job! But not enough! Show me more.',
+  ],
 
   toChooseHand(e) {
     if (this.hand) {
       this.hand = false;
       this.toMoveRightHand(e);
+      const target = e.currentTarget;
+      if (!target.classList.contains('active')) {
+        target.classList.add('active');
+        setTimeout(() => {
+          target.classList.remove('active');
+        }, 750);
+      }
     } else {
       this.hand = true;
       this.toMoveLeftHand(e);
+      const target = e.currentTarget;
+      if (!target.classList.contains('active')) {
+        target.classList.add('active');
+        setTimeout(() => {
+          target.classList.remove('active');
+        }, 750);
+      }
       //delete virus
       //   if (!e.currentTarget.classList.contains("main-target")) {
       //     console.dir(e.currentTarget.remove());
@@ -189,6 +209,7 @@ const toMove = {
  * Go to the next round
  */
 function toTheNextRound() {
+  animationTitle.textContent = toMove.textRefery[toMove.round];
   toMove.changeProgressBar();
   toMove.count = 0;
   toMove.round += 1;
