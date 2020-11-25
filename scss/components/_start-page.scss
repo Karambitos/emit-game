@@ -56,11 +56,14 @@
   &--text {
     position: relative;
     margin-left: auto;
-    margin-right: 15%;
-    // max-width: 705px;
+    margin-right: 25%;
     width: 705px;
     height: 300px;
     z-index: 3;
+
+    @include respond-to('full_xl') {
+      margin-right: 15%;
+    }
 
     h2 {
       pointer-events: none;
@@ -75,7 +78,7 @@
     position: absolute;
     display: flex;
     bottom: -10%;
-    left: 20px;
+    left: 4%;
     z-index: 2;
     height: 100%;
 
