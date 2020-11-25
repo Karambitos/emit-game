@@ -15,19 +15,17 @@ import {
   roundPict,
   roundNumber,
   animateBox,
-  animationTitle
-} from "./refs.js";
+  animationTitle,
+} from './refs.js';
 import {
   firstFigter,
   bonusFigter,
   hitEffect,
   bonusHitEffect,
-  roundWin
+  roundWin,
 } from './images/images.js';
 
-import {
-  typingText
-} from './animation.js';
+import { typingText } from './animation.js';
 
 setTimeout(function () {
   addElement();
@@ -42,7 +40,9 @@ const toMove = {
   bonusPersent: 60,
   round: 1,
   textRefery: [
-    'Wasn’t it a hard year? Show me how you Get Rid of it!', "Good Job! But not enough! Show me more.", "Good Job! But not enough! Show me more."
+    'Wasn’t it a hard year? Show me how you Get Rid of it!',
+    'Good Job! But not enough! Show me more.',
+    'Good Job! But not enough! Show me more.',
   ],
 
   toChooseHand(e) {
@@ -51,9 +51,9 @@ const toMove = {
       this.toMoveRightHand(e);
       const target = e.currentTarget;
       if (!target.classList.contains('active')) {
-        target.classList.add('active')
+        target.classList.add('active');
         setTimeout(() => {
-          target.classList.remove('active')
+          target.classList.remove('active');
         }, 750);
       }
     } else {
@@ -61,9 +61,10 @@ const toMove = {
       this.toMoveLeftHand(e);
       const target = e.currentTarget;
       if (!target.classList.contains('active')) {
-        target.classList.add('active')
+        target.classList.add('active');
         setTimeout(() => {
-          target.classList.remove('active')
+
+          target.classList.remove('active');
         }, 750);
       }
       //delete virus
@@ -128,10 +129,10 @@ const toMove = {
     });
   },
   calcPercent(lvl = false) {
-    const targetBg = document.querySelector(".main-target");
-    const slotImageBox = document.querySelector(".slot--image");
-    const roundNumber = document.querySelector(".round-card");
-    const roundPict = roundNumber.querySelector("img");
+    const targetBg = document.querySelector('.main-target');
+    const slotImageBox = document.querySelector('.slot--image');
+    const roundNumber = document.querySelector('.round-card');
+    const roundPict = roundNumber.querySelector('img');
 
     /*
      * Next level
@@ -168,8 +169,9 @@ const toMove = {
       parseInt(progress.textContent) >= this.bonusPersent &&
       !document.querySelector('.virusRight')
     ) {
+      toChangeRoundPict(`./images/virus.png`);
       addVirusElement();
-      targetBg.classList.add('active');
+      // targetBg.classList.add('active');
     }
 
     /*
@@ -187,29 +189,29 @@ const toMove = {
         document.querySelector(".mainTarget").classList.add("stars-added");
         leftHand.style.opacity = "0";
         rightHand.style.opacity = "0";
-        // let arrovNext = document.querySelector(".start--arrow-next");
         winRoundReffery.classList.add('active');
         setTimeout(function () {
-          winRoundRefferyText.classList.add("active");
+          winRoundRefferyText.classList.add('active');
           typingText();
         }, 1000);
         setTimeout(function () {
-          arrovNext.classList.add("active");
+          arrovNext.classList.add('active');
         }, 4000);
-        arrovNext.addEventListener("click", toTheNextRound);
+        arrovNext.addEventListener('click', toTheNextRound);
       }, 2000);
     }
   },
   changeProgressBar() {
     this.barMargin += 50;
-    bar.style.marginLeft = this.barMargin + "px";
+    bar.style.marginLeft = this.barMargin + 'px';
   },
 };
+
 /*
  * Go to the next round
  */
 function toTheNextRound() {
-  animationTitle.textContent = toMove.textRefery[toMove.round]
+  animationTitle.textContent = toMove.textRefery[toMove.round];
   toMove.changeProgressBar();
   toMove.count = 0;
   toMove.round += 1;
@@ -226,10 +228,10 @@ function toTheNextRound() {
   slotenemy[toMove.round - 2].classList.add('active');
   document.querySelector('.mainTarget').remove('stars-added');
   winRoundReffery.classList.remove('active');
-  winRoundRefferyText.classList.remove("active");
+  winRoundRefferyText.classList.remove('active');
   arrovNext.classList.remove('active');
 
-  toChangeRoundPict();
+  toChangeRoundPict(`./images/round${toMove.round}.svg`);
 
   setTimeout(function () {
     let rightHand = document.querySelector('.right-hand');
@@ -245,8 +247,9 @@ function stopAnimation() {
   targetBg.classList.remove('main-target-animate')
 }
 
-function toChangeRoundPict() {
-  roundPict.setAttribute('src', `./images/round${toMove.round}.svg`);
+function toChangeRoundPict(pict) {
+  roundPict.setAttribute('src', pict);
+
   roundNumber.classList.add('active');
   roundNumberHide();
 }
@@ -296,7 +299,7 @@ function addVirusElement() {
               <img src = "${bonusFigter.url}"
               alt = "${bonusFigter.alt}" / >
             </div>`;
-  animateBox.insertAdjacentHTML("beforeend", div);
+  animateBox.insertAdjacentHTML('beforeend', div);
 
   let allTargets = document.querySelectorAll('.target');
 
