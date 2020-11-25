@@ -584,6 +584,10 @@ section.unsupported-browser {
   display: none;
 }
 
+.animation-title {
+  opacity: 0;
+}
+
 .arrow-img {
   width: 144px;
 }
@@ -748,6 +752,20 @@ section.unsupported-browser {
   top: 47%;
   -webkit-transform: translate(50%, -50%);
           transform: translate(50%, -50%);
+}
+
+.win-page .start--text {
+  text-align: center;
+}
+
+.win-page .start--text h2 {
+  font-size: 140px;
+  line-height: 109%;
+}
+
+.win-page .start--arrow {
+  display: none;
+  visibility: hidden;
 }
 
 .fight-container {
@@ -1142,8 +1160,8 @@ section.unsupported-browser {
   font-weight: bold;
   font-size: 30px;
   line-height: 115%;
-  margin-top: 50px;
-  padding: 0 40px 0 105px;
+  margin-top: 59px;
+  padding: 0 40px 0 60px;
 }
 
 .referee-win--text.active {

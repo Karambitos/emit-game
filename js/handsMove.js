@@ -127,7 +127,11 @@ const toMove = {
     if (!document.querySelector('.virusRight') &&
       !document.querySelector('.big-boss')) {
       if (parseInt(progress.textContent) >= this.bonusPersent) {
+        // this.removeAllFighters();
         toChangeRoundPict(`${bonusHitEffect.url}`);
+        // setTimeout(() => {
+        //   addElement();
+        // }, 1500);
         setTimeout(() => {
           if (this.round === 2) {
             addChickenElement();
@@ -139,9 +143,9 @@ const toMove = {
     }
 
     /*
-     * Win - image shows
+     * Win - image shows / go to next Lvl
      */
-    if (parseInt(progress.textContent) >= 100) {
+    if (parseInt(progress.textContent) >= 100 && this.round !== 3) {
       this.removeAllFighters();
       roundPict.src = `${roundWin.url}`;
       roundNumber.classList.add('active');
@@ -156,6 +160,15 @@ const toMove = {
         leftHand.style.opacity = '0';
         rightHand.style.opacity = '0';
       }, 2000);
+    } else if (parseInt(progress.textContent) >= 100 && this.round === 3) {
+      this.removeAllFighters();
+      roundPict.src = `${roundWin.url}`;
+      roundNumber.classList.add('active');
+      progress.textContent = ``;
+      setTimeout(function () {
+        localStorage.setItem('key', 'true');
+        window.location.replace('/');
+      }, 2000);
     }
   },
   changeProgressBar() {
@@ -163,7 +176,6 @@ const toMove = {
     bar.style.marginLeft = this.barMargin + 'px';
   },
 };
-
 /*
  * Go to the next round referee logic
  */

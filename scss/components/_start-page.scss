@@ -133,3 +133,19 @@
     transform: translate(50%, -50%);
   }
 }
+
+.win-page {
+  .start--text {
+    text-align: center;
+
+    h2 {
+      font-size: 140px;
+      line-height: 109%;
+    }
+  }
+
+  .start--arrow {
+    display: none;
+    visibility: hidden;
+  }
+}
