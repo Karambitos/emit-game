@@ -25,9 +25,7 @@ import {
   roundWin,
 } from './images/images.js';
 
-import {
-  typingText
-} from './animation.js';
+import { typingText } from './animation.js';
 
 setTimeout(function () {
   addElement();
@@ -65,7 +63,6 @@ const toMove = {
       if (!target.classList.contains('active')) {
         target.classList.add('active');
         setTimeout(() => {
-
           target.classList.remove('active');
         }, 500);
       }
@@ -184,12 +181,14 @@ const toMove = {
       progress.textContent = ``;
       setTimeout(function () {
         roundNumber.classList.remove('active');
+        roundPict.src = '';
+        console.log(roundPict);
         addElement();
         refereeShow();
         stopAnimation();
-        document.querySelector(".mainTarget").classList.add("stars-added");
-        leftHand.style.opacity = "0";
-        rightHand.style.opacity = "0";
+        document.querySelector('.mainTarget').classList.add('stars-added');
+        leftHand.style.opacity = '0';
+        rightHand.style.opacity = '0';
       }, 2000);
     }
   },
@@ -198,7 +197,6 @@ const toMove = {
     bar.style.marginLeft = this.barMargin + 'px';
   },
 };
-
 
 /*
  * Go to the next round referee logic
@@ -252,8 +250,8 @@ function toTheNextRound() {
 }
 
 function stopAnimation() {
-  const targetBg = document.querySelector(".main-target");
-  targetBg.classList.remove('main-target-animate')
+  const targetBg = document.querySelector('.main-target');
+  targetBg.classList.remove('main-target-animate');
 }
 
 function toChangeRoundPict(pict) {
