@@ -54,7 +54,7 @@ const toMove = {
         target.classList.add('active')
         setTimeout(() => {
           target.classList.remove('active')
-        }, 750);
+        }, 500);
       }
     } else {
       this.hand = true;
@@ -64,7 +64,7 @@ const toMove = {
         target.classList.add('active')
         setTimeout(() => {
           target.classList.remove('active')
-        }, 750);
+        }, 500);
       }
       //delete virus
       //   if (!e.currentTarget.classList.contains("main-target")) {
@@ -169,7 +169,7 @@ const toMove = {
       !document.querySelector('.virusRight')
     ) {
       addVirusElement();
-      targetBg.classList.add('active');
+      // targetBg.classList.add('active');
     }
 
     /*
@@ -186,7 +186,6 @@ const toMove = {
         document.querySelector(".mainTarget").classList.add("stars-added");
         leftHand.style.opacity = "0";
         rightHand.style.opacity = "0";
-        // let arrovNext = document.querySelector(".start--arrow-next");
         winRoundReffery.classList.add('active');
         setTimeout(function () {
           winRoundRefferyText.classList.add("active");
@@ -204,6 +203,7 @@ const toMove = {
     bar.style.marginLeft = this.barMargin + "px";
   },
 };
+
 /*
  * Go to the next round
  */
