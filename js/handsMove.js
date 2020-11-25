@@ -8,8 +8,8 @@ import {
   rightEffect,
   leftHand,
   leftEffect,
-  winRoundReffery,
-  winRoundRefferyText,
+  winRoundReferee,
+  winRoundRefereeText,
   arrovNext,
   progress,
   roundPict,
@@ -25,7 +25,9 @@ import {
   roundWin,
 } from './images/images.js';
 
-import { typingText } from './animation.js';
+import {
+  typingText
+} from './animation.js';
 
 setTimeout(function () {
   addElement();
@@ -202,9 +204,9 @@ const toMove = {
  * Go to the next round referee logic
  */
 function refereeShow() {
-  winRoundReffery.classList.add('active');
+  winRoundReferee.classList.add('active');
   setTimeout(function () {
-    winRoundRefferyText.classList.add('active');
+    winRoundRefereeText.classList.add('active');
     typingText();
   }, 1000);
   setTimeout(function () {
@@ -233,8 +235,8 @@ function toTheNextRound() {
   }
   slotenemy[toMove.round - 2].classList.add('active');
   document.querySelector('.mainTarget').remove('stars-added');
-  winRoundReffery.classList.remove('active');
-  winRoundRefferyText.classList.remove('active');
+  winRoundReferee.classList.remove('active');
+  winRoundRefereeText.classList.remove('active');
   arrovNext.classList.remove('active');
 
   toChangeRoundPict(`./images/round${toMove.round}.svg`);

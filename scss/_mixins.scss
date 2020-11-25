@@ -20,7 +20,7 @@ $breakpoints: ('full-max': 1920px,
   'medium': 768px,
   'small': 640px,
   'tiny': 468px);
-// @include respond-to('giant') {}
+// @include respond-to('full_xl') {}
 
 @mixin respond-to($breakpoint) {
   @if map-has-key($breakpoints, $breakpoint) {

@@ -4,8 +4,8 @@ const rightHand = document.querySelector(".right-hand");
 const rightEffect = document.querySelector(".right-hand--effect");
 const leftHand = document.querySelector(".left-hand");
 const leftEffect = document.querySelector(".left-hand--effect");
-const winRoundReffery = document.querySelector('.reffery-win');
-const winRoundRefferyText = winRoundReffery.querySelector('.reffery-win--text');
+const winRoundReferee = document.querySelector('.referee-win');
+const winRoundRefereeText = winRoundReferee.querySelector('.referee-win--text');
 const arrovNext = document.querySelector(".start--arrow-next");
 const progress = document.querySelector(".progress-percent");
 const targetBg = document.querySelector(".main-target");
@@ -29,8 +29,8 @@ export {
     rightEffect,
     leftHand,
     leftEffect,
-    winRoundReffery,
-    winRoundRefferyText,
+    winRoundReferee,
+    winRoundRefereeText,
     arrovNext,
     progress,
     targetBg,
