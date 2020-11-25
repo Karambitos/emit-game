@@ -46,18 +46,23 @@ const toMove = {
       this.hand = false;
       this.toMoveRightHand(e);
       const target = e.currentTarget;
-      target.classList.add('active')
-      setTimeout(() => {
-        target.classList.remove('active')
-      }, 750);
+      console.log();
+      if (!target.classList.contains('active')) {
+        target.classList.add('active')
+        setTimeout(() => {
+          target.classList.remove('active')
+        }, 750);
+      }
     } else {
       this.hand = true;
       this.toMoveLeftHand(e);
       const target = e.currentTarget;
-      target.classList.add('active')
-      setTimeout(() => {
-        target.classList.remove('active')
-      }, 750);
+      if (!target.classList.contains('active')) {
+        target.classList.add('active')
+        setTimeout(() => {
+          target.classList.remove('active')
+        }, 750);
+      }
       //delete virus
       //   if (!e.currentTarget.classList.contains("main-target")) {
       //     console.dir(e.currentTarget.remove());
