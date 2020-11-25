@@ -1,85 +1,63 @@
-// UL {
-//   position: absolute;
-//   left: -1em;
-//   right: -1em;
-//   top: -1em;
-//   bottom: -1em;
-//   margin: auto;
-//   padding: 0;
-//   width: 0;
-//   height: 0;
-//   list-style: none;
-//   animation: 40s rotate infinite linear;
-// }
+.hit-effect {
+    pointer-events: none;
+    position: absolute;
+    display: block;
+    width: 500px;
+    opacity: 0;
+    z-index: 999;
+    top: -90%;
+    left: -50%;
 
-// LI,
-// LI:before,
-// LI:after {
-//   position: absolute;
-//   border: 0 solid transparent;
-//   border-width: 0.1em 20em;
-//   border-color: transparent #000;
-//   width: 0;
-//   height: 0;
-//   font-size: 40px;
-// }
+    .hit-img {
+        width: 100%;
+    }
+}
 
-// LI {
-//   left: -20em;
-//   top: 50%;
-//   margin-top: -1.2em;
-//   transform: rotate(.1deg);
-// }
+.virusLeft.activeHit,
+.virusRight.activeHit,
+.main-target.activeHit {
+    .hit-effect {
+        opacity: 1;
+    }
+}
 
-// LI:before,
-// LI:after {
-//   left: -20em;
-//   top: -1.2em;
-//   display: block;
-//   content: "";
-// }
-
-// LI:before {
-//   transform: rotate(60deg);
-// }
-
-// LI:after {
-//   transform: rotate(-60deg);
-// }
-
-// LI:nth-child(2) {
-//   transform: rotate(15deg);
-// }
-
-// LI:nth-child(2),
-// LI:nth-child(2):before,
-// LI:nth-child(2):after {
-//   border-color: transparent #000070;
-// }
-
-// LI:nth-child(3) {
-//   transform: rotate(30deg);
-// }
-
-// LI:nth-child(3),
-// LI:nth-child(3):before,
-// LI:nth-child(3):after {
-//   border-color: transparent #000070;
-// }
-
-// LI:nth-child(4) {
-//   transform: rotate(45deg);
-// }
-
-// LI:nth-child(4),
-// LI:nth-child(4):before,
-// LI:nth-child(4):after {
-//   border-color: transparent #000070;
-// }
+.virusLeft,
+.virusRight {
+    .hit-effect {
+        width: 400px;
+        top: -100%;
+        left: -100%;
+    }
+}
 
 
-// @keyframes rotate {
-//   100% {
-//     transform: rotate(360deg);
+
+
+
+//   &--effect {
+//     margin-right: auto;
+//     top: -30%;
+//     left: 0;
+//     transform: rotateZ(-20deg);
 //   }
+// }
+
+// .right-hand {
+
+
+//   &--effect {
+//     margin-left: auto;
+//     top: -36%;
+//     right: 17%;
+//   }
+// }
+
+// &--effect {}
+
+// &--effect {
+//     pointer-events: none;
+//     position: absolute;
+//     display: block;
+//     width: 546px;
+//     opacity: 0;
 // }

@@ -37,7 +37,7 @@ body {
 
   img {
     box-shadow: none;
-    
+
   }
 
   @include respond-to('giant') {
@@ -118,9 +118,4 @@ section.unsupported-browser {
 
 .round-img {
   width: 840px;
-}
-
-.hit-img {
-  width: 540px;
-
 }

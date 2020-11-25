@@ -12,6 +12,7 @@ const targetBg = document.querySelector(".main-target");
 const slotImageBox = document.querySelector(".slot--image");
 const roundNumber = document.querySelector(".round-card");
 const roundPict = document.querySelector(".round-card> img");
+const fightContainer = document.querySelector(".fight-container");
 const animateBox = document.querySelector(".fight-container--animate-box")
 const enemy = document.querySelector('.progress-enemy>img');
 const slotEnemyActive = document.querySelectorAll('.slot--image>img');
@@ -37,5 +38,6 @@ export {
     slotImageBox,
     roundNumber,
     roundPict,
+    fightContainer,
     animateBox
 }

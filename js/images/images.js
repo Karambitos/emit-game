@@ -1,15 +1,19 @@
 let firstFigter = {
     url: './images/tramp.png',
-    alt: 'Figter Trump',
+    alt: 'Figter',
 };
 let bonusFigter = {
     url: './images/virus.png',
-    alt: 'Figter virus',
+    alt: 'Figter',
 };
 // const hitEffect = {
 //     url: './images/baaam.png',
 //     alt: 'Hit effect',
 // };
+const bonusFigterCh = {
+    url: './images/chicken.png',
+    alt: 'Figter',
+};
 const hitEffect = {
     url: './images/pow.svg',
     alt: 'Hit effect',
@@ -28,5 +32,6 @@ export {
     bonusFigter,
     hitEffect,
     bonusHitEffect,
-    roundWin
+    roundWin,
+    bonusFigterCh
 }
