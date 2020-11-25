@@ -25,7 +25,9 @@ import {
   roundWin,
 } from './images/images.js';
 
-import { typingText } from './animation.js';
+import {
+  typingText
+} from './animation.js';
 
 setTimeout(function () {
   addElement();
@@ -54,7 +56,7 @@ const toMove = {
         target.classList.add('active');
         setTimeout(() => {
           target.classList.remove('active');
-        }, 750);
+        }, 500);
       }
     } else {
       this.hand = true;
@@ -65,7 +67,7 @@ const toMove = {
         setTimeout(() => {
 
           target.classList.remove('active');
-        }, 750);
+        }, 500);
       }
       //delete virus
       //   if (!e.currentTarget.classList.contains("main-target")) {
@@ -73,7 +75,6 @@ const toMove = {
       //   }
     }
   },
-
   toMoveRightHand(e) {
     /*
      * Change the hit effect
@@ -98,7 +99,6 @@ const toMove = {
       rightEffect.style.opacity = '';
     }, 200);
   },
-
   toMoveLeftHand(e) {
     /*
      * Change the hit effect
@@ -185,18 +185,10 @@ const toMove = {
       setTimeout(function () {
         roundNumber.classList.remove('active');
         addElement();
+        refereeShow();
         document.querySelector(".mainTarget").classList.add("stars-added");
         leftHand.style.opacity = "0";
         rightHand.style.opacity = "0";
-        winRoundReffery.classList.add('active');
-        setTimeout(function () {
-          winRoundRefferyText.classList.add('active');
-          typingText();
-        }, 1000);
-        setTimeout(function () {
-          arrovNext.classList.add('active');
-        }, 4000);
-        arrovNext.addEventListener('click', toTheNextRound);
       }, 2000);
     }
   },
@@ -205,6 +197,22 @@ const toMove = {
     bar.style.marginLeft = this.barMargin + 'px';
   },
 };
+
+
+/*
+ * Go to the next round referee logic
+ */
+function refereeShow() {
+  winRoundReffery.classList.add('active');
+  setTimeout(function () {
+    winRoundRefferyText.classList.add('active');
+    typingText();
+  }, 1000);
+  setTimeout(function () {
+    arrovNext.classList.add('active');
+  }, 4000);
+  arrovNext.addEventListener('click', toTheNextRound);
+}
 
 /*
  * Go to the next round
