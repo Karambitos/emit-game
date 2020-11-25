@@ -42,7 +42,7 @@ const toMove = {
   bonusPersent: 60,
   round: 1,
   textRefery: [
-    'Wasn’t it a hard year? Show me how you Get Rid of it!', "Good Job! But not enough! Show me more."
+    'Wasn’t it a hard year? Show me how you Get Rid of it!', "Good Job! But not enough! Show me more.", "Good Job! But not enough! Show me more."
   ],
 
   toChooseHand(e) {
