@@ -54,6 +54,13 @@ const toMove = {
     if (this.hand) {
       this.hand = false;
       this.toMoveRightHand(e);
+      // const target = e.currentTarget;
+      // if (target.classList.contains('big-boss')) {
+      //   target.classList.add('active');
+      //   setTimeout(() => {
+      //     target.classList.remove('active');
+      //   }, 500);
+      // }
     } else {
       this.hand = true;
       this.toMoveLeftHand(e);

@@ -7,13 +7,14 @@ $(document).ready(() => {
     });
 });
 
-// import {
-//     startArrow,
-// } from './refs.js';
 
 import {
     winPicture
 } from './images/images.js';
+
+import {
+  typingText
+} from './animation.js';
 /*
  * check local Storage
  */
@@ -42,8 +43,10 @@ const chengePageContent = {
     titleChange: function () {
         const mainText = document.querySelector('h2.animation-title');
         mainText.textContent = 'You did It!?';
+        // mainText.css("opacity", "0");
         setTimeout(() => {
-            mainText.textContent = 'You are a real Winner for 2021!';
+            mainText.innerHTML = 'You are a real Winner for 2021!';
+            // typingText();
         }, 4000);
     },
 
