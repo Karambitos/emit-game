@@ -214,7 +214,7 @@ function toTheNextRound() {
   winRoundRefereeText.classList.remove('active');
   arrovNext.classList.remove('active');
 
-  toChangeRoundPict(`./images/round${toMove.round}.svg`);
+  toChangeRoundPict(`./images/round${toMove.round}Ref.png`);
 
   setTimeout(function () {
     let rightHand = document.querySelector('.right-hand');

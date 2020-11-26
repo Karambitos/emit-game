@@ -15,7 +15,7 @@ const bonusFigterCh = {
     alt: 'Figter',
 };
 const hitEffect = {
-    url: './images/pow.svg',
+    url: './images/powRef.png',
     alt: 'Hit effect',
 };
 // const hitEffect = {
@@ -23,11 +23,11 @@ const hitEffect = {
 //     alt: 'Hit effect',
 // };
 const bonusHitEffect = {
-    url: './images/bonus.svg',
+    url: './images/bonusRef.png',
     alt: 'Hit effect',
 };
 const roundWin = {
-    url: './images/win.svg',
+    url: './images/winRef.png',
     alt: 'Win',
 };
 
