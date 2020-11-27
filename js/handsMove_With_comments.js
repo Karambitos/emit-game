@@ -213,7 +213,7 @@ function refereeShow() {
   winRoundReferee.classList.add('active');
   setTimeout(function () {
     winRoundRefereeText.classList.add('active');
-    typingText();
+    // typingText();
   }, 1000);
   setTimeout(function () {
     arrovNext.classList.add('active');

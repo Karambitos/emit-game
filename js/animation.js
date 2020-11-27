@@ -18,7 +18,7 @@ $(document).ready(() => {
  */
 function typingText() {
     setTimeout(() => {
-        let text = $('.animation-title').text();
+        let text = $('.type-letter').text();
         let length = text.length;
         let timeOut;
         let character = 0;
@@ -28,17 +28,44 @@ function typingText() {
             timeOut = setTimeout(function () {
                 character++;
                 let type = text.substring(0, character);
-                $('.animation-title').text(type);
-                $('.animation-title').css("opacity", "1");
+                $('.type-letter').text(type);
+                $('.type-letter').css("opacity", "1");
                 typeWriter();
 
                 if (character == length) {
                     clearTimeout(timeOut);
                 }
-            }, 200);
+            }, 100);
         }
     }, 100);
 }
+
+/*
+ * Slow Typing animation
+ */
+function title(params) {
+    const title = document.querySelector('.animation-title');
+    let time = 0;
+    let str = ''
+    for (let i = 0; i < title.textContent.length; i++) {
+        const element = title.textContent[i];
+        str += `<span class="letter">${element}</span>`
+    }
+    title.textContent = ''
+    title.insertAdjacentHTML('afterbegin', str)
+
+    function ins(params) {
+        setTimeout(() => {
+            params.classList.add('letter--show')
+        }, time += 100);
+    }
+
+    document.querySelectorAll('.letter').forEach(el => {
+        ins(el)
+    });
+}
+title()
+    
 /*
  * Fighter move animation
  */
@@ -90,7 +117,6 @@ function animateDiv() {
     //     },
     // );
 }
-
 
 const moveBoxs = document.querySelectorAll('.move-box');
 moveBoxs.forEach((box) => {

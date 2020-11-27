@@ -98,8 +98,8 @@
     right: 0;
   }
 
-  75% {
-    right: -90px;
+  50% {
+    right: -50px;
   }
 
   100% {
@@ -195,12 +195,70 @@
   0% {
     transform: translateY(0);
   }
+  50% {
+    transform: translateY(-50%);
+  }
 
   100% {
     transform: translateY(100%);
   }
 }
 
+@keyframes chicken-right {
+  0% {
+    transform: translate(100%, -50%) rotate(-90deg);
+  }
+  50% {
+    transform: translate(0%, -50%) rotate(-90deg);
+  }
+  100% {
+    transform: translate(100%, -50%) rotate(-90deg);
+  }
+}
+
+@keyframes chicken-top {
+  0% {
+    transform: translate(0, -100%) rotate(180deg);
+  }
+
+  50% {
+    transform: translate(0%, -50%) rotate(180deg);
+  }
+
+  100% {
+    transform: translate(0, -100%) rotate(180deg);
+  }
+}
+
+
+@keyframes showBG {
+  0% {
+    transform: scale(0.08);
+    opacity: 0;
+  }
+
+  50% {
+    transform: scale(1);
+    opacity: 0.5;
+  }
+
+  100% {
+    transform: scale(1);
+    opacity: 1;
+  }
+}
+
+@keyframes ColorChange {
+  0% {
+    opacity: 0;
+    // background-color: crimson;
+  }
+
+  100% {
+    opacity: 1;
+    // background-color: white;
+  }
+}
 
 .move-box,
 .move-box--x {

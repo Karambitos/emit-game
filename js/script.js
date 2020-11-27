@@ -17,9 +17,6 @@ import {
   typingText
 } from './animation.js';
 
-
-
-
 /*
  * check local Storage
  */
@@ -27,14 +24,20 @@ function checkStorage() {
     const value = localStorage.getItem('key');
     if (value === null) return
     const body = document.querySelector('body');
-    body.classList.add('win-page')
+    body.classList.add('win-page');
+    body.classList.remove('main-page');
     chengePageContent.titleChange();
     chengePageContent.imageChange();
+    setTimeout(() => {
+           chengePageContent.background();
+    }, 8000);
     // chengePageContent.arrowTextChange();
     // localStorage.clear()
 }
         
-if (document.querySelector('body').classList.contains('main-page')) {
+setTimeout(() => {
+    if (document.querySelector('body').classList.contains('main-page')) {
+        console.log('dssfd');
     setTimeout(() => {
         const refereeImg = document.querySelector('.start--referee>img');
         refereeImg.src = refereeSmile.url;
@@ -42,14 +45,17 @@ if (document.querySelector('body').classList.contains('main-page')) {
     setTimeout(() => {
         const startArrow = document.querySelector('.start--arrow');
         startArrow.classList.add('active')
-        }, 11000);
+        }, 6000);
 }
+}, 100);
 
 /*
  * reset local Storage
  */
-const startArrow = document.querySelector('.start--arrow');
-startArrow.addEventListener('click', () => localStorage.clear());
+// const startArrow = document.querySelector('.start--arrow');
+// startArrow.addEventListener('click', () => localStorage.clear());
+
+
 /*
  * chenge page content
  */
@@ -58,10 +64,9 @@ const chengePageContent = {
     titleChange: function () {
         const mainText = document.querySelector('h2.animation-title');
         mainText.textContent = 'You did It!?';
-        // mainText.css("opacity", "0");
-        // setTimeout(() => {
-        //     mainText.innerHTML = 'You are a real Winner for 2021!';
-        // }, 4000);
+        setTimeout(() => {
+            $('.start--text').addClass("active")
+        }, 4000);
     },
 
     // arrowTextChange: function () {
@@ -72,6 +77,20 @@ const chengePageContent = {
     imageChange: function () {
         const startImage = document.querySelector('.start--referee>img');
         startImage.src = `${winPicture.url}`;
+    },
+
+    background: function () {
+        const logo = $('.logo');
+        const hideBox = $('.hide-box');
+        $('.background').addClass("active");
+        logo.addClass("active");
+        setTimeout(() => {
+            hideBox.fadeIn();
+        }, 4000);
+        setTimeout(() => {
+            hideBox.addClass("move");
+            logo.addClass("move");
+        }, 6000);
     }
 }
 
