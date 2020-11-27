@@ -43,7 +43,7 @@ const toMove = {
   hand: true,
   hitPersent: 12,
   bonusPersent: 60,
-  round: 1,
+  round: 2,
   textRefery: [
     'Wasn’t it a hard year? Show me how you Get Rid of it!',
     'Good Job! But not enough! Show me more.',
@@ -54,13 +54,6 @@ const toMove = {
     if (this.hand) {
       this.hand = false;
       this.toMoveRightHand(e);
-      // const target = e.currentTarget;
-      // if (target.classList.contains('big-boss')) {
-      //   target.classList.add('active');
-      //   setTimeout(() => {
-      //     target.classList.remove('active');
-      //   }, 500);
-      // }
     } else {
       this.hand = true;
       this.toMoveLeftHand(e);
@@ -142,6 +135,12 @@ const toMove = {
         setTimeout(() => {
           if (this.round === 2) {
             addChickenElement();
+            setTimeout(() => {
+              $('.big-boss').addClass('big-boss--right');
+            }, 5000);
+            setTimeout(() => {
+              $('.big-boss').addClass('big-boss--top');
+            }, 10000);
           } else {
             addVirusElement();
           }

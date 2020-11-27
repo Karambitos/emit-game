@@ -13,6 +13,7 @@
   opacity: 1;
   pointer-events: all;
   visibility: inherit;
+  overflow: hidden;
 
   &::before {
     content: '';
@@ -69,6 +70,25 @@
       pointer-events: none;
       z-index: 5;
     }
+    h2.final-title{
+      display: none;
+      opacity: 0;
+      pointer-events: none;
+      visibility: hidden;
+    }
+
+    .animation-title{
+      .letter {
+        opacity: 0;
+        transition: opacity 2000ms;
+      }
+
+      .letter--show {
+        opacity: 1;
+        transition: opacity 2000ms;
+
+      }
+    }
   }
 
   &--referee {
@@ -112,8 +132,7 @@
     }
 
     &.active {
-      @include animate(all);
-      animation: arrow 1000ms infinite;
+      animation: arrow 2000ms infinite;
       opacity: 1;
       visibility: inherit;
       pointer-events: all;
@@ -141,17 +160,39 @@
 
 .win-page {
   .start--text {
+    justify-content: center;
+    align-items: center;
+    display: flex;
     text-align: center;
-
     h2 {
       font-size: 140px;
       line-height: 109%;
     }
-  }
+    
+    &.active{
+      .animation-title{
+        display: none;
+      }
+      .final-title {
+        font-size: 90px;
+        display: block;
+        animation: zoom 1000ms cubic-bezier(0, 0, 0.58, 1);
+        opacity: 1;
+        visibility: inherit;
+        pointer-events: all;
 
+        span{
+          font-size: 140px;
+        }
+      }
+    }
+
+  }
+  
   .start--arrow {
     display: none;
     visibility: hidden;
   }
+  
 }
 

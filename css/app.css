@@ -220,8 +220,8 @@
   0% {
     right: 0;
   }
-  75% {
-    right: -90px;
+  50% {
+    right: -50px;
   }
   100% {
     right: 0;
@@ -232,8 +232,8 @@
   0% {
     right: 0;
   }
-  75% {
-    right: -90px;
+  50% {
+    right: -50px;
   }
   100% {
     right: 0;
@@ -415,6 +415,10 @@
     -webkit-transform: translateY(0);
             transform: translateY(0);
   }
+  50% {
+    -webkit-transform: translateY(-50%);
+            transform: translateY(-50%);
+  }
   100% {
     -webkit-transform: translateY(100%);
             transform: translateY(100%);
@@ -426,9 +430,127 @@
     -webkit-transform: translateY(0);
             transform: translateY(0);
   }
+  50% {
+    -webkit-transform: translateY(-50%);
+            transform: translateY(-50%);
+  }
   100% {
     -webkit-transform: translateY(100%);
             transform: translateY(100%);
+  }
+}
+
+@-webkit-keyframes chicken-right {
+  0% {
+    -webkit-transform: translate(100%, -50%) rotate(-90deg);
+            transform: translate(100%, -50%) rotate(-90deg);
+  }
+  50% {
+    -webkit-transform: translate(0%, -50%) rotate(-90deg);
+            transform: translate(0%, -50%) rotate(-90deg);
+  }
+  100% {
+    -webkit-transform: translate(100%, -50%) rotate(-90deg);
+            transform: translate(100%, -50%) rotate(-90deg);
+  }
+}
+
+@keyframes chicken-right {
+  0% {
+    -webkit-transform: translate(100%, -50%) rotate(-90deg);
+            transform: translate(100%, -50%) rotate(-90deg);
+  }
+  50% {
+    -webkit-transform: translate(0%, -50%) rotate(-90deg);
+            transform: translate(0%, -50%) rotate(-90deg);
+  }
+  100% {
+    -webkit-transform: translate(100%, -50%) rotate(-90deg);
+            transform: translate(100%, -50%) rotate(-90deg);
+  }
+}
+
+@-webkit-keyframes chicken-top {
+  0% {
+    -webkit-transform: translate(0, -100%) rotate(180deg);
+            transform: translate(0, -100%) rotate(180deg);
+  }
+  50% {
+    -webkit-transform: translate(0%, -50%) rotate(180deg);
+            transform: translate(0%, -50%) rotate(180deg);
+  }
+  100% {
+    -webkit-transform: translate(0, -100%) rotate(180deg);
+            transform: translate(0, -100%) rotate(180deg);
+  }
+}
+
+@keyframes chicken-top {
+  0% {
+    -webkit-transform: translate(0, -100%) rotate(180deg);
+            transform: translate(0, -100%) rotate(180deg);
+  }
+  50% {
+    -webkit-transform: translate(0%, -50%) rotate(180deg);
+            transform: translate(0%, -50%) rotate(180deg);
+  }
+  100% {
+    -webkit-transform: translate(0, -100%) rotate(180deg);
+            transform: translate(0, -100%) rotate(180deg);
+  }
+}
+
+@-webkit-keyframes showBG {
+  0% {
+    -webkit-transform: scale(0.08);
+            transform: scale(0.08);
+    opacity: 0;
+  }
+  50% {
+    -webkit-transform: scale(1);
+            transform: scale(1);
+    opacity: 0.5;
+  }
+  100% {
+    -webkit-transform: scale(1);
+            transform: scale(1);
+    opacity: 1;
+  }
+}
+
+@keyframes showBG {
+  0% {
+    -webkit-transform: scale(0.08);
+            transform: scale(0.08);
+    opacity: 0;
+  }
+  50% {
+    -webkit-transform: scale(1);
+            transform: scale(1);
+    opacity: 0.5;
+  }
+  100% {
+    -webkit-transform: scale(1);
+            transform: scale(1);
+    opacity: 1;
+  }
+}
+
+@-webkit-keyframes ColorChange {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+@keyframes ColorChange {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
   }
 }
 
@@ -478,7 +600,7 @@ body {
   position: absolute;
   top: 3%;
   right: 100px;
-  z-index: 10;
+  z-index: 30;
 }
 
 .logo img {
@@ -490,6 +612,10 @@ body {
   .logo {
     right: 30px;
   }
+}
+
+.hide-box {
+  display: none;
 }
 
 h1,
@@ -562,7 +688,7 @@ section.unsupported-browser {
   display: none;
 }
 
-.animation-title {
+.type-letter {
   opacity: 0;
 }
 
@@ -576,6 +702,72 @@ section.unsupported-browser {
 
 .fighter {
   cursor: pointer;
+}
+
+.background {
+  z-index: 20;
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  overflow: hidden;
+  pointer-events: none;
+}
+
+.background.active {
+  -webkit-animation: ColorChange 3000ms cubic-bezier(0.4, 0, 0.2, 1);
+          animation: ColorChange 3000ms cubic-bezier(0.4, 0, 0.2, 1);
+  background-color: #5dccd3;
+}
+
+.logo.active {
+  -webkit-transition: 3000ms ease;
+  transition: 3000ms ease;
+  -webkit-transform: translate(50%, -50%) scale(1.6);
+          transform: translate(50%, -50%) scale(1.6);
+  top: 50%;
+  right: 50%;
+}
+
+.logo.active.move {
+  right: 54%;
+}
+
+.hide-box {
+  position: absolute;
+  -webkit-transform: translate(50%, -50%);
+          transform: translate(50%, -50%);
+  top: 50%;
+  right: 50%;
+  width: 100%;
+  height: 200px;
+  z-index: 29;
+  overflow: hidden;
+}
+
+.hide-box--color {
+  z-index: 2;
+  background-color: #5dccd3;
+  position: absolute;
+  width: 50%;
+  height: 100%;
+  left: 0;
+}
+
+.hide-box img {
+  -webkit-transition: 3000ms ease;
+  transition: 3000ms ease;
+  top: 50%;
+  right: 50%;
+  -webkit-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
+  height: 100px;
+  z-index: 1;
+  position: absolute;
+}
+
+.hide-box.move img {
+  -webkit-transform: translate(110%, -50%);
+          transform: translate(110%, -50%);
 }
 
 /**components*/
@@ -601,6 +793,7 @@ section.unsupported-browser {
   opacity: 1;
   pointer-events: all;
   visibility: inherit;
+  overflow: hidden;
 }
 
 .start::before {
@@ -665,6 +858,25 @@ section.unsupported-browser {
   z-index: 5;
 }
 
+.start--text h2.final-title {
+  display: none;
+  opacity: 0;
+  pointer-events: none;
+  visibility: hidden;
+}
+
+.start--text .animation-title .letter {
+  opacity: 0;
+  -webkit-transition: opacity 2000ms;
+  transition: opacity 2000ms;
+}
+
+.start--text .animation-title .letter--show {
+  opacity: 1;
+  -webkit-transition: opacity 2000ms;
+  transition: opacity 2000ms;
+}
+
 .start--referee {
   -webkit-animation: referee 3000ms cubic-bezier(0.4, 0, 1, 1), move 3000ms linear 3000ms;
           animation: referee 3000ms cubic-bezier(0.4, 0, 1, 1), move 3000ms linear 3000ms;
@@ -711,10 +923,8 @@ section.unsupported-browser {
 }
 
 .start--arrow.active {
-  -webkit-transition: all 0.3s ease-in-out;
-  transition: all 0.3s ease-in-out;
-  -webkit-animation: arrow 1000ms infinite;
-          animation: arrow 1000ms infinite;
+  -webkit-animation: arrow 2000ms infinite;
+          animation: arrow 2000ms infinite;
   opacity: 1;
   visibility: inherit;
   pointer-events: all;
@@ -737,12 +947,39 @@ section.unsupported-browser {
 }
 
 .win-page .start--text {
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
   text-align: center;
 }
 
 .win-page .start--text h2 {
   font-size: 140px;
   line-height: 109%;
+}
+
+.win-page .start--text.active .animation-title {
+  display: none;
+}
+
+.win-page .start--text.active .final-title {
+  font-size: 90px;
+  display: block;
+  -webkit-animation: zoom 1000ms cubic-bezier(0, 0, 0.58, 1);
+          animation: zoom 1000ms cubic-bezier(0, 0, 0.58, 1);
+  opacity: 1;
+  visibility: inherit;
+  pointer-events: all;
+}
+
+.win-page .start--text.active .final-title span {
+  font-size: 140px;
 }
 
 .win-page .start--arrow {
@@ -1124,9 +1361,31 @@ section.unsupported-browser {
 .big-boss {
   width: 50%;
   position: absolute;
-  bottom: -50%;
-  -webkit-animation: chicken 10000ms ease 1000ms;
-          animation: chicken 10000ms ease 1000ms;
+  bottom: -110%;
+  -webkit-animation: chicken 5000ms ease 800ms;
+          animation: chicken 5000ms ease 800ms;
+}
+
+.big-boss--right {
+  -webkit-animation: chicken-right 5000ms ease 800ms;
+          animation: chicken-right 5000ms ease 800ms;
+  right: -30%;
+  top: 50%;
+  bottom: auto;
+  left: auto;
+  -webkit-transform: translate(100%, -50%) rotate(-90deg);
+          transform: translate(100%, -50%) rotate(-90deg);
+}
+
+.big-boss--top {
+  -webkit-animation: chicken-top 5000ms ease 800ms;
+          animation: chicken-top 5000ms ease 800ms;
+  right: 25%;
+  top: 0;
+  bottom: auto;
+  left: auto;
+  -webkit-transform: translate(0, -100%) rotate(180deg);
+          transform: translate(0, -100%) rotate(180deg);
 }
 
 .referee-win {
