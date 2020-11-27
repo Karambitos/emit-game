@@ -867,14 +867,14 @@ section.unsupported-browser {
 
 .start--text .animation-title .letter {
   opacity: 0;
-  -webkit-transition: opacity 2000ms;
-  transition: opacity 2000ms;
+  -webkit-transition: opacity 1000ms;
+  transition: opacity 1000ms;
 }
 
 .start--text .animation-title .letter--show {
   opacity: 1;
-  -webkit-transition: opacity 2000ms;
-  transition: opacity 2000ms;
+  -webkit-transition: opacity 1000ms;
+  transition: opacity 1000ms;
 }
 
 .start--referee {

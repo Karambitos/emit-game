@@ -43,7 +43,7 @@ const toMove = {
   hand: true,
   hitPersent: 12,
   bonusPersent: 60,
-  round: 2,
+  round: 1,
   textRefery: [
     'Wasn’t it a hard year? Show me how you Get Rid of it!',
     'Good Job! But not enough! Show me more.',
@@ -137,10 +137,10 @@ const toMove = {
             addChickenElement();
             setTimeout(() => {
               $('.big-boss').addClass('big-boss--right');
-            }, 5000);
+            }, 4000);
             setTimeout(() => {
               $('.big-boss').addClass('big-boss--top');
-            }, 10000);
+            }, 8000);
           } else {
             addVirusElement();
           }
