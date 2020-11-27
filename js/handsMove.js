@@ -43,7 +43,7 @@ const toMove = {
   hand: true,
   hitPersent: 12,
   bonusPersent: 60,
-  round: 2,
+  round: 1,
   textRefery: [
     'Wasn’t it a hard year? Show me how you Get Rid of it!',
     'Good Job! But not enough! Show me more.',
