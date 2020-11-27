@@ -12,10 +12,10 @@ $(document).ready(() => {
     typingText();
 
 });
+
 /*
  * Typing animation
  */
-
 function typingText() {
     setTimeout(() => {
         let text = $('.animation-title').text();
@@ -35,7 +35,7 @@ function typingText() {
                 if (character == length) {
                     clearTimeout(timeOut);
                 }
-            }, 100);
+            }, 200);
         }
     }, 100);
 }

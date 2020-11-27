@@ -73,13 +73,14 @@
 
   &--referee {
     animation: referee 3000ms cubic-bezier(0.4, 0, 1, 1),
-      move 3000ms linear infinite 3000ms;
+      move 3000ms linear 3000ms;
 
     position: absolute;
     display: flex;
     bottom: -10%;
     left: 4%;
     z-index: 2;
+    max-width: 500px;
     height: 100%;
 
     img {
@@ -89,32 +90,36 @@
   }
 
   &--arrow {
-    animation: pulse 1000ms infinite;
+    
     position: absolute;
     right: -10%;
     bottom: 0;
+    opacity: 0;
+    visibility: hidden;
+    pointer-events: none;
+    cursor: pointer;
+
+
+    &:hover {
+      animation: none;
+      right: -50px;
+    }
 
     &-next {
       @include animate(all);
-      animation: none;
-      opacity: 0;
-      visibility: hidden;
-      pointer-events: none;
-      right: 100px;
       bottom: 42px;
+      transform: translateX(-100%)
     }
 
-    &-next.active {
-      animation: pulse 1000ms infinite;
+    &.active {
+      @include animate(all);
+      animation: arrow 1000ms infinite;
       opacity: 1;
       visibility: inherit;
       pointer-events: all;
     }
 
-    &:hover {
-      animation: none;
-      transform: scale3d(1.1, 1.1, 1.1) rotate3d(0, 0, 1, 3deg);
-    }
+    
   }
 
   &--arrow-text {
