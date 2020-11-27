@@ -80,12 +80,12 @@
     .animation-title{
       .letter {
         opacity: 0;
-        transition: opacity 2000ms;
+        transition: opacity 1000ms;
       }
 
       .letter--show {
         opacity: 1;
-        transition: opacity 2000ms;
+        transition: opacity 1000ms;
 
       }
     }
