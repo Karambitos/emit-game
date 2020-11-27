@@ -192,5 +192,6 @@ moveBoxsX.forEach((box) => {
 
 
 export {
-    typingText
+    typingText,
+    title
 }

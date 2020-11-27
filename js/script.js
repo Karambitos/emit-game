@@ -14,7 +14,8 @@ import {
 } from './images/images.js';
 
 import {
-  typingText
+    typingText,
+    title
 } from './animation.js';
 
 /*
@@ -30,7 +31,7 @@ function checkStorage() {
     chengePageContent.imageChange();
     setTimeout(() => {
            chengePageContent.background();
-    }, 8000);
+    }, 7000);
     // chengePageContent.arrowTextChange();
     // localStorage.clear()
 }
@@ -64,6 +65,7 @@ const chengePageContent = {
     titleChange: function () {
         const mainText = document.querySelector('h2.animation-title');
         mainText.textContent = 'You did It!?';
+        title();
         setTimeout(() => {
             $('.start--text').addClass("active")
         }, 4000);
@@ -86,11 +88,11 @@ const chengePageContent = {
         logo.addClass("active");
         setTimeout(() => {
             hideBox.fadeIn();
-        }, 4000);
+        }, 2900);
         setTimeout(() => {
             hideBox.addClass("move");
             logo.addClass("move");
-        }, 6000);
+        }, 3000);
     }
 }
 
