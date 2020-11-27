@@ -2,6 +2,14 @@ const firstFigter = {
     url: './images/tramp.png',
     alt: 'Figter',
 };
+const referee = {
+    url: './images/referee.png',
+    alt: 'Referee',
+};
+const refereeSmile = {
+    url: './images/referee-smile.png',
+    alt: 'Referee',
+};
 const bonusFigter = {
     url: './images/virus.png',
     alt: 'Figter',
@@ -32,6 +40,7 @@ const roundWin = {
 };
 
 export {
+    refereeSmile,
     winPicture,
     firstFigter,
     bonusFigter,

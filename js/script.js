@@ -7,13 +7,19 @@ $(document).ready(() => {
     });
 });
 
-// import {
-//     startArrow,
-// } from './refs.js';
 
 import {
+    refereeSmile,
     winPicture
 } from './images/images.js';
+
+import {
+  typingText
+} from './animation.js';
+
+
+
+
 /*
  * check local Storage
  */
@@ -24,16 +30,26 @@ function checkStorage() {
     body.classList.add('win-page')
     chengePageContent.titleChange();
     chengePageContent.imageChange();
-    chengePageContent.arrowTextChange();
-    localStorage.clear()
+    // chengePageContent.arrowTextChange();
+    // localStorage.clear()
+}
+        
+if (document.querySelector('body').classList.contains('main-page')) {
+    setTimeout(() => {
+        const refereeImg = document.querySelector('.start--referee>img');
+        refereeImg.src = refereeSmile.url;
+    }, 6000);
+    setTimeout(() => {
+        const startArrow = document.querySelector('.start--arrow');
+        startArrow.classList.add('active')
+        }, 11000);
 }
 
 /*
  * reset local Storage
  */
-// const startArrow = document.querySelector('.start--arrow');
-// startArrow.addEventListener('click', () => localStorage.clear());
-
+const startArrow = document.querySelector('.start--arrow');
+startArrow.addEventListener('click', () => localStorage.clear());
 /*
  * chenge page content
  */
@@ -42,15 +58,16 @@ const chengePageContent = {
     titleChange: function () {
         const mainText = document.querySelector('h2.animation-title');
         mainText.textContent = 'You did It!?';
-        setTimeout(() => {
-            mainText.textContent = 'You are a real Winner for 2021!';
-        }, 4000);
+        // mainText.css("opacity", "0");
+        // setTimeout(() => {
+        //     mainText.innerHTML = 'You are a real Winner for 2021!';
+        // }, 4000);
     },
 
-    arrowTextChange: function () {
-        const startArrowText = document.querySelector('.start--arrow-text');
-        startArrowText.textContent = 'Again?';
-    },
+    // arrowTextChange: function () {
+    //     const startArrowText = document.querySelector('.start--arrow-text');
+    //     startArrowText.textContent = 'Again?';
+    // },
 
     imageChange: function () {
         const startImage = document.querySelector('.start--referee>img');

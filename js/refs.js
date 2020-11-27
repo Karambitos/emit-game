@@ -1,4 +1,3 @@
-// const startArrow = document.querySelector('.start--arrow');
 const bar = document.querySelector('.bar');
 const progressLine = document.querySelector("span.progress");
 const rightHand = document.querySelector(".right-hand");
@@ -19,9 +18,7 @@ const enemy = document.querySelector('.progress-enemy>img');
 const slotEnemyActive = document.querySelectorAll('.slot--image>img');
 const slotenemy = document.querySelectorAll('.slot--image');
 const animationTitle = document.querySelector('.animation-title');
-
 export {
-    // startArrow,
     animationTitle,
     slotenemy,
     slotEnemyActive,

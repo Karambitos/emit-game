@@ -216,49 +216,27 @@
   }
 }
 
-@-webkit-keyframes pulse {
+@-webkit-keyframes arrow {
   0% {
-    -webkit-transform: scale3d(1, 1, 1);
-            transform: scale3d(1, 1, 1);
+    right: 0;
   }
-  20% {
-    -webkit-transform: scale3d(0.9, 0.9, 0.9);
-            transform: scale3d(0.9, 0.9, 0.9);
-  }
-  90% {
-    -webkit-transform: scale3d(1.1, 1.1, 1.1);
-            transform: scale3d(1.1, 1.1, 1.1);
-  }
-  80% {
-    -webkit-transform: scale3d(1.1, 1.1, 1.1);
-            transform: scale3d(1.1, 1.1, 1.1);
+  75% {
+    right: -90px;
   }
   100% {
-    -webkit-transform: scale3d(1, 1, 1);
-            transform: scale3d(1, 1, 1);
+    right: 0;
   }
 }
 
-@keyframes pulse {
+@keyframes arrow {
   0% {
-    -webkit-transform: scale3d(1, 1, 1);
-            transform: scale3d(1, 1, 1);
+    right: 0;
   }
-  20% {
-    -webkit-transform: scale3d(0.9, 0.9, 0.9);
-            transform: scale3d(0.9, 0.9, 0.9);
-  }
-  90% {
-    -webkit-transform: scale3d(1.1, 1.1, 1.1);
-            transform: scale3d(1.1, 1.1, 1.1);
-  }
-  80% {
-    -webkit-transform: scale3d(1.1, 1.1, 1.1);
-            transform: scale3d(1.1, 1.1, 1.1);
+  75% {
+    right: -90px;
   }
   100% {
-    -webkit-transform: scale3d(1, 1, 1);
-            transform: scale3d(1, 1, 1);
+    right: 0;
   }
 }
 
@@ -462,8 +440,8 @@
           transform-origin: 50% 50%;
   -webkit-transform-style: preserve-3d;
           transform-style: preserve-3d;
-  -webkit-transform: translateZ(100px) rotateY(calc(var(--x) * 16deg)) rotateX(calc(var(--y) * -16deg));
-          transform: translateZ(100px) rotateY(calc(var(--x) * 16deg)) rotateX(calc(var(--y) * -16deg));
+  -webkit-transform: translateZ(100px) rotateY(calc(var(--x) * 26deg)) rotateX(calc(var(--y) * -26deg));
+          transform: translateZ(100px) rotateY(calc(var(--x) * 26deg)) rotateX(calc(var(--y) * -26deg));
 }
 
 /*
@@ -688,8 +666,8 @@ section.unsupported-browser {
 }
 
 .start--referee {
-  -webkit-animation: referee 3000ms cubic-bezier(0.4, 0, 1, 1), move 3000ms linear infinite 3000ms;
-          animation: referee 3000ms cubic-bezier(0.4, 0, 1, 1), move 3000ms linear infinite 3000ms;
+  -webkit-animation: referee 3000ms cubic-bezier(0.4, 0, 1, 1), move 3000ms linear 3000ms;
+          animation: referee 3000ms cubic-bezier(0.4, 0, 1, 1), move 3000ms linear 3000ms;
   position: absolute;
   display: -webkit-box;
   display: -ms-flexbox;
@@ -697,6 +675,7 @@ section.unsupported-browser {
   bottom: -10%;
   left: 4%;
   z-index: 2;
+  max-width: 500px;
   height: 100%;
 }
 
@@ -708,38 +687,37 @@ section.unsupported-browser {
 }
 
 .start--arrow {
-  -webkit-animation: pulse 1000ms infinite;
-          animation: pulse 1000ms infinite;
   position: absolute;
   right: -10%;
   bottom: 0;
-}
-
-.start--arrow-next {
-  -webkit-transition: all 0.3s ease-in-out;
-  transition: all 0.3s ease-in-out;
-  -webkit-animation: none;
-          animation: none;
   opacity: 0;
   visibility: hidden;
   pointer-events: none;
-  right: 100px;
-  bottom: 42px;
-}
-
-.start--arrow-next.active {
-  -webkit-animation: pulse 1000ms infinite;
-          animation: pulse 1000ms infinite;
-  opacity: 1;
-  visibility: inherit;
-  pointer-events: all;
+  cursor: pointer;
 }
 
 .start--arrow:hover {
   -webkit-animation: none;
           animation: none;
-  -webkit-transform: scale3d(1.1, 1.1, 1.1) rotate3d(0, 0, 1, 3deg);
-          transform: scale3d(1.1, 1.1, 1.1) rotate3d(0, 0, 1, 3deg);
+  right: -50px;
+}
+
+.start--arrow-next {
+  -webkit-transition: all 0.3s ease-in-out;
+  transition: all 0.3s ease-in-out;
+  bottom: 42px;
+  -webkit-transform: translateX(-100%);
+          transform: translateX(-100%);
+}
+
+.start--arrow.active {
+  -webkit-transition: all 0.3s ease-in-out;
+  transition: all 0.3s ease-in-out;
+  -webkit-animation: arrow 1000ms infinite;
+          animation: arrow 1000ms infinite;
+  opacity: 1;
+  visibility: inherit;
+  pointer-events: all;
 }
 
 .start--arrow-text {
@@ -981,27 +959,49 @@ section.unsupported-browser {
 /*
 * Hands
 */
-.right-hand {
-  -webkit-animation: referee 1000ms cubic-bezier(0.4, 0, 1, 1), move 2500ms linear infinite 1000ms;
-          animation: referee 1000ms cubic-bezier(0.4, 0, 1, 1), move 2500ms linear infinite 1000ms;
-  right: 18%;
-  bottom: -23%;
-  width: 25%;
+.right-hand,
+.left-hand {
   position: absolute;
+  width: 25%;
   z-index: 10;
   opacity: 1;
 }
 
-.left-hand {
+.right-hand--effect,
+.left-hand--effect {
+  pointer-events: none;
+  position: absolute;
+  display: block;
+  width: 546px;
+}
+
+.right-hand > img,
+.left-hand > img {
   -webkit-animation: referee 1000ms cubic-bezier(0.4, 0, 1, 1), move 2500ms linear infinite 2000ms;
           animation: referee 1000ms cubic-bezier(0.4, 0, 1, 1), move 2500ms linear infinite 2000ms;
-  position: absolute;
+}
+
+.right-hand {
+  right: 18%;
+  bottom: -23%;
+}
+
+.right-hand--effect {
+  top: -50%;
+  left: -50%;
+  opacity: 0;
+}
+
+.left-hand {
   left: 13%;
   bottom: -28%;
-  width: 25%;
-  position: absolute;
-  z-index: 10;
-  opacity: 1;
+}
+
+.left-hand--effect {
+  opacity: 0;
+  margin-right: auto;
+  top: -30%;
+  left: 0;
 }
 
 .main-target {
@@ -1142,6 +1142,8 @@ section.unsupported-browser {
 .referee-win.active {
   -webkit-animation: referee 1000ms cubic-bezier(0.4, 0, 1, 1), move 3000ms linear infinite 1000ms;
           animation: referee 1000ms cubic-bezier(0.4, 0, 1, 1), move 3000ms linear infinite 1000ms;
+  opacity: 1;
+  visibility: inherit;
 }
 
 .referee-win--text {
@@ -1172,15 +1174,6 @@ section.unsupported-browser {
   -webkit-animation: zoom-in 1000ms ease-out;
           animation: zoom-in 1000ms ease-out;
   opacity: 1;
-}
-
-/*
-* active class
-*/
-.active {
-  opacity: 1;
-  visibility: inherit;
-  pointer-events: all;
 }
 
 .hit-effect {
