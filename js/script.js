@@ -32,8 +32,7 @@ function checkStorage() {
     setTimeout(() => {
            chengePageContent.background();
     }, 7000);
-    // chengePageContent.arrowTextChange();
-    // localStorage.clear()
+    localStorage.clear()
 }
         
 setTimeout(() => {
