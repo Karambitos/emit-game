@@ -37,7 +37,6 @@ function checkStorage() {
         
 setTimeout(() => {
     if (document.querySelector('body').classList.contains('main-page')) {
-        console.log('dssfd');
     setTimeout(() => {
         const refereeImg = document.querySelector('.start--referee>img');
         refereeImg.src = refereeSmile.url;
