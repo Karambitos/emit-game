@@ -59,6 +59,26 @@ const toMove = {
       this.toMoveLeftHand(e);
     }
   },
+
+  wrongMoveHand(e) {
+    if (!e.target.parentNode.classList.contains('fighter')) {
+        if (this.hand) {
+        this.hand = false;
+        rightHand.style.bottom = (-20) + '%';
+        setTimeout(function () {
+          rightHand.style.bottom = (-23) + '%';
+        }, 200);
+        } else {
+        this.hand = true;
+        leftHand.style.bottom = (-25) + '%';
+        setTimeout(function () {
+          leftHand.style.bottom = (-28) + '%';
+        }, 200);
+      }
+    } return
+    
+  },
+    
   toMoveRightHand(e) {
     let target = e.currentTarget;
     hitEffectAdd(target);
@@ -136,11 +156,19 @@ const toMove = {
           if (this.round === 2) {
             addChickenElement();
             setTimeout(() => {
-              $('.big-boss').addClass('big-boss--right');
+              $('.bigBoss').addClass('big-boss--right');
+              console.log('4000');
             }, 4000);
             setTimeout(() => {
+              $('.big-boss').removeClass('big-boss--right');
               $('.big-boss').addClass('big-boss--top');
+              console.log('8000');
             }, 8000);
+            setTimeout(() => {
+              $('.big-boss').removeClass('big-boss--top');
+              $('.big-boss').addClass('big-boss--right');
+              console.log('8000');
+            }, 12000);
           } else {
             addVirusElement();
           }
@@ -195,7 +223,7 @@ function refereeShow() {
     arrovNext.classList.add('active');
   }, 4000);
   arrovNext.addEventListener('click', toTheNextRound);
-}
+};
 /*
  * Go to the next round
  */
@@ -230,19 +258,18 @@ function toTheNextRound() {
 
     addElement();
   }, 1000);
-}
+};
 
 function stopAnimation() {
   const targetBg = document.querySelector('.main-target');
   targetBg.classList.remove('main-target-animate');
-}
+};
 
 function toChangeRoundPict(pict) {
   roundPict.setAttribute('src', pict);
-
   roundNumber.classList.add('active');
   roundNumberHide();
-}
+};
 /*
  * Hide round Number
  */
@@ -250,10 +277,11 @@ function roundNumberHide() {
   setTimeout(function () {
     roundNumber.classList.remove('active');
   }, 1500);
-}
+};
 /*
  * Create main element
  */
+
 function addElement() {
   let div = `<div class='main-target main-target-animate mainTarget fighter'>
                 <span class ="star-box"></span>
@@ -272,13 +300,14 @@ function addElement() {
   document
     .querySelector('.fight-container--animate-box')
     .insertAdjacentHTML('beforeend', div);
-
+  
   let allTargets = document.querySelectorAll('.mainTarget');
 
   allTargets.forEach(el =>
     el.addEventListener('click', e => toMove.toChooseHand(e)),
   );
-}
+};
+
 /*
  * Create virus element
  */
@@ -308,7 +337,7 @@ function addVirusElement() {
   allTargets.forEach(el =>
     el.addEventListener('click', e => toMove.toChooseHand(e)),
   );
-}
+};
 
 /*
  * Create Chicken element
@@ -325,12 +354,12 @@ function addChickenElement() {
             </div>`;
   fightContainer.insertAdjacentHTML('beforeend', div);
 
-  let allTargets = document.querySelectorAll('.target');
+  // let allTargets = document.querySelectorAll('.target');
 
-  allTargets.forEach(el =>
-    el.addEventListener('click', e => toMove.toChooseHand(e)),
-  );
-}
+  // allTargets.forEach(el =>
+  //   el.addEventListener('click', e => toMove.toChooseHand(e)),
+  // );
+};
 
 /*
  * Create hands Hit effect
@@ -348,4 +377,7 @@ function hitEffectAdd(target) {
   setTimeout(function () {
     target.classList.remove('active')
   }, 2500);
-}
+};
+
+const ringSection = document.querySelector('.fight-container');
+ringSection.addEventListener('click', e => toMove.wrongMoveHand(e));

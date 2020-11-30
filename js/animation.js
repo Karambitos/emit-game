@@ -31,7 +31,6 @@ function typingText() {
                 $('.type-letter').text(type);
                 $('.type-letter').css("opacity", "1");
                 typeWriter();
-
                 if (character == length) {
                     clearTimeout(timeOut);
                 }
@@ -192,5 +191,6 @@ moveBoxsX.forEach((box) => {
 
 
 export {
-    typingText
+    typingText,
+    title
 }

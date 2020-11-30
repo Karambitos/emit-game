@@ -132,27 +132,45 @@ section.unsupported-browser {
 }
 
 
-// .BG{
-//   @include animate (all);
-//   background-color: lightblue;
-//   position: absolute;
-//   // bottom: 0;
-//   // left: 0;
-//   top: 20px;
-//   right: 100px;
-//   z-index: 10;
+.hit-effect {
+  pointer-events: none;
+  position: absolute;
+  display: block;
+  width: 500px;
+  opacity: 0;
+  z-index: 999;
+  top: -90%;
+  left: -50%;
 
-//   border-radius: 50%;
-// }
+  .hit-img {
+    width: 100%;
+  }
+}
 
-// .BG.active{
-//   @include animate (all);
+.big-boss.activeHit,
+.virusLeft.activeHit,
+.virusRight.activeHit,
+.main-target.activeHit {
+  .hit-effect {
+    opacity: 1;
+  }
+}
 
-//   bottom: 0;
-//   left: 0;
-//   top: 0;
-//   right: 0;
-// }
+.virusLeft,
+.virusRight {
+  .hit-effect {
+    width: 400px;
+    top: -100%;
+    left: -100%;
+  }
+}
+
+.big-boss {
+  .hit-effect {
+    top: 300px;
+    left: 70px;
+  }
+}
 
 .background {
   z-index: 20;

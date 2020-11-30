@@ -14,7 +14,8 @@ import {
 } from './images/images.js';
 
 import {
-  typingText
+    typingText,
+    title
 } from './animation.js';
 
 /*
@@ -30,14 +31,12 @@ function checkStorage() {
     chengePageContent.imageChange();
     setTimeout(() => {
            chengePageContent.background();
-    }, 8000);
-    // chengePageContent.arrowTextChange();
-    // localStorage.clear()
+    }, 7000);
+    localStorage.clear()
 }
         
 setTimeout(() => {
     if (document.querySelector('body').classList.contains('main-page')) {
-        console.log('dssfd');
     setTimeout(() => {
         const refereeImg = document.querySelector('.start--referee>img');
         refereeImg.src = refereeSmile.url;
@@ -64,6 +63,7 @@ const chengePageContent = {
     titleChange: function () {
         const mainText = document.querySelector('h2.animation-title');
         mainText.textContent = 'You did It!?';
+        title();
         setTimeout(() => {
             $('.start--text').addClass("active")
         }, 4000);
@@ -86,11 +86,11 @@ const chengePageContent = {
         logo.addClass("active");
         setTimeout(() => {
             hideBox.fadeIn();
-        }, 4000);
+        }, 2900);
         setTimeout(() => {
             hideBox.addClass("move");
             logo.addClass("move");
-        }, 6000);
+        }, 3000);
     }
 }
 
