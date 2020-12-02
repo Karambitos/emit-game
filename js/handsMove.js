@@ -46,7 +46,7 @@ const toMove = {
   round: 1,
   textRefery: [
     'Wasn’t it a hard year? Show me how you Get Rid of it!',
-    'Good Job! But not enough! Show me more.',
+    'Gut gemacht! Mal sehen, was du noch drauf hast!',
     'Next round.',
   ],
 
@@ -59,7 +59,6 @@ const toMove = {
       this.toMoveLeftHand(e);
     }
   },
-
   wrongMoveHand(e) {
     if (!e.target.parentNode.classList.contains('fighter')) {
         if (this.hand) {
@@ -78,7 +77,6 @@ const toMove = {
     } return
     
   },
-    
   toMoveRightHand(e) {
     let target = e.currentTarget;
     hitEffectAdd(target);
@@ -147,34 +145,30 @@ const toMove = {
     if (!document.querySelector('.virusRight') &&
       !document.querySelector('.big-boss')) {
       if (parseInt(progress.textContent) >= this.bonusPersent) {
-        // this.removeAllFighters();
         toChangeRoundPict(`${bonusHitEffect.url}`);
-        // setTimeout(() => {
-        //   addElement();
-        // }, 1500);
         setTimeout(() => {
           if (this.round === 2) {
             addChickenElement();
+            addVirusElement();
             setTimeout(() => {
-              $('.bigBoss').addClass('big-boss--right');
-              console.log('4000');
-            }, 4000);
+              $('.big-boss').addClass('big-boss--right');
+            }, 1500);
             setTimeout(() => {
               $('.big-boss').removeClass('big-boss--right');
               $('.big-boss').addClass('big-boss--top');
-              console.log('8000');
-            }, 8000);
+            }, 3000);
             setTimeout(() => {
               $('.big-boss').removeClass('big-boss--top');
               $('.big-boss').addClass('big-boss--right');
-              console.log('8000');
-            }, 12000);
-          } else {
-            addVirusElement();
+            }, 4500);
+          }
+          else {
+          addVirusElement();
+          // console.log('addVirusElement()', addVirusElement());
           }
         }, 1500);
       }
-    }
+    } 
 
     /*
      * Win - image shows / go to next Lvl
@@ -206,7 +200,7 @@ const toMove = {
     }
   },
   changeProgressBar() {
-    this.barMargin += 50;
+    this.barMargin += 55;
     bar.style.marginLeft = this.barMargin + 'px';
   },
 };
@@ -233,13 +227,14 @@ function toTheNextRound() {
   toMove.count = 0;
   toMove.round += 1;
   toMove.calcPercent(2);
-  firstFigter.url = `./images/main-target${toMove.round}.jpg`;
+  bonusFigter.url = `./images/bonus${toMove.round}.png`;
+  firstFigter.url = `./images/main-target${toMove.round}.png`;
   firstFigter.alt = 'target2';
-  enemy.setAttribute('src', `./images/main-target${toMove.round}.jpg`);
+  enemy.setAttribute('src', `./images/main-target${toMove.round}.png`);
   if (slotEnemyActive[toMove.round - 1]) {
     slotEnemyActive[toMove.round - 1].setAttribute(
       'src',
-      `./images/main-target${toMove.round}.jpg`,
+      `./images/main-target${toMove.round}.png`,
     );
   }
   slotenemy[toMove.round - 2].classList.add('active');
@@ -343,7 +338,7 @@ function addVirusElement() {
  * Create Chicken element
  */
 function addChickenElement() {
-  let div = `<div class='big-boss target fighter'>
+  let div = `<div class='big-boss fighter'>
               <img src = "${bonusFigterCh.url}"
               alt = "${bonusFigterCh.alt}" / >
               <span class = "hit-effect" >
@@ -353,22 +348,12 @@ function addChickenElement() {
                 </span>
             </div>`;
   fightContainer.insertAdjacentHTML('beforeend', div);
-
-  // let allTargets = document.querySelectorAll('.target');
-
-  // allTargets.forEach(el =>
-  //   el.addEventListener('click', e => toMove.toChooseHand(e)),
-  // );
 };
 
 /*
  * Create hands Hit effect
  */
 function hitEffectAdd(target) {
-  // let cssClass = 'activeHitR';
-  // if (true) {
-  //   cssClass = 'activeHitL';
-  // }
   target.classList.add('activeHit')
   setTimeout(function () {
     target.classList.remove('activeHit')
@@ -379,5 +364,12 @@ function hitEffectAdd(target) {
   }, 2500);
 };
 
+
+/*
+ * Hands if hit missed
+ */
 const ringSection = document.querySelector('.fight-container');
 ringSection.addEventListener('click', e => toMove.wrongMoveHand(e));
+
+
+    

@@ -1,5 +1,5 @@
 const firstFigter = {
-    url: './images/tramp.png',
+    url: './images/main-target.png',
     alt: 'Figter',
 };
 const referee = {
@@ -11,7 +11,7 @@ const refereeSmile = {
     alt: 'Referee',
 };
 const bonusFigter = {
-    url: './images/virus.png',
+    url: './images/bonus.png',
     alt: 'Figter',
 };
 const winPicture = {
