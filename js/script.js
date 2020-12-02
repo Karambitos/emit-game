@@ -8,6 +8,8 @@ $(document).ready(() => {
 });
 
 
+// console.log(localStorage);
+
 import {
     refereeSmile,
     winPicture
@@ -17,6 +19,42 @@ import {
     typingText,
     title
 } from './animation.js';
+
+
+
+
+/*
+ * Fighter images 
+ */
+
+// const status = document.getElementById('status');
+// if (window.FileList && window.File && window.FileReader) {
+//   document.getElementById('file-selector').addEventListener('change', event => {
+//     status.textContent = '';
+//     const file = event.target.files[0];
+//     if (!file.type) {
+//       status.textContent = 'Error: The File.type property does not appear to be supported on this browser.';
+//       return;
+//     }
+//     if (!file.type.match('image.*')) {
+//       status.textContent = 'Error: The selected file does not appear to be an image.'
+//       return;
+//     }
+//     const reader = new FileReader();
+//       reader.addEventListener('load', event => {
+//           localStorage.setItem('firstFighter', event.target.result);
+//           localStorage.setItem('2', 'два');
+//           localStorage.setItem('3', 'три');
+//           console.log(event.target.result);
+//           console.log(localStorage.getItem('2'));
+//           console.log(localStorage.getItem('3'));
+//           console.log(localStorage);
+//     });
+//     reader.readAsDataURL(file);
+//   }); 
+// }
+
+
 
 /*
  * check local Storage
@@ -31,8 +69,8 @@ function checkStorage() {
     chengePageContent.imageChange();
     setTimeout(() => {
            chengePageContent.background();
-    }, 7000);
-    localStorage.clear()
+    }, 10000);
+    // localStorage.clear()
 }
         
 setTimeout(() => {
@@ -44,7 +82,7 @@ setTimeout(() => {
     setTimeout(() => {
         const startArrow = document.querySelector('.start--arrow');
         startArrow.classList.add('active')
-        }, 6000);
+        }, 8000);
 }
 }, 100);
 
@@ -62,7 +100,7 @@ const chengePageContent = {
 
     titleChange: function () {
         const mainText = document.querySelector('h2.animation-title');
-        mainText.textContent = 'You did It!?';
+        mainText.textContent = 'Du bist Mega!';
         title();
         setTimeout(() => {
             $('.start--text').addClass("active")
