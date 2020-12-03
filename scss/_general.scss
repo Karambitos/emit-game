@@ -56,9 +56,10 @@ h2 {
   color: $mainText;
   font-weight: normal;
   font-size: 90px;
-  line-height: 109%;
+  line-height: 1.2em;
   text-shadow: 5px 9px 0px #000000;
 }
+
 
 img {
   display: block;
@@ -202,18 +203,23 @@ section.unsupported-browser {
   top: 50%;
   right: 50%;
   width: 100%;
-  height: 200px;
+  height: 180px;
   z-index: 29;
   overflow: hidden;
 
   &--color{
     z-index: 2;
-      background-color: #5dccd3;
-      position: absolute;
-      width: 50%;
-      height: 100%;
-      left: 0;
+    background-color: #5dccd3;
+    position: absolute;
+    width: 48%;
+    height: 100%;
+    left: 0;
   }
+
+   &--color+img{
+     filter: none;
+   }
+
 
   img {
     transition: 3000ms ease;
@@ -228,8 +234,15 @@ section.unsupported-browser {
   &.move {
     img {
     transform: translate(110%, -50%);
+    filter: drop-shadow(0px 4px 20px rgba(0, 0, 0, 0.3));
     }
   }
 }
+/*
+* Final text
+*/
 
-
+.top-text{
+  transform: translate(-30px, -35px);
+  display: inline-block;
+}

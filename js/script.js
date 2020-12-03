@@ -7,9 +7,6 @@ $(document).ready(() => {
     });
 });
 
-
-// console.log(localStorage);
-
 import {
     refereeSmile,
     winPicture
@@ -19,42 +16,6 @@ import {
     typingText,
     title
 } from './animation.js';
-
-
-
-
-/*
- * Fighter images 
- */
-
-// const status = document.getElementById('status');
-// if (window.FileList && window.File && window.FileReader) {
-//   document.getElementById('file-selector').addEventListener('change', event => {
-//     status.textContent = '';
-//     const file = event.target.files[0];
-//     if (!file.type) {
-//       status.textContent = 'Error: The File.type property does not appear to be supported on this browser.';
-//       return;
-//     }
-//     if (!file.type.match('image.*')) {
-//       status.textContent = 'Error: The selected file does not appear to be an image.'
-//       return;
-//     }
-//     const reader = new FileReader();
-//       reader.addEventListener('load', event => {
-//           localStorage.setItem('firstFighter', event.target.result);
-//           localStorage.setItem('2', 'два');
-//           localStorage.setItem('3', 'три');
-//           console.log(event.target.result);
-//           console.log(localStorage.getItem('2'));
-//           console.log(localStorage.getItem('3'));
-//           console.log(localStorage);
-//     });
-//     reader.readAsDataURL(file);
-//   }); 
-// }
-
-
 
 /*
  * check local Storage
@@ -70,7 +31,7 @@ function checkStorage() {
     setTimeout(() => {
            chengePageContent.background();
     }, 10000);
-    // localStorage.clear()
+    localStorage.clear()
 }
         
 setTimeout(() => {
@@ -87,13 +48,6 @@ setTimeout(() => {
 }, 100);
 
 /*
- * reset local Storage
- */
-// const startArrow = document.querySelector('.start--arrow');
-// startArrow.addEventListener('click', () => localStorage.clear());
-
-
-/*
  * chenge page content
  */
 const chengePageContent = {
@@ -106,11 +60,6 @@ const chengePageContent = {
             $('.start--text').addClass("active")
         }, 4000);
     },
-
-    // arrowTextChange: function () {
-    //     const startArrowText = document.querySelector('.start--arrow-text');
-    //     startArrowText.textContent = 'Again?';
-    // },
 
     imageChange: function () {
         const startImage = document.querySelector('.start--referee>img');
