@@ -195,7 +195,7 @@ const toMove = {
       progress.textContent = ``;
       setTimeout(function () {
         localStorage.setItem('key', 'true');
-        window.location.replace('/');
+        window.location.replace('./');
       }, 2000);
     }
   },
