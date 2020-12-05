@@ -187,13 +187,13 @@ section.unsupported-browser {
 }
 
 .logo.active {
-  transition: 3000ms ease;
+  transition: 4000ms ease;
   transform: translate(50%, -50%) scale(1.6);
   top: 50%;
   right: 50%;
 
   &.move{
-      right: 54%;
+      right: 56%;
   }
 }
 
@@ -233,9 +233,29 @@ section.unsupported-browser {
 
   &.move {
     img {
-    transform: translate(110%, -50%);
+    transform: translate(110%, -55%);
     filter: drop-shadow(0px 4px 20px rgba(0, 0, 0, 0.3));
     }
+  }
+}
+
+.restart-btn{
+  animation: arrowRef 2000ms infinite;
+  width: 144px;
+
+  display: none;
+  pointer-events: all;
+  position: absolute;
+  bottom: 50px;
+  left: 46%;
+
+  a{
+    display: block;
+  }
+  
+  p{
+        font-size: 28px;
+        right: 51%;
   }
 }
 /*

@@ -240,6 +240,36 @@
   }
 }
 
+@-webkit-keyframes arrowRef {
+  0% {
+    -webkit-transform: translateX(0);
+            transform: translateX(0);
+  }
+  50% {
+    -webkit-transform: translateX(-50px);
+            transform: translateX(-50px);
+  }
+  100% {
+    -webkit-transform: translateX(0);
+            transform: translateX(0);
+  }
+}
+
+@keyframes arrowRef {
+  0% {
+    -webkit-transform: translateX(0);
+            transform: translateX(0);
+  }
+  50% {
+    -webkit-transform: translateX(-50px);
+            transform: translateX(-50px);
+  }
+  100% {
+    -webkit-transform: translateX(0);
+            transform: translateX(0);
+  }
+}
+
 @-webkit-keyframes referee {
   0% {
     bottom: -100%;
@@ -754,8 +784,8 @@ section.unsupported-browser {
 }
 
 .logo.active {
-  -webkit-transition: 3000ms ease;
-  transition: 3000ms ease;
+  -webkit-transition: 4000ms ease;
+  transition: 4000ms ease;
   -webkit-transform: translate(50%, -50%) scale(1.6);
           transform: translate(50%, -50%) scale(1.6);
   top: 50%;
@@ -763,7 +793,7 @@ section.unsupported-browser {
 }
 
 .logo.active.move {
-  right: 54%;
+  right: 56%;
 }
 
 .hide-box {
@@ -805,10 +835,30 @@ section.unsupported-browser {
 }
 
 .hide-box.move img {
-  -webkit-transform: translate(110%, -50%);
-          transform: translate(110%, -50%);
+  -webkit-transform: translate(110%, -55%);
+          transform: translate(110%, -55%);
   -webkit-filter: drop-shadow(0px 4px 20px rgba(0, 0, 0, 0.3));
           filter: drop-shadow(0px 4px 20px rgba(0, 0, 0, 0.3));
+}
+
+.restart-btn {
+  -webkit-animation: arrowRef 2000ms infinite;
+          animation: arrowRef 2000ms infinite;
+  width: 144px;
+  display: none;
+  pointer-events: all;
+  position: absolute;
+  bottom: 50px;
+  left: 46%;
+}
+
+.restart-btn a {
+  display: block;
+}
+
+.restart-btn p {
+  font-size: 28px;
+  right: 51%;
 }
 
 /*
@@ -1057,7 +1107,7 @@ section.unsupported-browser {
           align-items: center;
   height: inherit;
   background-image: url(../images/fight-ringBG.jpg);
-  background-size: inherit;
+  background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
 }

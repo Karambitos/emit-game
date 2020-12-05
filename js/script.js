@@ -31,6 +31,9 @@ function checkStorage() {
     setTimeout(() => {
            chengePageContent.background();
     }, 10000);
+    setTimeout(() => {
+        $('.restart-btn').fadeIn()
+    }, 18000);
     localStorage.clear()
 }
         
